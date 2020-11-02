@@ -1,0 +1,194 @@
+PODS:
+  - ActiveLabel (1.0.1)
+  - Alamofire (4.8.1)
+  - AMap3DMap-NO-IDFA (6.9.0):
+    - AMapFoundation-NO-IDFA (~> 1.5)
+  - AMapFoundation-NO-IDFA (1.6.3)
+  - AMapLocation-NO-IDFA (2.6.3):
+    - AMapFoundation-NO-IDFA (~> 1.4)
+  - AMapSearch-NO-IDFA (6.9.0):
+    - AMapFoundation-NO-IDFA (~> 1.4)
+  - Bugly (2.4.8)
+  - CryptoSwift (0.15.0)
+  - Hyphenate (3.5.3)
+  - IQKeyboardManagerSwift (6.2.0)
+  - JCore (1.2.6)
+  - JPush (3.1.2):
+    - JCore (~> 1.2.6)
+  - Kingfisher (4.10.1)
+  - KMPlaceholderTextView (1.4.0)
+  - MarkdownView (1.5.0)
+  - Masonry (1.1.0)
+  - MJRefresh (3.1.16)
+  - mob_linksdk (2.2.6):
+    - MOBFoundation
+  - MOBFoundation (3.2.12)
+  - MonkeyKing (1.13.0)
+  - objc-geohash (0.0.1)
+  - ObjectMapper (3.4.2)
+  - PKHUD (5.2.1)
+  - ReachabilitySwift (4.3.0)
+  - Realm (3.18.0):
+    - Realm/Headers (= 3.18.0)
+  - Realm/Headers (3.18.0)
+  - RealmSwift (3.18.0):
+    - Realm (= 3.18.0)
+  - SCRecorder (2.7.0)
+  - SnapKit (4.2.0)
+  - SwiftDate (5.1.0)
+  - SwiftyJSON (4.2.0)
+  - TYAttributedLabel (2.6.6)
+  - TZImagePickerController (3.2.1)
+  - WechatOpenSDK (1.8.2)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+  - ZFPlayer (2.1.6):
+    - Masonry
+
+DEPENDENCIES:
+  - ActiveLabel (from `https://github.com/smelloftime/ActiveLabel.swift`, branch `master-swift4-2`)
+  - Alamofire (= 4.8.1)
+  - AMap3DMap-NO-IDFA (= 6.9.0)
+  - AMapLocation-NO-IDFA (= 2.6.3)
+  - AMapSearch-NO-IDFA (= 6.9.0)
+  - Bugly (= 2.4.8)
+  - CryptoSwift (= 0.15.0)
+  - Hyphenate (= 3.5.3)
+  - IQKeyboardManagerSwift (= 6.2.0)
+  - JPush (= 3.1.2)
+  - Kingfisher (= 4.10.1)
+  - KMPlaceholderTextView (= 1.4.0)
+  - MarkdownView (from `https://github.com/smelloftime/MarkdownView.git`)
+  - Masonry (= 1.1.0)
+  - MJRefresh (= 3.1.16)
+  - mob_linksdk (= 2.2.6)
+  - MonkeyKing (= 1.13.0)
+  - objc-geohash (= 0.0.1)
+  - ObjectMapper (= 3.4.2)
+  - PKHUD (= 5.2.1)
+  - ReachabilitySwift (= 4.3.0)
+  - RealmSwift (= 3.18.0)
+  - SCRecorder (from `https://github.com/caolin358688599/SCRecorder.git`)
+  - SnapKit (= 4.2.0)
+  - SwiftDate (= 5.1.0)
+  - SwiftyJSON (= 4.2.0)
+  - TYAttributedLabel (from `https://github.com/customized-repos/TYAttributedLabel.git`)
+  - TZImagePickerController (from `https://github.com/smelloftime/TZImagePickerController.git`)
+  - WechatOpenSDK (= 1.8.2)
+  - XCGLogger (= 4.0.0)
+  - YYKit (= 1.0.9)
+  - ZFPlayer (from `https://github.com/caolin358688599/ZFPlayer.git`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AMap3DMap-NO-IDFA
+    - AMapFoundation-NO-IDFA
+    - AMapLocation-NO-IDFA
+    - AMapSearch-NO-IDFA
+    - Bugly
+    - CryptoSwift
+    - Hyphenate
+    - IQKeyboardManagerSwift
+    - JCore
+    - JPush
+    - Kingfisher
+    - KMPlaceholderTextView
+    - Masonry
+    - MJRefresh
+    - mob_linksdk
+    - MOBFoundation
+    - MonkeyKing
+    - objc-geohash
+    - ObjectMapper
+    - PKHUD
+    - ReachabilitySwift
+    - Realm
+    - RealmSwift
+    - SnapKit
+    - SwiftDate
+    - SwiftyJSON
+    - WechatOpenSDK
+    - XCGLogger
+    - YYKit
+
+EXTERNAL SOURCES:
+  ActiveLabel:
+    :branch: master-swift4-2
+    :git: https://github.com/smelloftime/ActiveLabel.swift
+  MarkdownView:
+    :git: https://github.com/smelloftime/MarkdownView.git
+  SCRecorder:
+    :git: https://github.com/caolin358688599/SCRecorder.git
+  TYAttributedLabel:
+    :git: https://github.com/customized-repos/TYAttributedLabel.git
+  TZImagePickerController:
+    :git: https://github.com/smelloftime/TZImagePickerController.git
+  ZFPlayer:
+    :git: https://github.com/caolin358688599/ZFPlayer.git
+
+CHECKOUT OPTIONS:
+  ActiveLabel:
+    :commit: e59002947371cfa9119d76bc6e0d9e5e525a755c
+    :git: https://github.com/smelloftime/ActiveLabel.swift
+  MarkdownView:
+    :commit: 1c0049e40fd1c6ac46bb1c928efd81e9d98f42c5
+    :git: https://github.com/smelloftime/MarkdownView.git
+  SCRecorder:
+    :commit: f5f692f07ca4a898c3ae00530ae75db7806722ea
+    :git: https://github.com/caolin358688599/SCRecorder.git
+  TYAttributedLabel:
+    :commit: d3626586e7077eabbbaa253d90bd02902774c6a4
+    :git: https://github.com/customized-repos/TYAttributedLabel.git
+  TZImagePickerController:
+    :commit: 8c23825c651ee8f919867a7b22a63db3cb1012bd
+    :git: https://github.com/smelloftime/TZImagePickerController.git
+  ZFPlayer:
+    :commit: a3fa8d4bb7a1ce4fcbe0d2c0503198824006806b
+    :git: https://github.com/caolin358688599/ZFPlayer.git
+
+SPEC CHECKSUMS:
+  ActiveLabel: b8b2396fe25308d563601437d6605bf691c3b5db
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  AMap3DMap-NO-IDFA: ffb000a25913efcdc5d979faa54a78655965bc23
+  AMapFoundation-NO-IDFA: cf241b2f4832fe6c9e121af381e34791be49ad0d
+  AMapLocation-NO-IDFA: f22a480573aa18c521946f13d49521f042a7dca6
+  AMapSearch-NO-IDFA: 264999e6c149383a8f164c2fe49b51513e93d674
+  Bugly: da3c02408c14838d498429320545a8e439392978
+  CryptoSwift: 769f58a9e89f64e8796c2e59ce5f002dc81a2438
+  Hyphenate: 445ea0670a89da602d91a30df34dbf2b9a3c7e51
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
+  JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
+  MarkdownView: 5bbee438c823db1cd189002d44c84fa909b3a896
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
+  mob_linksdk: bd90e001752222a07f76a77606eb3b7a174d088f
+  MOBFoundation: 8b679c59f14588770fa307b830e64290d31f3227
+  MonkeyKing: cdaa3e93d4802464eceea619aba87f70c31db2e1
+  objc-geohash: 5a92a1deb6c4729ecefdf847159991a1068fb4cc
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  Realm: 7b3d04740facf45e958a514b466a32b04f1113d6
+  RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
+  SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftDate: 6329e58969a2de31cea7f1ee1143b247693196e7
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  TYAttributedLabel: cb8fc910d97eb5224936d4f692a78e042af691b2
+  TZImagePickerController: fddbb359c360cc7e22bf349e806a83601e67859b
+  WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  ZFPlayer: 006aa31c550c2758ea54d34763a932aa3604e27a
+
+PODFILE CHECKSUM: a583c39070ea7ad59314c3ab49e396fecb077de7
+
+COCOAPODS: 1.9.1
