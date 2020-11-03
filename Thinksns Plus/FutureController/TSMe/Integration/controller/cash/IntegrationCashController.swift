@@ -120,6 +120,8 @@ class IntegrationCashTableController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        TSAppConfig.share.localInfo.goldName = "積分"
         setUI()
         // 添加点击手势，完成 "空白处点击关闭键盘效果"
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(tapGRProcess(_:)))
@@ -143,6 +145,7 @@ class IntegrationCashTableController: UITableViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
+        
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = false
         // 更新状态栏的颜色

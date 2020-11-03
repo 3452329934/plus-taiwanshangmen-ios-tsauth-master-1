@@ -111,16 +111,16 @@ class ShareListView: UIView, Sharable {
     var titleArary = ["QQ", "空间", "微信", "朋友圈", "微博"]
     /// 自己发的
     var imageArrayMe = ["detail_share_forwarding", "detail_share_clt", "detail_share_sent", "detail_share_top", "detail_share_det"]
-    var titleAraryMe = ["转发", "收藏", "私信发送", "申请置顶", "删除"]
+    var titleAraryMe = ["转发".localized, "收藏", "私信发送".localized, "申请置顶", "删除"]
     /// 自己发的,但没有申请置顶按钮(话题)
     var imageArrayMeNoReTop = ["detail_share_forwarding", "detail_share_clt", "detail_share_sent", "detail_share_det"]
-    var titleAraryMeNoReTop = ["转发", "收藏", "私信发送", "删除"]
+    var titleAraryMeNoReTop = ["转发".localized, "收藏", "私信发送".localized, "删除"]
     /// 自己发的已收藏
     var imageArrayMeCollection = ["detail_share_forwarding", "detail_share_clt_hl", "detail_share_sent", "detail_share_top", "detail_share_det"]
-    var titleAraryMeCollection = ["转发", "已收藏", "私信发送", "申请置顶", "删除"]
+    var titleAraryMeCollection = ["转发".localized, "已收藏".localized, "私信发送".localized, "申请置顶", "删除"]
     /// 自己发的已收藏，但没有申请置顶按钮(话题)
     var imageArrayMeCollectionNoReTop = ["detail_share_forwarding", "detail_share_clt_hl", "detail_share_sent", "detail_share_det"]
-    var titleAraryMeCollectionNoReTop = ["转发", "已收藏", "私信发送", "删除"]
+    var titleAraryMeCollectionNoReTop = ["转发".localized, "已收藏", "私信发送".localized, "删除"]
 //
 //    /// 自己发的帖子
 //    var imageArrayMePost = ["detail_share_forwarding", "detail_share_sent","detail_share_clt_hl", "detail_share_det"]
@@ -134,14 +134,14 @@ class ShareListView: UIView, Sharable {
 
     /// 别人发的
     var imageArrayOther = ["detail_share_forwarding", "detail_share_report", "detail_share_clt", "detail_share_sent"]
-    var titleAraryOther = ["转发", "举报", "收藏", "私信发送"]
+    var titleAraryOther = ["转发".localized, "举报".localized, "收藏", "私信发送".localized]
     /// 别人发的已收藏
     var imageArrayOtherCollection = ["detail_share_forwarding", "detail_share_report", "detail_share_clt_hl", "detail_share_sent"]
-    var titleAraryOtherCollection = ["转发", "举报", "已收藏", "私信发送"]
+    var titleAraryOtherCollection = ["转发".localized, "举报".localized, "已收藏", "私信发送".localized]
     /// 各类详情页
     /// 别人发的
     var imageArrayDetail = ["detail_share_forwarding", "detail_share_sent"]
-    var titleAraryDetail = ["转发", "私信发送"]
+    var titleAraryDetail = ["转发".localized, "私信发送".localized]
     // MARK: Lifecycle
     init(isMineSend: Bool, isCollection: Bool, shareType: ShareListType) {
         super.init(frame: UIScreen.main.bounds)
@@ -173,123 +173,125 @@ class ShareListView: UIView, Sharable {
     func setUI() {
         backgroundColor = UIColor(white: 0, alpha: 0.2)
         // 没有微信时将微信和朋友圈移除
-        if !ShareManager.thirdAccout(type: .wechat).isAppInstalled {
-            imageArray.remove(at: 3)
-            titleArary.remove(at: 3)
-            imageArray.remove(at: 2)
-            titleArary.remove(at: 2)
-        }
-        if shareType == .momentList || shareType == .groupMomentList {
-            if isMine {
-                if isCollect {
-                    imageArray += imageArrayMeCollection
-                    titleArary += titleAraryMeCollection
-                } else {
-                    imageArray += imageArrayMe
-                    titleArary += titleAraryMe
-                }
-            } else if isManager {
-                if isCollect {
-                    imageArrayOtherCollection.remove(at: 1)
-                    imageArray += imageArrayOtherCollection
-                    titleAraryOtherCollection.remove(at: 1)
-                    titleArary += titleAraryOtherCollection
-                } else {
-                    imageArrayOther.remove(at: 1)
-                    imageArray += imageArrayOther
-                    titleAraryOther.remove(at: 1)
-                    titleArary += titleAraryOther
-                }
-                imageArray.append("detail_share_det")
-                titleArary.append("删除")
-            } else {
-                if isCollect {
-                    imageArray += imageArrayOtherCollection
-                    titleArary += titleAraryOtherCollection
-                } else {
-                    imageArray += imageArrayOther
-                    titleArary += titleAraryOther
-                }
-            }
-        } else if shareType == .topicFeedList {
-            /// 话题没有置顶，没有置顶
-            if isMine {
-                if isCollect {
-                    imageArray += imageArrayMeCollectionNoReTop
-                    titleArary += titleAraryMeCollectionNoReTop
-                } else {
-                    imageArray += imageArrayMeNoReTop
-                    titleArary += titleAraryMeNoReTop
-                }
-            } else if isManager {
-                if isCollect {
-                    imageArrayOtherCollection.remove(at: 1)
-                    imageArray += imageArrayOtherCollection
-                    titleAraryOtherCollection.remove(at: 1)
-                    titleArary += titleAraryOtherCollection
-                } else {
-                    imageArrayOther.remove(at: 1)
-                    imageArray += imageArrayOther
-                    titleAraryOther.remove(at: 1)
-                    titleArary += titleAraryOther
-                }
-                imageArray.append("detail_share_det")
-                titleArary.append("删除")
-            } else {
-                if isCollect {
-                    imageArray += imageArrayOtherCollection
-                    titleArary += titleAraryOtherCollection
-                } else {
-                    imageArray += imageArrayOther
-                    titleArary += titleAraryOther
-                }
-            }
-        } else if shareType == .groupDetail {
-            /// 圈子详情
-            if  isOwner || isManager {
-                    imageArray.append("detail_share_forwarding")
-                    imageArray.append("detail_share_sent")
-                    imageArray.append(isExcellent ? "ico_cancel" : "ico_essence")
-                    imageArray.append("detail_share_top")
-                    imageArray.append("detail_share_det")
-                    titleArary.append("转发")
-                    titleArary.append("私信发送")
-                    titleArary.append(isExcellent ? "撤销精华帖":"设为精华帖")
-                    titleArary.append(isTop ? "撤销置顶":"置顶帖子")
-                    titleArary.append("删除")
-            } else {
-             // 普通用户
-                if isMine {
-                    imageArray.append("detail_share_forwarding")
-                    imageArray.append("detail_share_sent")
-                    imageArray.append(isCollect ? "detail_share_clt_hl":"detail_share_clt")
-                      if !isTop {
-                    imageArray.append("detail_share_top")
-                    }
-                    imageArray.append("detail_share_det")
-                    titleArary.append("转发")
-                    titleArary.append("私信发送")
-                    titleArary.append(isCollect ? "已收藏":"收藏")
-                     if !isTop {
-                    titleArary.append("申请置顶")
-                    }
-                    titleArary.append("删除")
-                } else {
-                    imageArray.append("detail_share_forwarding")
-                    imageArray.append("detail_share_sent")
-                    imageArray.append("detail_share_report")
-                    imageArray.append(isCollect ? "detail_share_clt_hl":"detail_share_clt")
-                    titleArary.append("转发")
-                    titleArary.append("私信发送")
-                    titleArary.append("举报")
-                    titleArary.append(isCollect ? "已收藏":"收藏")
-                }
-            }
-        } else {
-            imageArray += imageArrayDetail
-            titleArary += titleAraryDetail
-        }
-
+//        if !ShareManager.thirdAccout(type: .wechat).isAppInstalled {
+//            imageArray.remove(at: 3)
+//            titleArary.remove(at: 3)
+//            imageArray.remove(at: 2)
+//            titleArary.remove(at: 2)
+//        }
+//        if shareType == .momentList || shareType == .groupMomentList {
+//            if isMine {
+//                if isCollect {
+//                    imageArray += imageArrayMeCollection
+//                    titleArary += titleAraryMeCollection
+//                } else {
+//                    imageArray += imageArrayMe
+//                    titleArary += titleAraryMe
+//                }
+//            } else if isManager {
+//                if isCollect {
+//                    imageArrayOtherCollection.remove(at: 1)
+//                    imageArray += imageArrayOtherCollection
+//                    titleAraryOtherCollection.remove(at: 1)
+//                    titleArary += titleAraryOtherCollection
+//                } else {
+//                    imageArrayOther.remove(at: 1)
+//                    imageArray += imageArrayOther
+//                    titleAraryOther.remove(at: 1)
+//                    titleArary += titleAraryOther
+//                }
+//                imageArray.append("detail_share_det")
+//                titleArary.append("删除")
+//            } else {
+//                if isCollect {
+//                    imageArray += imageArrayOtherCollection
+//                    titleArary += titleAraryOtherCollection
+//                } else {
+//                    imageArray += imageArrayOther
+//                    titleArary += titleAraryOther
+//                }
+//            }
+//        } else if shareType == .topicFeedList {
+//            /// 话题没有置顶，没有置顶
+//            if isMine {
+//                if isCollect {
+//                    imageArray += imageArrayMeCollectionNoReTop
+//                    titleArary += titleAraryMeCollectionNoReTop
+//                } else {
+//                    imageArray += imageArrayMeNoReTop
+//                    titleArary += titleAraryMeNoReTop
+//                }
+//            } else if isManager {
+//                if isCollect {
+//                    imageArrayOtherCollection.remove(at: 1)
+//                    imageArray += imageArrayOtherCollection
+//                    titleAraryOtherCollection.remove(at: 1)
+//                    titleArary += titleAraryOtherCollection
+//                } else {
+//                    imageArrayOther.remove(at: 1)
+//                    imageArray += imageArrayOther
+//                    titleAraryOther.remove(at: 1)
+//                    titleArary += titleAraryOther
+//                }
+//                imageArray.append("detail_share_det")
+//                titleArary.append("删除")
+//            } else {
+//                if isCollect {
+//                    imageArray += imageArrayOtherCollection
+//                    titleArary += titleAraryOtherCollection
+//                } else {
+//                    imageArray += imageArrayOther
+//                    titleArary += titleAraryOther
+//                }
+//            }
+//        } else if shareType == .groupDetail {
+//            /// 圈子详情
+//            if  isOwner || isManager {
+//                    imageArray.append("detail_share_forwarding")
+//                    imageArray.append("detail_share_sent")
+//                    imageArray.append(isExcellent ? "ico_cancel" : "ico_essence")
+//                    imageArray.append("detail_share_top")
+//                    imageArray.append("detail_share_det")
+//                    titleArary.append("转发")
+//                    titleArary.append("私信发送")
+//                    titleArary.append(isExcellent ? "撤销精华帖":"设为精华帖")
+//                    titleArary.append(isTop ? "撤销置顶":"置顶帖子")
+//                    titleArary.append("删除")
+//            } else {
+//             // 普通用户
+//                if isMine {
+//                    imageArray.append("detail_share_forwarding")
+//                    imageArray.append("detail_share_sent")
+//                    imageArray.append(isCollect ? "detail_share_clt_hl":"detail_share_clt")
+//                      if !isTop {
+//                    imageArray.append("detail_share_top")
+//                    }
+//                    imageArray.append("detail_share_det")
+//                    titleArary.append("转发")
+//                    titleArary.append("私信发送")
+//                    titleArary.append(isCollect ? "已收藏":"收藏")
+//                     if !isTop {
+//                    titleArary.append("申请置顶")
+//                    }
+//                    titleArary.append("删除")
+//                } else {
+//                    imageArray.append("detail_share_forwarding")
+//                    imageArray.append("detail_share_sent")
+//                    imageArray.append("detail_share_report")
+//                    imageArray.append(isCollect ? "detail_share_clt_hl":"detail_share_clt")
+//                    titleArary.append("转发")
+//                    titleArary.append("私信发送")
+//                    titleArary.append("举报")
+//                    titleArary.append(isCollect ? "已收藏":"收藏")
+//                }
+//            }
+//        } else {
+        imageArray = []
+        titleArary = []
+        imageArray += imageArrayDetail
+        titleArary += titleAraryDetail
+//        }
+        
         for index in 0..<imageArray.count {
             let shareView = UIView()
             shareView.isUserInteractionEnabled = true
@@ -402,7 +404,7 @@ class ShareListView: UIView, Sharable {
             shareURLToWeChatMomentsWith(URLString: shareUrlString, image: shareImage, description: shareDescription, title: shareTitle, complete: finishBlock)
         case "微博":
             shareURLToWeiboWith(URLString: shareUrlString, image: shareImage, description: shareDescription, title: shareTitle, complete: finishBlock)
-        case "转发":
+        case "转发".localized:
             // 如果是游客模式，触发登录注册操作
             if TSCurrentUserInfo.share.isLogin == false {
                 self.isHidden = true
@@ -424,7 +426,7 @@ class ShareListView: UIView, Sharable {
             }
             delegate?.didClickCollectionButon(self, fatherViewTag: index, feedIndex: feedindex)
             dismiss()
-        case "私信发送":
+        case "私信发送".localized:
             // 如果是游客模式，触发登录注册操作
             if TSCurrentUserInfo.share.isLogin == false {
                 self.isHidden = true
@@ -450,7 +452,7 @@ class ShareListView: UIView, Sharable {
             self.isHidden = true
             delegate?.didClickApplyTopButon(self, fatherViewTag: index, feedIndex: feedindex)
             dismiss()
-        case "置顶帖子":
+        case "置顶帖子".localized:
             // 如果是游客模式，触发登录注册操作
             if TSCurrentUserInfo.share.isLogin == false {
                 self.isHidden = true
@@ -463,7 +465,7 @@ class ShareListView: UIView, Sharable {
             self.isHidden = true
             delegate?.didClickSetTopButon(self, fatherViewTag: index, feedIndex: feedindex)
             dismiss()
-        case "撤销置顶":
+        case "撤销置顶".localized:
             // 如果是游客模式，触发登录注册操作
             if TSCurrentUserInfo.share.isLogin == false {
                 self.isHidden = true
@@ -476,7 +478,7 @@ class ShareListView: UIView, Sharable {
             self.isHidden = true
             delegate?.didClickCancelTopButon(self, fatherViewTag: index, feedIndex: feedindex)
             dismiss()
-        case "设为精华帖":
+        case "设为精华帖".localized:
             // 如果是游客模式，触发登录注册操作
             if TSCurrentUserInfo.share.isLogin == false {
                 self.isHidden = true
@@ -489,7 +491,7 @@ class ShareListView: UIView, Sharable {
             self.isHidden = true
             delegate?.didClickSetExcellentButon(self, fatherViewTag: index, feedIndex: feedindex)
             dismiss()
-        case "撤销精华帖":
+        case "撤销精华帖".localized:
             // 如果是游客模式，触发登录注册操作
             if TSCurrentUserInfo.share.isLogin == false {
                 self.isHidden = true
@@ -515,7 +517,7 @@ class ShareListView: UIView, Sharable {
             self.isHidden = true
             delegate?.didClickDeleteButon(self, fatherViewTag: index, feedIndex: feedindex)
             dismiss()
-        case "举报":
+        case "举报".localized:
             // 如果是游客模式，触发登录注册操作
             if TSCurrentUserInfo.share.isLogin == false {
                 self.isHidden = true

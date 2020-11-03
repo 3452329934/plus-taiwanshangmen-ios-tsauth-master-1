@@ -187,7 +187,7 @@ class TSBindingPhoneOrEmailView: UIView, TSSectionForCapatchaDelegate {
         self.capatchaCellView.userInput.addTarget(self, action: #selector(getCAPATCHA(_:)), for: .editingChanged)
 
         submitBinding.sizeType = .large
-        submitBinding.setTitle("确认", for: .normal)
+        submitBinding.setTitle("确认".localized, for: .normal)
         submitBinding.addTarget(self, action: #selector(submitBtnTaped), for: .touchUpInside)
 
         self.addSubview(emailCellView)

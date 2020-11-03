@@ -53,7 +53,7 @@ class TopicCollectionCell: UICollectionViewCell {
         followButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         followButton.titleLabel?.font = UIFont(name: "PingFangSC-Medium", size: 13)
         followButton.setTitleColor(UIColor.white, for: .normal)
-        followButton.setTitle("+ 关注", for: .normal)
+        followButton.setTitle("+ 关注".localized, for: .normal)
         followButton.centerX = titleLabel.centerX
         followButton.isHidden = true
         self.addSubview(imageBg)
@@ -65,6 +65,6 @@ class TopicCollectionCell: UICollectionViewCell {
     func setInfo(model: TopicListModel, index: IndexPath) {
         titleLabel.text = model.topicTitle
         imageBg.kf.setImage(with: URL(string: TSUtil.praseTSNetFileUrl(netFile: model.topicLogo) ?? ""), placeholder: #imageLiteral(resourceName: "pic_cover"), options: nil, progressBlock: nil, completionHandler: nil)
-        followButton.setTitle(model.topicFollow ? "已关注" : "+ 关注", for: .normal)
+        followButton.setTitle(model.topicFollow ? "已关注".localized : "+ 关注".localized, for: .normal)
     }
 }

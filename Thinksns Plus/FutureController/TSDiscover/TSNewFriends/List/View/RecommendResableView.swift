@@ -19,7 +19,7 @@ class RecommendResableView: UICollectionReusableView {
         self.backgroundColor = UIColor.clear
         self.titleLabel.font = UIFont.systemFont(ofSize: 14)
         self.titleLabel.textColor = TSColor.normal.minor
-        self.titleLabel.text = "推荐好友"
+        self.titleLabel.text = "推荐好友".localized
         self.addSubview(self.titleLabel)
     }
     required init?(coder aDecoder: NSCoder) {

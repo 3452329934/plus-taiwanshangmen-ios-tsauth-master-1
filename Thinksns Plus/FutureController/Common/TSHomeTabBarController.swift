@@ -25,7 +25,7 @@ struct TSGuestAccessibleContent {
 }
 
 class TSHomeTabBarController: UITabBarController, HomeTabBarCenterButtonDelegate, UITabBarControllerDelegate, TSBeforeReleaseViewDelegate, DemoCallManagerDelegate {
-
+    // MARK: - 首頁底部工具列
     let customTabBar = TSHomeTabBar()
     var thebfview: TSBeforeReleaseView!
     lazy var unreadCountNetworkManager = UnreadCountNetworkManager()
@@ -79,7 +79,6 @@ class TSHomeTabBarController: UITabBarController, HomeTabBarCenterButtonDelegate
     // MARK: - Custom user interface
     /// 设置子视图控制器
     func setChildViewController() {
-//        self.addChild(TSMomentListVC(), "标题_首页".localized, "IMG_common_ico_bottom_home_normal", "IMG_common_ico_bottom_home_high")
         self.addChild(FeedPagesController(), "标题_首页".localized, "IMG_common_ico_bottom_home_normal", "IMG_common_ico_bottom_home_high")
 
         self.addChild(TSDiscoverViewController(), "标题_发现".localized, "IMG_common_ico_bottom_discover_normal", "IMG_common_ico_bottom_discover_high")
@@ -143,17 +142,17 @@ class TSHomeTabBarController: UITabBarController, HomeTabBarCenterButtonDelegate
         // 显示顺序：文字、图片、投稿、签到(签到可能没有)、问答
         if TSAppConfig.share.localInfo.checkin == true {
             if TSAppConfig.share.launchInfo?.quoraSwitch == true {
-                thebfview = TSBeforeReleaseView(frame: self.view.frame, images: [#imageLiteral(resourceName: "IMG_ico_word"), #imageLiteral(resourceName: "IMG_ico_potoablum"), #imageLiteral(resourceName: "IMG_ico_contribute"), #imageLiteral(resourceName: "IMG_ico_attendance"), #imageLiteral(resourceName: "IMG_ico_question"), #imageLiteral(resourceName: "IMG_ico_fatie"), #imageLiteral(resourceName: "ico_video")], titles: ["显示_文字".localized, "显示_图片".localized, "显示_投稿".localized, "显示_签到".localized, "显示_问答".localized, "显示_发帖".localized, "视频"])
+                thebfview = TSBeforeReleaseView(frame: self.view.frame, images: [#imageLiteral(resourceName: "IMG_ico_word"), #imageLiteral(resourceName: "IMG_ico_potoablum"), #imageLiteral(resourceName: "IMG_ico_contribute"), #imageLiteral(resourceName: "IMG_ico_fatie")], titles: ["显示_文字".localized, "显示_图片".localized, "显示_签到".localized, "视频".localized])
             } else {
-                thebfview = TSBeforeReleaseView(frame: self.view.frame, images: [#imageLiteral(resourceName: "IMG_ico_word"), #imageLiteral(resourceName: "IMG_ico_potoablum"), #imageLiteral(resourceName: "IMG_ico_contribute"), #imageLiteral(resourceName: "IMG_ico_attendance"), #imageLiteral(resourceName: "IMG_ico_fatie"), #imageLiteral(resourceName: "ico_video")], titles: ["显示_文字".localized, "显示_图片".localized, "显示_投稿".localized, "显示_签到".localized, "显示_发帖".localized, "视频"])
+                thebfview = TSBeforeReleaseView(frame: self.view.frame, images: [#imageLiteral(resourceName: "IMG_ico_word"), #imageLiteral(resourceName: "IMG_ico_potoablum"), #imageLiteral(resourceName: "IMG_ico_contribute"), #imageLiteral(resourceName: "IMG_ico_fatie")], titles: ["显示_文字".localized, "显示_图片".localized, "显示_签到".localized, "视频".localized])
             }
             thebfview.tag = 250
         }
         if TSAppConfig.share.localInfo.checkin == false {
             if TSAppConfig.share.launchInfo?.quoraSwitch == true {
-                thebfview = TSBeforeReleaseView(frame: self.view.frame, images: [#imageLiteral(resourceName: "IMG_ico_word"), #imageLiteral(resourceName: "IMG_ico_potoablum"), #imageLiteral(resourceName: "IMG_ico_contribute"), #imageLiteral(resourceName: "IMG_ico_question"), #imageLiteral(resourceName: "IMG_ico_fatie"), #imageLiteral(resourceName: "ico_video")], titles: ["显示_文字".localized, "显示_图片".localized, "显示_投稿".localized, "显示_问答".localized, "显示_发帖".localized, "视频"])
+                thebfview = TSBeforeReleaseView(frame: self.view.frame, images: [#imageLiteral(resourceName: "IMG_ico_word"), #imageLiteral(resourceName: "IMG_ico_potoablum"), #imageLiteral(resourceName: "IMG_ico_contribute"), #imageLiteral(resourceName: "IMG_ico_fatie")], titles: ["显示_文字".localized, "显示_图片".localized, "显示_签到".localized, "视频".localized])
             } else {
-                thebfview = TSBeforeReleaseView(frame: self.view.frame, images: [#imageLiteral(resourceName: "IMG_ico_word"), #imageLiteral(resourceName: "IMG_ico_potoablum"), #imageLiteral(resourceName: "IMG_ico_contribute"), #imageLiteral(resourceName: "IMG_ico_fatie"), #imageLiteral(resourceName: "ico_video")], titles: ["显示_文字".localized, "显示_图片".localized, "显示_投稿".localized, "显示_发帖".localized, "视频"])
+                thebfview = TSBeforeReleaseView(frame: self.view.frame, images: [#imageLiteral(resourceName: "IMG_ico_word"), #imageLiteral(resourceName: "IMG_ico_potoablum"), #imageLiteral(resourceName: "IMG_ico_contribute"), #imageLiteral(resourceName: "IMG_ico_fatie")], titles: ["显示_文字".localized, "显示_图片".localized, "显示_签到".localized, "视频".localized])
             }
             thebfview.tag = 251
         }
@@ -191,7 +190,7 @@ class TSHomeTabBarController: UITabBarController, HomeTabBarCenterButtonDelegate
         case "显示_发帖".localized:
             // 圈子 发帖
             self.gotoPostPublish()
-        case "视频":
+        case "视频".localized:
             isPausedMusic = false
             checkShortVideoAuthorizeStatus()
         default:
@@ -222,7 +221,7 @@ class TSHomeTabBarController: UITabBarController, HomeTabBarCenterButtonDelegate
         switch status {
         case .denied, .restricted:
             let appName = TSAppConfig.share.localInfo.appDisplayName
-            TSErrorTipActionsheetView().setWith(title: "相册权限设置", TitleContent: "请为\(appName)开放相册权限：手机设置-隐私-相册-\(appName)(打开)", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
+            TSErrorTipActionsheetView().setWith(title: "相簿權限設置", TitleContent: "請為\(appName)開放相簿權限：手機設置-隱私-相簿-\(appName)(打開)", doneButtonTitle: ["去設置", "取消"], complete: { (_) in
                 let url = URL(string: UIApplication.openSettingsURLString)
                 if UIApplication.shared.canOpenURL(url!) {
                     UIApplication.shared.openURL(url!)
@@ -322,7 +321,7 @@ class TSHomeTabBarController: UITabBarController, HomeTabBarCenterButtonDelegate
         case .denied, .restricted:
             // 2.取消了授权
             let appName = TSAppConfig.share.localInfo.appDisplayName
-            TSErrorTipActionsheetView().setWith(title: "相册权限设置", TitleContent: "请为\(appName)开放相册权限：手机设置-隐私-相册-\(appName)(打开)", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
+            TSErrorTipActionsheetView().setWith(title: "相簿權限設置", TitleContent: "請為\(appName)開放相簿權限：手機設置-隱私-相簿-\(appName)(打開)", doneButtonTitle: ["去設置", "取消"], complete: { (_) in
                 let url = URL(string: UIApplication.openSettingsURLString)
                 if UIApplication.shared.canOpenURL(url!) {
                     UIApplication.shared.openURL(url!)
@@ -335,7 +334,7 @@ class TSHomeTabBarController: UITabBarController, HomeTabBarCenterButtonDelegate
             case .denied, .restricted:
                 // 2.取消了授权
                 let appName = TSAppConfig.share.localInfo.appDisplayName
-                TSErrorTipActionsheetView().setWith(title: "相册权限设置", TitleContent: "请为\(appName)开放相册权限：手机设置-隐私-相册-\(appName)(打开)", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
+                TSErrorTipActionsheetView().setWith(title: "相簿權限設置", TitleContent: "請為\(appName)開放相簿權限：手機設置-隱私-相簿-\(appName)(打開)", doneButtonTitle: ["去設置", "取消"], complete: { (_) in
                     let url = URL(string: UIApplication.openSettingsURLString)
                     if UIApplication.shared.canOpenURL(url!) {
                         UIApplication.shared.openURL(url!)
@@ -348,7 +347,7 @@ class TSHomeTabBarController: UITabBarController, HomeTabBarCenterButtonDelegate
                 case .denied, .restricted:
                     // 2.取消了授权
                     let appName = TSAppConfig.share.localInfo.appDisplayName
-                    TSErrorTipActionsheetView().setWith(title: "相册权限设置", TitleContent: "请为\(appName)开放相册权限：手机设置-隐私-相册-\(appName)(打开)", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
+                    TSErrorTipActionsheetView().setWith(title: "相簿權限設置", TitleContent: "請為\(appName)開放相簿權限：手機設置-隱私-相簿-\(appName)(打開)", doneButtonTitle: ["去設置", "取消"], complete: { (_) in
                         let url = URL(string: UIApplication.openSettingsURLString)
                         if UIApplication.shared.canOpenURL(url!) {
                             UIApplication.shared.openURL(url!)

@@ -27,7 +27,7 @@ class TSNewFriendsCollectionViewCell: UICollectionViewCell {
         // 用户名
        lableForName.text = model.name
        //粉丝
-        labelForFuns.text = "粉丝: " + TSAppConfig.share.pageViewsString(number:model.extra?.followersCount ?? 0)
+        labelForFuns.text = "粉絲: " + TSAppConfig.share.pageViewsString(number:model.extra?.followersCount ?? 0)
     }
     func setFriendInfo(model: TSUserInfoModel) {
         // 头像
@@ -41,6 +41,6 @@ class TSNewFriendsCollectionViewCell: UICollectionViewCell {
         // 用户名
         lableForName.text = model.name
         //粉丝
-        labelForFuns.text = "粉丝: " + TSAppConfig.share.pageViewsString(number:model.extra?.followersCount ?? 0)
+        labelForFuns.text = "粉絲: " + TSAppConfig.share.pageViewsString(number:model.extra?.followersCount ?? 0)
     }
 }

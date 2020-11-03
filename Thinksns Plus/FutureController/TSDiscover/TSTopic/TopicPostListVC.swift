@@ -204,7 +204,7 @@ class TopicPostListVC: UIViewController, TSBeforeReleaseViewDelegate, TZImagePic
             return
         }
         // 显示顺序：文字、图片、视图
-        thebfview = TSBeforeReleaseView(frame: self.view.frame, images: [#imageLiteral(resourceName: "IMG_ico_word"), #imageLiteral(resourceName: "IMG_ico_potoablum"), #imageLiteral(resourceName: "ico_video")], titles: ["显示_文字".localized, "显示_图片".localized, "视频"])
+        thebfview = TSBeforeReleaseView(frame: self.view.frame, images: [#imageLiteral(resourceName: "IMG_ico_word"), #imageLiteral(resourceName: "IMG_ico_potoablum"), #imageLiteral(resourceName: "ico_video")], titles: ["显示_文字".localized, "显示_图片".localized, "视频".localized])
         thebfview.tag = 250
         thebfview.TSBeforeReleaseViewDelegate = self
         self.view.addSubview(thebfview)
@@ -226,7 +226,7 @@ class TopicPostListVC: UIViewController, TSBeforeReleaseViewDelegate, TZImagePic
             self.present(navigation, animated: true, completion: nil)
         case "显示_图片".localized:
             checkPhotoAuthorizeStatus()
-        case "视频":
+        case "视频".localized:
             checkShortVideoAuthorizeStatus()
         default:
             break

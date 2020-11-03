@@ -18,7 +18,7 @@ class TSSwitchServiceVC: UIViewController {
     @IBOutlet weak var jpKey: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "切换服务器"
+        self.title = "切换服务器".localized
     }
 
     @IBAction func sureBtnClick(_ sender: Any) {
@@ -27,7 +27,7 @@ class TSSwitchServiceVC: UIViewController {
         if serviceType == 2 {
             // 自定义服务器 必须手动填写
             if self.customURLTF.text?.isEmpty == true || self.jpName.text?.isEmpty == true || self.jpKey.text?.isEmpty == true {
-                self.showHint("请输入自定义内容")
+                self.showHint("请输入自定义内容".localized)
                 return
             }
         }

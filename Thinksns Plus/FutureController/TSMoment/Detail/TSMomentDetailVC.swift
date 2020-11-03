@@ -149,8 +149,8 @@ class TSMomentDetailVC: TSViewController, TSMomentDetailNavViewDelegate/* 导航
         if self.playerView != nil && TSCurrentUserInfo.share.isAgreeUserCelluarWatchShortVideo == false && TSAppConfig.share.reachabilityStatus == .Cellular {
             if playState == true {
                 self.perform(#selector(stopShortVideo), afterDelay: 0.000_01)
-                let alert = TSAlertController(title: "提示", message: "您当前正在使用移动网络，继续播放将消耗流量", style: .actionsheet, sheetCancelTitle: "放弃")
-                let action = TSAlertAction(title:"继续", style: .default, handler: { [weak self] (_) in
+                let alert = TSAlertController(title: "提示", message: "您当前正在使用移动网络，继续播放将消耗流量".localized, style: .actionsheet, sheetCancelTitle: "放棄")
+                let action = TSAlertAction(title:"繼續", style: .default, handler: { [weak self] (_) in
                     TSCurrentUserInfo.share.isAgreeUserCelluarWatchShortVideo = true
                     self?.playerView!.play()
                 })
@@ -424,8 +424,8 @@ class TSMomentDetailVC: TSViewController, TSMomentDetailNavViewDelegate/* 导航
                     return
                 }
                 // 弹窗 然后继续播放
-                let alert = TSAlertController(title: "提示", message: "您当前正在使用移动网络，继续播放将消耗流量", style: .actionsheet, sheetCancelTitle: "放弃")
-                let action = TSAlertAction(title:"继续", style: .default, handler: { [weak self] (_) in
+                let alert = TSAlertController(title: "提示", message: "您当前正在使用移动网络，继续播放将消耗流量".localized, style: .actionsheet, sheetCancelTitle: "放棄")
+                let action = TSAlertAction(title:"繼續", style: .default, handler: { [weak self] (_) in
                     self?.playWith(model: (self?.model!)!)
                     TSCurrentUserInfo.share.isAgreeUserCelluarWatchShortVideo = true
                 })
@@ -433,8 +433,8 @@ class TSMomentDetailVC: TSViewController, TSMomentDetailNavViewDelegate/* 导航
                 UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: false, completion: nil)
             } else if TSAppConfig.share.reachabilityStatus == .NotReachable {
                 // 弹窗 然后继续播放
-                let alert = TSAlertController(title: "提示", message: "网络未连接，请检查网络", style: .actionsheet, sheetCancelTitle: "停止播放")
-                let action = TSAlertAction(title:"继续播放", style: .default, handler: { [weak self] (_) in
+                let alert = TSAlertController(title: "提示", message: "网络未连接，请检查网络".localized, style: .actionsheet, sheetCancelTitle: "停止播放")
+                let action = TSAlertAction(title:"繼續播放", style: .default, handler: { [weak self] (_) in
                     self?.playWith(model: (self?.model!)!)
                     TSCurrentUserInfo.share.isAgreeUserCelluarWatchShortVideo = true
                 })
@@ -490,7 +490,7 @@ class TSMomentDetailVC: TSViewController, TSMomentDetailNavViewDelegate/* 导航
     /// 点击了打赏按钮
     func reward() {
         if model?.userInfo?.userIdentity == TSCurrentUserInfo.share.userInfo?.userIdentity {
-            let alert = TSAlertController(title: "提示", message: "不能打赏自己", style: .actionsheet, sheetCancelTitle: "取消")
+            let alert = TSAlertController(title: "提示", message: "不能打賞自己", style: .actionsheet, sheetCancelTitle: "取消")
             present(alert, animated: false, completion: nil)
             return
         }
@@ -574,7 +574,7 @@ class TSMomentDetailVC: TSViewController, TSMomentDetailNavViewDelegate/* 导航
                 let reportTarget: ReportTargetModel = ReportTargetModel(feedModel: model)
                 let reportVC: ReportViewController = ReportViewController(reportTarget: reportTarget)
                 self.navigationController?.pushViewController(reportVC, animated: true)
-            case "下载":
+            case "下载".localized:
                 if let videoUrl = model.data?.videoURL {
                     TSUtil.share().showDownloadVC(videoUrl: videoUrl)
                 }
@@ -586,7 +586,7 @@ class TSMomentDetailVC: TSViewController, TSMomentDetailNavViewDelegate/* 导航
 
     // 删除动态的二次确认弹窗
     func showFeedDeleteConfirmAlert(model: TSMomentListCellModel) -> Void {
-        let alertVC = TSAlertController.deleteConfirmAlert(deleteActionTitle: "删除动态") {
+        let alertVC = TSAlertController.deleteConfirmAlert(deleteActionTitle: "删除动态".localized) {
             self.deleteFeed(model: model)
         }
         self.present(alertVC, animated: false, completion: nil)
@@ -704,7 +704,7 @@ class TSMomentDetailVC: TSViewController, TSMomentDetailNavViewDelegate/* 导航
             let imageButton = (headerView?.viewWithTag((headerView?.tagForImageButton)!) as? TSPreviewButton)!
             image = imageButton.imageView?.image
         }
-        let title = model.data?.title == "" ? TSAppSettingInfoModel().appDisplayName + " " + "动态" : model.data?.title
+        let title = model.data?.title == "" ? TSAppSettingInfoModel().appDisplayName + " " + "动态".localized : model.data?.title
         var defaultContent = "默认分享内容".localized
         defaultContent.replaceAll(matching: "kAppName", with: TSAppSettingInfoModel().appDisplayName)
         let description = model.data?.content == "" ? defaultContent: model.data?.content

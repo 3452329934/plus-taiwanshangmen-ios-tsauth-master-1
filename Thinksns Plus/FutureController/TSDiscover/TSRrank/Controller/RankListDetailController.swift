@@ -92,28 +92,28 @@ extension RankListDetailController: RankListDetailViewRefreshDelegate {
         // 3.如果是 今日/一周/本月 动态排行榜
         let feedsRankTypes: [RankListManager.RankType] = [.feedToday, .feedWeek, .feedMonth]
         if feedsRankTypes.contains(rankType) {
-            datas = userInfos.map { RankListDetailCellModel(userInfo: $0, detailInfo: "点赞量：\($0.extra?.count ?? 0)") }
+            datas = userInfos.map { RankListDetailCellModel(userInfo: $0, detailInfo: "點讚量：\($0.extra?.count ?? 0)") }
         }
 
         // 4.如果是 今日/一周/本月 资讯排行榜
         let newsRankTypes: [RankListManager.RankType] = [.newsToday, .newsWeek, .newsMonth]
         if newsRankTypes.contains(rankType) {
-            datas = userInfos.map { RankListDetailCellModel(userInfo: $0, detailInfo: "浏览量：" + TSAppConfig.share.pageViewsString(number: ($0.extra?.count)!)) }
+            datas = userInfos.map { RankListDetailCellModel(userInfo: $0, detailInfo: "瀏覽量：" + TSAppConfig.share.pageViewsString(number: ($0.extra?.count)!)) }
         }
 
         // 5.如果是全站粉丝排行榜
         if rankType == .fans {
-            datas = userInfos.map { RankListDetailCellModel(userInfo: $0, detailInfo: "粉丝：\($0.extra?.count ?? 0)") }
+            datas = userInfos.map { RankListDetailCellModel(userInfo: $0, detailInfo: "粉絲：\($0.extra?.count ?? 0)") }
         }
 
         // 6.如果是社区签到排行榜
         if rankType == .attendance {
-            datas = userInfos.map { RankListDetailCellModel(userInfo: $0, detailInfo: "累计签到：\($0.extra?.checkinCount ?? 0)") }
+            datas = userInfos.map { RankListDetailCellModel(userInfo: $0, detailInfo: "累計簽到：\($0.extra?.checkinCount ?? 0)") }
         }
 
         // 7.如果是问答达人排行榜
         if rankType == .quoraExperts {
-            datas = userInfos.map { RankListDetailCellModel(userInfo: $0, detailInfo: "问答点赞量：\($0.extra?.count ?? 0)") }
+            datas = userInfos.map { RankListDetailCellModel(userInfo: $0, detailInfo: "問答點讚量：\($0.extra?.count ?? 0)") }
         }
 
         return datas

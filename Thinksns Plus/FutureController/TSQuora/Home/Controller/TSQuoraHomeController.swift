@@ -18,7 +18,7 @@ class TSQuoraHomeController: TSViewController {
     let topicView = TSTopicListView(frame: CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - TSNavigationBarHeight)))
 
     /// 标题按钮
-    let segmentControl = UISegmentedControl(items: ["问答", "专题"])
+    let segmentControl = UISegmentedControl(items: ["问答".localized, "专题".localized])
 
     override func viewDidLoad() {
         super.viewDidLoad()

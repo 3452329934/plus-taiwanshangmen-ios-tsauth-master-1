@@ -334,7 +334,7 @@ class TSNewsDetailView: UIView, TSDetailRewardListViewDelegate {
         // 3. extraInfoView
         let nsDate = NSDate(timeIntervalSince1970: model.createdDate.timeIntervalSince1970)
         let strDate = TSDate().dateString(.normal, nsDate: nsDate)
-        self.publishTimeLabel.text = "发布于\(strDate)"
+        self.publishTimeLabel.text = "發布於\(strDate)"
         self.scanNumLabel.text = TSAppConfig.share.pageViewsString(number: model.hits) +  "显示_人浏览".localized
         // 2. detailView - content
         var newContent: String = model.content_markdown

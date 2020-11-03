@@ -136,7 +136,7 @@ class TSCommentContentView: UIView, TYAttributedLabelDelegate {
             // 有回复用户，展示 "xx 回复 xxx: 评论内容"
             let userName = comment.user?.name ?? "未知用户"
             let replyUserName = replyUser.name
-            let prefixText = userName + " 回复 " + replyUserName + ": "
+            let prefixText = userName + " 回覆 " + replyUserName + ": "
             let attDic: [ NSAttributedString.Key: Any] = [NSAttributedString.Key.font: self.detailFont, NSAttributedString.Key.foregroundColor: self.commentColor]
             let attText = NSMutableAttributedString(string: prefixText + commentContent, attributes: attDic)
             let userRange = (prefixText as NSString).range(of: userName)
@@ -169,7 +169,7 @@ class TSCommentContentView: UIView, TYAttributedLabelDelegate {
         if let replyUser = comment.replyUser {
             // 有回复用户，展示 "回复 xxx: 评论内容"
             let replyUserName: String = replyUser.name
-            let prefixText = "回复 " + replyUserName + ": "
+            let prefixText = "回覆 " + replyUserName + ": "
             let attDic: [ NSAttributedString.Key: Any] = [NSAttributedString.Key.font: self.detailFont, NSAttributedString.Key.foregroundColor: self.commentColor]
             let attText = NSMutableAttributedString(string: prefixText + commentContent, attributes: attDic)
             let replyUserRange = (prefixText as NSString).range(of: replyUserName)
@@ -203,7 +203,7 @@ class TSCommentContentView: UIView, TYAttributedLabelDelegate {
             // 有回复用户，展示 "xx 回复 xxx: 评论内容"
             let userName = comment.userInfo?.name ?? "未知用户"
             let replyUserName = replyUser.name
-            let prefixText = userName + " 回复 " + replyUserName + ": "
+            let prefixText = userName + " 回覆 " + replyUserName + ": "
             let attDic: [ NSAttributedString.Key: Any] = [NSAttributedString.Key.font: self.detailFont, NSAttributedString.Key.foregroundColor: self.commentColor]
             let attText = NSMutableAttributedString(string: prefixText + commentContent, attributes: attDic)
             let userRange = (prefixText as NSString).range(of: userName)
@@ -236,7 +236,7 @@ class TSCommentContentView: UIView, TYAttributedLabelDelegate {
         if let replyUser = comment.replyUserInfo {
             // 有回复用户，展示 "回复 xxx: 评论内容"
             let replyUserName: String = replyUser.name
-            let prefixText = "回复 " + replyUserName + ": "
+            let prefixText = "回覆 " + replyUserName + ": "
             let attDic: [ NSAttributedString.Key: Any] = [NSAttributedString.Key.font: self.detailFont, NSAttributedString.Key.foregroundColor: self.commentColor]
             let attText = NSMutableAttributedString(string: prefixText + commentContent, attributes: attDic)
             let replyUserRange = (prefixText as NSString).range(of: replyUserName)

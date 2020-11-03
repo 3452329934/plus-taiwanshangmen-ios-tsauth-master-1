@@ -135,14 +135,14 @@ class HomePageHeaderContentView: UIView {
         buttonForFans.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         buttonForFans.setTitleColor(UIColor.white, for: .normal)
         let fansCount = model.userInfo.extra?.followersCount ?? 0
-        buttonForFans.setTitle("粉丝 \(fansCount)", for: .normal)
+        buttonForFans.setTitle("粉絲 \(fansCount)", for: .normal)
         buttonForFans.sizeToFit()
 
         // 2.关注按钮
         buttonForFollow.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         buttonForFollow.setTitleColor(UIColor.white, for: .normal)
         let followCount = model.userInfo.extra?.followingsCount ?? 0
-        buttonForFollow.setTitle("关注 \(followCount)", for: .normal)
+        buttonForFollow.setTitle("關注 \(followCount)", for: .normal)
         buttonForFollow.sizeToFit()
 
         // 计算粉丝按钮和关注按钮的 frame
@@ -165,7 +165,7 @@ class HomePageHeaderContentView: UIView {
         labelForVerified.textColor = TSColor.button.orangeGold
         labelForVerified.font = UIFont.systemFont(ofSize: 14)
         labelForVerified.numberOfLines = 0
-        labelForVerified.text = "认证：\(verifiedInfo)"
+        labelForVerified.text = "認證：\(verifiedInfo)"
         labelForVerified.frame = CGRect(x: 10, y: yRecord + 9, width: UIScreen.main.bounds.width - 15, height: 0)
         labelForVerified.sizeToFit()
         yRecord = labelForVerified.frame.maxY
@@ -191,7 +191,7 @@ class HomePageHeaderContentView: UIView {
         labelForIntro.textColor = UIColor(hex: 0x999999)
         labelForIntro.font = UIFont.systemFont(ofSize: 14)
         labelForIntro.numberOfLines = 0
-        labelForIntro.text = "简介：\(introInfo)"
+        labelForIntro.text = "簡介：\(introInfo)"
         labelForIntro.frame = CGRect(x: 10, y: yRecord + 9, width: UIScreen.main.bounds.width - 15, height: 0)
         labelForIntro.sizeToFit()
         yRecord = labelForIntro.frame.maxY

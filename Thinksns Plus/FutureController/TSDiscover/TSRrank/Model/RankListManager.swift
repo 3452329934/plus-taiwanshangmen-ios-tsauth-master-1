@@ -13,21 +13,21 @@ class RankListManager: NSObject {
 
     /// 排行榜类型
     enum RankType: String {
-        case fans = "全站粉丝排行榜"
-        case wealth = "财富达人排行榜"
-        case income = "收入达人排行榜"
-        case attendance = "社区签到排行榜"
-        case communityExperts = "社区专家排行榜"
-        case quoraExperts = "问答达人排行榜"
+        case fans = "全站粉絲排行榜"
+        case wealth = "財富達人排行榜"
+        case income = "收入達人排行榜"
+        case attendance = "社區簽到排行榜"
+        case communityExperts = "社區專家排行榜"
+        case quoraExperts = "問答達人排行榜"
         case answerToday = "今日解答排行榜"
         case answerWeek = "一周解答排行榜"
         case answerMonth = "本月解答排行榜"
-        case feedToday = "今日动态排行榜"
-        case feedWeek = "一周动态排行榜"
-        case feedMonth = "本月动态排行榜"
-        case newsToday = "今日资讯排行榜"
-        case newsWeek = "一周资讯排行榜"
-        case newsMonth = "本月资讯排行榜"
+        case feedToday = "今日動態排行榜"
+        case feedWeek = "一周動態排行榜"
+        case feedMonth = "本月動態排行榜"
+        case newsToday = "今日資訊排行榜"
+        case newsWeek = "一周資訊排行榜"
+        case newsMonth = "本月資訊排行榜"
     }
 
     /// 批量获取排行榜信息
@@ -71,7 +71,7 @@ class RankListManager: NSObject {
                 aComplete(datas, nil, true)
             } else {
                 // 6.2 获取数据失败
-                let message = Array(allMessages.values).flatMap { $0 }.first
+                let message = Array(allMessages.values).compactMap { $0 }.first
                 aComplete(nil, message, false)
             }
         }

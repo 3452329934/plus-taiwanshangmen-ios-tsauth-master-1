@@ -251,6 +251,7 @@ class TSNewsTagSettingVC: UIViewController, UICollectionViewDelegate, UICollecti
             self.view.removeFromSuperview()
         }
     }
+    // call api來的
     func setDatas(data: TSNewsAllTagsModel) {
         self.markedTags = data.markedTags
         self.unmarkedTags = data.unmarkedTags

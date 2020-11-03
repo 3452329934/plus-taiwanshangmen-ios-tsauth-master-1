@@ -532,7 +532,7 @@ extension GroupBasicController: TZImagePickerControllerDelegate, UIImagePickerCo
             let imageName = (PHAsset().originalFilename)!
             self.changeImageRequest(image: photos[0], imageName: imageName, size:  CGSize(width: photos[0].size.width, height: photos[0].size.height))
         } else {
-            let resultAlert = TSIndicatorWindowTop(state: .faild, title: "图片选择异常,请重试!")
+            let resultAlert = TSIndicatorWindowTop(state: .faild, title: "图片选择异常,请重试!".localized)
             resultAlert.show(timeInterval: TSIndicatorWindowTop.defaultShowTimeInterval)
         }
     }

@@ -109,12 +109,12 @@ class PostShortVideoViewController: UIViewController, UITextViewDelegate, UIGest
         // 导出视频
         if let asset = shortVideoAsset.asset {
             let str = self.textView.text
-            let indicator = TSIndicatorWindowTop(state: .loading, title: "视频处理中")
+            let indicator = TSIndicatorWindowTop(state: .loading, title: "處理中")
             indicator.show()
             guard let manager = TZImageManager.default() else {
                 indicator.dismiss()
                 btn.isEnabled = true
-                TSIndicatorWindowTop.showDefaultTime(state: .faild, title: "视频导出失败")
+                TSIndicatorWindowTop.showDefaultTime(state: .faild, title: "視頻導出失敗")
                 return
             }
             manager.getVideoOutputPath(with: asset, presetName: AVAssetExportPreset640x480, success: { (url) in
@@ -226,7 +226,7 @@ class PostShortVideoViewController: UIViewController, UITextViewDelegate, UIGest
         bottomLine.backgroundColor = UIColor(hex: 0x667487)
         toolView.addSubview(bottomLine)
 
-        self.title = "发布动态"
+        self.title = "發布動態"
         textView.becomeFirstResponder()
         // 键盘的return键为换行样式
         textView.returnKeyType = .default
@@ -482,30 +482,30 @@ extension PostShortVideoViewController {
             topicView.addSubview(topLine)
 
             if topicData.isEmpty {
-                let addTopicLabel = UILabel(frame: CGRect(x: 20, y: 1, width: 100, height: 49))
-                addTopicLabel.text = "添加话题"
-                addTopicLabel.textColor = UIColor(hex: 0x333333)
-                addTopicLabel.font = UIFont.systemFont(ofSize: 15)
-                topicView.addSubview(addTopicLabel)
-
-                let rightIcon = UIImageView(frame: CGRect(x: ScreenWidth - 20 - 10, y: 0, width: 10, height: 20))
-                rightIcon.clipsToBounds = true
-                rightIcon.contentMode = .scaleAspectFill
-                rightIcon.image = #imageLiteral(resourceName: "IMG_ic_arrow_smallgrey")
-                rightIcon.centerY = addTopicLabel.centerY
-                topicView.addSubview(rightIcon)
-
-                /// 外加一个点击事件button
-                let addButton = UIButton(type: .custom)
-                addButton.backgroundColor = UIColor.clear
-                addButton.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: 50)
-                addButton.addTarget(self, action: #selector(jumpToTopicSearchVC), for: UIControl.Event.touchUpInside)
-                topicView.addSubview(addButton)
-                topicViewHeight.constant = 50
-                topicView.updateConstraints()
-                let bottomLine = UIView(frame: CGRect(x: 0, y: topicViewHeight.constant - 0.5, width: ScreenWidth, height: 0.5))
-                bottomLine.backgroundColor = TSColor.inconspicuous.disabled
-                topicView.addSubview(bottomLine)
+//                let addTopicLabel = UILabel(frame: CGRect(x: 20, y: 1, width: 100, height: 49))
+//                addTopicLabel.text = "添加话题"
+//                addTopicLabel.textColor = UIColor(hex: 0x333333)
+//                addTopicLabel.font = UIFont.systemFont(ofSize: 15)
+//                topicView.addSubview(addTopicLabel)
+//
+//                let rightIcon = UIImageView(frame: CGRect(x: ScreenWidth - 20 - 10, y: 0, width: 10, height: 20))
+//                rightIcon.clipsToBounds = true
+//                rightIcon.contentMode = .scaleAspectFill
+//                rightIcon.image = #imageLiteral(resourceName: "IMG_ic_arrow_smallgrey")
+//                rightIcon.centerY = addTopicLabel.centerY
+//                topicView.addSubview(rightIcon)
+//
+//                /// 外加一个点击事件button
+//                let addButton = UIButton(type: .custom)
+//                addButton.backgroundColor = UIColor.clear
+//                addButton.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: 50)
+//                addButton.addTarget(self, action: #selector(jumpToTopicSearchVC), for: UIControl.Event.touchUpInside)
+//                topicView.addSubview(addButton)
+//                topicViewHeight.constant = 50
+//                topicView.updateConstraints()
+//                let bottomLine = UIView(frame: CGRect(x: 0, y: topicViewHeight.constant - 0.5, width: ScreenWidth, height: 0.5))
+//                bottomLine.backgroundColor = TSColor.inconspicuous.disabled
+//                topicView.addSubview(bottomLine)
             } else {
                 var XX: CGFloat = 15
                 var YY: CGFloat = 14

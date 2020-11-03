@@ -33,7 +33,7 @@ class TSNewsDetailToolbarView: TSToolbarView, TSToolbarViewDelegate, TSCustomAci
     // MARK: - Lifecycle
     init(_ object: NewsDetailModel) {
         self.object = object
-        super.init(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 48 - TSBottomSafeAreaHeight, width: UIScreen.main.bounds.width, height: 48 + TSBottomSafeAreaHeight), type: .top, items: [TSToolbarItemModel(image: "", title: "喜欢", index: 0), TSToolbarItemModel(image: "IMG_home_ico_comment_normal", title: "评论", index: 1), TSToolbarItemModel(image: "IMG_detail_ico_share_normal", title: "分享", index: 2), TSToolbarItemModel(image: "IMG_home_ico_more", title: "更多", index: 3)])
+        super.init(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 48 - TSBottomSafeAreaHeight, width: UIScreen.main.bounds.width, height: 48 + TSBottomSafeAreaHeight), type: .top, items: [TSToolbarItemModel(image: "", title: "喜欢".localized, index: 0), TSToolbarItemModel(image: "IMG_home_ico_comment_normal", title: "评论".localized, index: 1), TSToolbarItemModel(image: "IMG_detail_ico_share_normal", title: "分享".localized, index: 2), TSToolbarItemModel(image: "IMG_home_ico_more", title: "更多", index: 3)])
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -15,6 +15,7 @@ class TSIndicatorPayPicture: TSIndicatorPayBasicView {
     ///
     /// - Parameter isRead: true 查看付费，false 下载付费
     func show(isRead: Bool) {
+        TSAppConfig.share.localInfo.goldName = "積分"
         let goldName = TSAppConfig.share.localInfo.goldName
         let isReadString = isRead ? goldName + "支付弹窗_图片查看付费描述".localized : goldName + "支付弹窗_图片下载付费描述".localized
 

@@ -267,7 +267,7 @@ class IntegrationRechargeIAPTableController: UITableViewController, SKPaymentTra
 
     @IBAction func sureButtonTaped(_ sender: UIButton) {
         guard let rechargeNumber = rechargeNumber else {
-            showAlert(status: .faild, message: "请输入或选择充值金额")
+            showAlert(status: .faild, message: "請输入或選擇充值金额")
             return
         }
 
@@ -286,7 +286,7 @@ class IntegrationRechargeIAPTableController: UITableViewController, SKPaymentTra
         payment.quantity = 1
 
         sender.isUserInteractionEnabled = false
-        let alert = TSIndicatorWindowTop(state: .loading, title: "支付中")
+        let alert = TSIndicatorWindowTop(state: .loading, title: "支付中".localized)
         alert.show()
         self.indicatorView = alert
         var request = IntegrationIAPNetworkRequest().recharge
@@ -302,19 +302,19 @@ class IntegrationRechargeIAPTableController: UITableViewController, SKPaymentTra
                 if let indicatorView = self.indicatorView {
                     indicatorView.dismiss()
                 }
-                self.showAlert(status: .faild, message: response.message ?? "发起交易失败")
+                self.showAlert(status: .faild, message: response.message ?? "发起交易失败".localized)
             case .error(_):
                 sender.isUserInteractionEnabled = true
                 if let indicatorView = self.indicatorView {
                     indicatorView.dismiss()
                 }
-                self.showAlert(status: .faild, message: "网络错误")
+                self.showAlert(status: .faild, message: "网络错误".localized)
             case .success(let response):
                 guard let model = response.model else {
                     if let indicatorView = self.indicatorView {
                         indicatorView.dismiss()
                     }
-                    self.showAlert(status: .faild, message: "网络错误")
+                    self.showAlert(status: .faild, message: "网络错误".localized)
                     return
                 }
                 self.integrationModle = model
@@ -373,7 +373,7 @@ class IntegrationRechargeIAPTableController: UITableViewController, SKPaymentTra
             self?.sureButton.isUserInteractionEnabled = true
             switch result {
             case .error(_):
-                let alert = TSIndicatorWindowTop(state: .faild, title: "网络错误")
+                let alert = TSIndicatorWindowTop(state: .faild, title: "网络错误".localized)
                 alert.show(timeInterval: TSIndicatorWindowTop.defaultShowTimeInterval)
             case .failure(_):
                 let alert = TSIndicatorWindowTop(state: .faild, title: "显示_支付失败".localized)

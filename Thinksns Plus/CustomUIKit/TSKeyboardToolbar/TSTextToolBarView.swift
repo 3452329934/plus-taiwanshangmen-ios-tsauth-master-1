@@ -141,7 +141,7 @@ class TSTextToolBarView: UIView, UITextViewDelegate, TSSystemEmojiSelectorViewDe
 
         // 设置文本框
         self.addSubview(sendTextView)
-        sendTextView.placeholder = "随便说说~~"
+        sendTextView.placeholder = "随便说说~~".localized
         sendTextView.backgroundColor = UIColor.clear
         sendTextView.delegate = self
         sendTextView.placeholderFont = UIFont.systemFont(ofSize: TSFont.ContentText.comment.rawValue)

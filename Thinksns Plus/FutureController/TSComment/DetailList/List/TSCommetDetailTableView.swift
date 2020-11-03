@@ -75,11 +75,11 @@ class TSCommetDetailTableView: TSMomentDetailVC, UITableViewDataSource, TSDetail
         PaidManager.showFeedPaidTextAlertCallBack(feedId: self.requestId, paidInfo: paidInfo, complete: { (payStatus, content) in
             if payStatus == 0 {
                 self.payInfo = nil
-                TSIndicatorWindowTop.showDefaultTime(state: .faild, title: "购买内容失败")
+                TSIndicatorWindowTop.showDefaultTime(state: .faild, title: "购买内容失败".localized)
                 self.navigationController?.popViewController(animated: true)
             } else if payStatus == 1 {
                 self.payInfo = nil
-                TSIndicatorWindowTop.showDefaultTime(state: .success, title: "成功购买内容")
+                TSIndicatorWindowTop.showDefaultTime(state: .success, title: "成功购买内容".localized)
                 /// 刷新该页面数据
                 self.loading()
                 self.refresh()

@@ -80,7 +80,7 @@ class TSWebViewController: TSViewController, WKNavigationDelegate {
         buttonForBack.setImage(UIImage(named: "IMG_topbar_back"), for: .normal)
         buttonForBack.frame = CGRect(x: -11, y: -1, width: 44, height: 44)
         buttonForBack.addTarget(self, action: #selector(backButtonTaped), for: .touchUpInside)
-        buttonForClose.setTitle("关闭", for: .normal)
+        buttonForClose.setTitle("關閉", for: .normal)
         buttonForClose.setTitleColor(.black, for: .normal)
         buttonForClose.frame = CGRect(x: 44, y: 0, width: 44, height: 44)
         buttonForClose.addTarget(self, action: #selector(closeButtonTaped), for: .touchUpInside)

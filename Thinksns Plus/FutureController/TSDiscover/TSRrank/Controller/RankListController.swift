@@ -25,9 +25,9 @@ class RankListController: UIViewController {
     func setUI() {
         title = "排行榜"
         // 1.标签滚动视图
-        var titles = ["用户", "问答", "动态", "资讯"]
+        var titles = ["用户".localized, "问答".localized, "动态".localized, "活動發布".localized]
         if !TSAppConfig.share.localInfo.quoraSwitch {
-        titles = ["用户", "动态", "资讯"]
+        titles = ["用户".localized, "动态".localized, "活動發布".localized]
         }
         labelCollection.leadingAndTralling = 32
         labelCollection.titles = titles

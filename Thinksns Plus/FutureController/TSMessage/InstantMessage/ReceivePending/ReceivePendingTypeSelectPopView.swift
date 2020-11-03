@@ -120,7 +120,7 @@ class ReceivePendingTypeSelectPopView: UIView {
         }
         self.typeSelectView = typeSelectView
         // 2.x typeOptionView
-        let titles = ["动态评论置顶", "资讯评论置顶", "帖子评论置顶", "帖子置顶", "圈子加入申请"]
+        let titles = ["动态评论置顶".localized, "资讯评论置顶".localized, "帖子评论置顶".localized, "帖子置顶".localized, "圈子加入申请".localized]
         let buttonReceiveTypes = [ReceivePendingController.ShowType.momentCommentTop, ReceivePendingController.ShowType.newsCommentTop, ReceivePendingController.ShowType.postCommentTop, ReceivePendingController.ShowType.postTop, ReceivePendingController.ShowType.groupAudit]
         let pendingCounts = [TSCurrentUserInfo.share.unreadCount.feedCommentPinned, TSCurrentUserInfo.share.unreadCount.newsCommentPinned, TSCurrentUserInfo.share.unreadCount.postCommentPinned, TSCurrentUserInfo.share.unreadCount.postPinned, TSCurrentUserInfo.share.unreadCount.groupJoinPinned]
         for (index, title) in titles.enumerated() {

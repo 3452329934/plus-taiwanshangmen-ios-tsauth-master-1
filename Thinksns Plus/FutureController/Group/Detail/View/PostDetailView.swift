@@ -365,8 +365,8 @@ class PostDetailView: UIView, TSDetailRewardListViewDelegate {
         // 3. extraInfoView
         let nsDate = NSDate(timeIntervalSince1970: model.createDate.timeIntervalSince1970)
         let strDate = TSDate().dateString(.normal, nsDate: nsDate)
-        self.publishTimeLabel.text = "发布于\(strDate)"
-        self.scanNumLabel.text = TSAppConfig.share.pageViewsString(number: model.viewsCount) + "人浏览"
+        self.publishTimeLabel.text = "發布於\(strDate)"
+        self.scanNumLabel.text = TSAppConfig.share.pageViewsString(number: model.viewsCount) + "人瀏覽"
         // 4.rewardInfo
         self.setupRewardInfo(with: model)
         // 2. detailView - content
@@ -397,7 +397,7 @@ class PostDetailView: UIView, TSDetailRewardListViewDelegate {
         }
         }
        """
-
+        print(string)
         let content = model.body.ts_getMarkdownContent()
         self.detailView.load(markdown: content, enableImage: true)
         self.detailView.onRendered = { [unowned self] (height) in

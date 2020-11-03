@@ -12,7 +12,7 @@ class TSTopicListView: UIView {
     /// 标签滚动视图
     var labelCollectView = TSLabelCollectionView()
     /// 标题数组
-    let titles = ["全部专题", "我关注的"]
+    let titles = ["全部專題", "我關注的"]
 
     /// 问答列表视图
     var tables: [TSQuoraTopicsJoinTableView] = []

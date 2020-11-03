@@ -47,12 +47,12 @@ class ConcernRankingListTableViewCellTableViewCell: AbstractRankingListTableView
         if let praiseTitleS = userInfo.relationshipTextWithCurrentUser()?.rawValue {
             praiseTitle = praiseTitleS
             self.praiseButton?.isHidden = false
-            if praiseTitleS == "已关注" || praiseTitleS == "互相关注" {
+            if praiseTitleS == "已关注".localized || praiseTitleS == "互相关注".localized {
                 self.praiseButton?.setTitleColor(TSColor.main.theme, for: .normal)
                 self.praiseButton?.backgroundColor = UIColor.white
                 self.praiseButton?.layer.borderColor = TSColor.main.theme.cgColor
                 self.praiseButton?.layer.borderWidth = 0.5
-            } else if praiseTitleS == "+ 关注" {
+            } else if praiseTitleS == "+ 关注".localized {
                 self.praiseButton?.setTitleColor(UIColor.white, for: .normal)
                 self.praiseButton?.backgroundColor = TSColor.main.theme
             } else {

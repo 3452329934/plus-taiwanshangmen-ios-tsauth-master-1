@@ -150,7 +150,7 @@ class GroupMonthPickerView: UIView {
         // 1. rightBtn - doneBtn
         let rightBtn = UIButton(type: .custom)
         toolView.addSubview(rightBtn)
-        rightBtn.setTitle("确定", for: .normal)
+        rightBtn.setTitle("确定".localized, for: .normal)
         rightBtn.setTitleColor(TSColor.main.theme, for: .normal)
         rightBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         rightBtn.addTarget(self, action: #selector(rightBtnClick(_:)), for: .touchUpInside)
@@ -161,7 +161,7 @@ class GroupMonthPickerView: UIView {
         // 2. leftBtn - cancelBtn
         let leftBtn = UIButton(type: .custom)
         toolView.addSubview(leftBtn)
-        leftBtn.setTitle("取消", for: .normal)
+        leftBtn.setTitle("取消".localized, for: .normal)
         leftBtn.setTitleColor(TSColor.normal.minor, for: .normal)
         leftBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         leftBtn.addTarget(self, action: #selector(leftBtnClick(_:)), for: .touchUpInside)

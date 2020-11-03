@@ -31,7 +31,7 @@ class TSSettingVC: TSViewController, TSCustomAcionSheetDelegate {
 
     // MARK: - Custom user interface
     func setUI() {
-        self.title = "设置"
+        self.title = "设置".localized
         // 获取版本号信息
         let versionString = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         if let version = versionString {

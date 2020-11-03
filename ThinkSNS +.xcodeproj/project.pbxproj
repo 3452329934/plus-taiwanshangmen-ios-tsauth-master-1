@@ -1035,7 +1035,6 @@
 		83E5966B1E8107ED009FB064 /* TSCustomActionsheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E596651E8107ED009FB064 /* TSCustomActionsheetView.swift */; };
 		83E5966C1E8107ED009FB064 /* TSIndicatorFlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E596671E8107ED009FB064 /* TSIndicatorFlowerView.swift */; };
 		83E5966F1E810A35009FB064 /* TSIndicatorA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E5966E1E810A35009FB064 /* TSIndicatorA.swift */; };
-		83E5BE211E14F3C80006CACA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83E5BE231E14F3C80006CACA /* InfoPlist.strings */; };
 		83E5F29A1EE7CDBC00D47A4F /* TSSystemMessageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E5F2981EE7CDBC00D47A4F /* TSSystemMessageObject.swift */; };
 		83E5F29B1EE7CDBC00D47A4F /* TSDatabaseSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E5F2991EE7CDBC00D47A4F /* TSDatabaseSystem.swift */; };
 		83E6315A1F108E2900197A03 /* CustomPHPreViewVC+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E631571F108E2900197A03 /* CustomPHPreViewVC+Collection.swift */; };
@@ -1049,7 +1048,6 @@
 		83EC5D381F5FD1B7007C8EBA /* ButtonPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC5D371F5FD1B7007C8EBA /* ButtonPlaceholderView.swift */; };
 		83EC5D3B1F5FD2EE007C8EBA /* QuestionsSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC5D391F5FD2EE007C8EBA /* QuestionsSearchResultCell.swift */; };
 		83EC5D3C1F5FD2EE007C8EBA /* QuestionsSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83EC5D3A1F5FD2EE007C8EBA /* QuestionsSearchResultCell.xib */; };
-		83ED63EC1E1E51CD002C7F37 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83ED63EE1E1E51CD002C7F37 /* Localizable.strings */; };
 		83ED69681E52D03B003AFF2A /* TSSetUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ED69661E52D03B003AFF2A /* TSSetUserInfoVC.swift */; };
 		83ED69691E52D03B003AFF2A /* TSSetUserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83ED69671E52D03B003AFF2A /* TSSetUserInfoVC.xib */; };
 		83EF66921FA3243E004F8C7D /* TSTagObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF66911FA3243E004F8C7D /* TSTagObject.swift */; };
@@ -1216,6 +1214,7 @@
 		BBD39ABC1F503FE1008758BE /* TSUnbindPhoneOrEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD39ABB1F503FE1008758BE /* TSUnbindPhoneOrEmailView.swift */; };
 		BBD39ABE1F511492008758BE /* BindingNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD39ABD1F511492008758BE /* BindingNetworkRequest.swift */; };
 		BBD39AC01F51198D008758BE /* BindingNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD39ABF1F51198D008758BE /* BindingNetworkManager.swift */; };
+		F233C4C5253EBF0600195AA5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F233C4C7253EBF0600195AA5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -2123,7 +2122,6 @@
 		832ADE0E1E1E298B009804F7 /* TSLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLoginVC.xib; sourceTree = "<group>"; };
 		832ADE111E1E426B009804F7 /* TSRegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSRegisterVC.swift; sourceTree = "<group>"; };
 		832ADE121E1E426B009804F7 /* TSRegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSRegisterVC.xib; sourceTree = "<group>"; };
-		832CA6711E14F70B0053BA12 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		832E5F141F72079E00F44BBA /* NormalPlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalPlaceholderView.swift; sourceTree = "<group>"; };
 		8331108C1F68D34A00E69741 /* MusicSingleListsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSingleListsVC.swift; sourceTree = "<group>"; };
 		83313EF0201048C90054E3E0 /* IntegrationHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationHomeController.swift; sourceTree = "<group>"; };
@@ -2402,7 +2400,6 @@
 		83E596651E8107ED009FB064 /* TSCustomActionsheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSCustomActionsheetView.swift; sourceTree = "<group>"; };
 		83E596671E8107ED009FB064 /* TSIndicatorFlowerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSIndicatorFlowerView.swift; sourceTree = "<group>"; };
 		83E5966E1E810A35009FB064 /* TSIndicatorA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSIndicatorA.swift; sourceTree = "<group>"; };
-		83E5BE241E14F3DB0006CACA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83E5F2981EE7CDBC00D47A4F /* TSSystemMessageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSystemMessageObject.swift; sourceTree = "<group>"; };
 		83E5F2991EE7CDBC00D47A4F /* TSDatabaseSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSDatabaseSystem.swift; sourceTree = "<group>"; };
 		83E631571F108E2900197A03 /* CustomPHPreViewVC+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomPHPreViewVC+Collection.swift"; sourceTree = "<group>"; };
@@ -2416,8 +2413,6 @@
 		83EC5D371F5FD1B7007C8EBA /* ButtonPlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonPlaceholderView.swift; sourceTree = "<group>"; };
 		83EC5D391F5FD2EE007C8EBA /* QuestionsSearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsSearchResultCell.swift; sourceTree = "<group>"; };
 		83EC5D3A1F5FD2EE007C8EBA /* QuestionsSearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionsSearchResultCell.xib; sourceTree = "<group>"; };
-		83ED63ED1E1E51CD002C7F37 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		83ED63F01E1E51FC002C7F37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		83ED69661E52D03B003AFF2A /* TSSetUserInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSSetUserInfoVC.swift; sourceTree = "<group>"; };
 		83ED69671E52D03B003AFF2A /* TSSetUserInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSSetUserInfoVC.xib; sourceTree = "<group>"; };
 		83EF66911FA3243E004F8C7D /* TSTagObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSTagObject.swift; sourceTree = "<group>"; };
@@ -2591,6 +2586,9 @@
 		BBD39ABF1F51198D008758BE /* BindingNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingNetworkManager.swift; sourceTree = "<group>"; };
 		D5CFB9FCD78322F351189F12 /* Pods_ThinkSNSPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkSNSPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C36ECF4EADCE16697115AF /* Pods_ThinkSNS__.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkSNS__.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F233C4C6253EBF0600195AA5 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F233C4C8253EBF0800195AA5 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F233C4C9253EC03800195AA5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3775,8 +3773,6 @@
 				3608C4911E9B87D700B04F33 /* AppDeleguate+JPush.swift */,
 				38FBEEA720BFD5EE0021B2A1 /* AppDeleguate+Pay.swift */,
 				36659C581E027E640002B7FF /* Info.plist */,
-				83ED63EE1E1E51CD002C7F37 /* Localizable.strings */,
-				83E5BE231E14F3C80006CACA /* InfoPlist.strings */,
 			);
 			path = SupportFile;
 			sourceTree = "<group>";
@@ -3820,6 +3816,7 @@
 				36A33CF61F3032DD007AE4B3 /* TSRealmManager */,
 				36D80A1B1E67B577008C5196 /* TSDataBase */,
 				8306BCE8201EBDBB00E3737F /* Tool */,
+				F233C4C7253EBF0600195AA5 /* Localizable.strings */,
 			);
 			path = "Thinksns Plus";
 			sourceTree = "<group>";
@@ -7732,8 +7729,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
-				en,
 				Base,
+				"zh-Hant",
 				"zh-Hans",
 			);
 			mainGroup = 368BEB291DFF9D0B0031379A;
@@ -7780,10 +7777,8 @@
 				36FB534D1F69326D00B25A8D /* TSConversationTableViewCell.xib in Resources */,
 				36E928D2205A73F500EFDED0 /* EaseUIResource.bundle in Resources */,
 				8325B15A1F5EAE280062024F /* QuoraSearchHistoryBottomCell.xib in Resources */,
-				83E5BE211E14F3C80006CACA /* InfoPlist.strings in Resources */,
 				8326B79F1F340F8C0059CEC7 /* TSPersonalCertification.storyboard in Resources */,
 				3810930520A823A800357446 /* JoinedGroupListCell.xib in Resources */,
-				83ED63EC1E1E51CD002C7F37 /* Localizable.strings in Resources */,
 				83313EF520104AF20054E3E0 /* IntegrationHomeController.storyboard in Resources */,
 				88A4C49322CC3DF100F54B12 /* Settings.bundle in Resources */,
 				36B5081C1EA4A70E0015C67D /* LaunchScreen.storyboard in Resources */,
@@ -7821,6 +7816,7 @@
 				8303E7131E30C38C00A02BB6 /* TSSetPasswordVC.xib in Resources */,
 				36E9285C205A73F400EFDED0 /* EaseUI.podspec in Resources */,
 				83549A27202ACD9000590D81 /* WalletHomeController.storyboard in Resources */,
+				F233C4C5253EBF0600195AA5 /* Localizable.strings in Resources */,
 				831653F11FC5108700150D70 /* GroupHomeCountCell.xib in Resources */,
 				832ADE101E1E298B009804F7 /* TSLoginVC.xib in Resources */,
 				25E4A5A220E32CFF0028F758 /* TSSeachBar.xib in Resources */,
@@ -9081,20 +9077,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		83E5BE231E14F3C80006CACA /* InfoPlist.strings */ = {
+		F233C4C7253EBF0600195AA5 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				83E5BE241E14F3DB0006CACA /* en */,
-				832CA6711E14F70B0053BA12 /* zh-Hans */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		83ED63EE1E1E51CD002C7F37 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				83ED63ED1E1E51CD002C7F37 /* zh-Hans */,
-				83ED63F01E1E51FC002C7F37 /* en */,
+				F233C4C6253EBF0600195AA5 /* zh-Hant */,
+				F233C4C8253EBF0800195AA5 /* English */,
+				F233C4C9253EC03800195AA5 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -9233,10 +9221,10 @@
 					"$(PROJECT_DIR)/Thinksns\\ Plus/Libraries/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/Thinksns\\ Plus/Libraries/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 1.1.2;
 				OTHER_SWIFT_FLAGS = "$(inherited) -Xfrontend -warn-long-expression-type-checking=200 -Xfrontend -warn-long-function-bodies=200";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyicx.TSPlus;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chiehmeng.goingdown;
+				PRODUCT_NAME = ThinkSNSPlus;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "thinksns-tsplus-dev";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -9257,7 +9245,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6RK8A77Q2W;
+				DEVELOPMENT_TEAM = JR4FM4G3QP;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -9283,12 +9271,12 @@
 					"$(PROJECT_DIR)/Thinksns\\ Plus/Libraries/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/Thinksns\\ Plus/Libraries/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 1.1.2;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhiyicx.TSPlus;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chiehmeng.Goingdown;
+				PRODUCT_NAME = ThinkSNSPlus;
 				PROVISIONING_PROFILE = "f93df868-5b10-428a-8cc2-b1234b873f52";
-				PROVISIONING_PROFILE_SPECIFIER = tempInHome;
+				PROVISIONING_PROFILE_SPECIFIER = goingdown;
 				SWIFT_OBJC_BRIDGING_HEADER = "Thinksns Plus/Libraries/ThinkSNS +-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;

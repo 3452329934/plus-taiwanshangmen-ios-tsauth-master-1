@@ -93,7 +93,7 @@ class FeedCommentListView: UIView, UIGestureRecognizerDelegate {
         // 2.查看全部按钮
         let buttonOrigin = CGPoint(x: 58, y: table.frame.maxY)
         if commentsCount > maxShowingCount {
-            seeAllButton.setTitle("查看全部评论", for: .normal)
+            seeAllButton.setTitle("查看全部评论".localized, for: .normal)
             seeAllButton.setTitleColor(UIColor(hex: 0x333333), for: .normal)
             seeAllButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
             seeAllButton.sizeToFit()

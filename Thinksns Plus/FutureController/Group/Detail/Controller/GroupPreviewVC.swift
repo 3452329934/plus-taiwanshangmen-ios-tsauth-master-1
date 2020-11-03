@@ -136,7 +136,7 @@ class GroupPreviewVC: UIViewController, UITableViewDataSource, UITableViewDelega
             let headerView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 41))
             headerView.backgroundColor = UIColor.white
             let tipLabel = UILabel(frame: CGRect(x: 15, y: 25, width: ScreenWidth, height: 16))
-            tipLabel.text = "帖子预览"
+            tipLabel.text = "帖子预览".localized
             tipLabel.font = UIFont.boldSystemFont(ofSize: 14)
             headerView.addSubview(tipLabel)
             return headerView
@@ -232,7 +232,7 @@ class GroupPreviewVC: UIViewController, UITableViewDataSource, UITableViewDelega
     func uploadJoinBtn() {
         if let joined = groupModel.joined {
             if joined.audit == 0 {
-                self.joinBtn.setTitle("审核中", for: .normal)
+                self.joinBtn.setTitle("审核中".localized, for: .normal)
                 self.joinBtn.backgroundColor = TSColor.normal.disabled
                 self.joinBtn.isEnabled = false
             } else if joined.audit == 1 {
@@ -298,7 +298,7 @@ class GroupPreviewVC: UIViewController, UITableViewDataSource, UITableViewDelega
                    weakself.pushDetailVC()
                     NotificationCenter.default.post(name: NSNotification.Name.Group.joined, object: nil, userInfo: ["isJoin": true, "groupInfo": weakself.groupModel])
                 } else {
-                    weakself.joinBtn.setTitle("审核中", for: .normal)
+                    weakself.joinBtn.setTitle("审核中".localized, for: .normal)
                     weakself.joinBtn.isEnabled = false
                     weakself.joinBtn.backgroundColor = TSColor.normal.disabled
                 }

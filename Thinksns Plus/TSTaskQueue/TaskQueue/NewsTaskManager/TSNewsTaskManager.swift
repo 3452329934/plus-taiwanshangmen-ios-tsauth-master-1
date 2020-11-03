@@ -51,7 +51,7 @@ class TSNewsTaskManager: NSObject {
             let defaultObject = TSNewsTagObject()
             defaultObject.index = 0
             defaultObject.isMarked = 1
-            defaultObject.name = "推荐"
+            defaultObject.name = "推荐".localized
             defaultObject.tagID = -1
             data?.markedTags.insert(defaultObject, at: 0)
 

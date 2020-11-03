@@ -23,7 +23,7 @@ class TSFollowControl: UIControl {
     }
     override var isSelected: Bool {
         didSet {
-            self.titleLabel.text = isSelected ? "已关注" : "关注"
+            self.titleLabel.text = isSelected ? "已关注".localized : "关注".localized
             self.iconView.image = isSelected ? UIImage(named: "IMG_channel_ico_added") : UIImage(named: "IMG_channel_ico_add_blue")
             self.titleLabel.textColor = isSelected ? UIColor(hex: 0xcccccc) : TSColor.main.theme
             self.layer.borderColor = isSelected ? UIColor(hex: 0xcccccc).cgColor : TSColor.main.theme.cgColor
@@ -77,7 +77,7 @@ class TSFollowControl: UIControl {
         }
         self.iconView = iconView
         // 3. default
-        titleLabel.text = "关注"
+        titleLabel.text = "关注".localized
         iconView.image = UIImage(named: "IMG_channel_ico_add_blue")
     }
 

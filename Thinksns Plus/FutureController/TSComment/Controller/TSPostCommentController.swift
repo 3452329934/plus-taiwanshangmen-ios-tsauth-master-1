@@ -802,9 +802,9 @@ extension TSPostCommentController {
             textField.placeholder = "可选范围1~30天"
             textField.keyboardType = .numberPad
         })
-        alert.addAction(TSAlertAction(title: "取消", style: .theme, handler: { (action) in
+        alert.addAction(TSAlertAction(title: "取消".localized, style: .theme, handler: { (action) in
         }))
-        alert.addAction(TSAlertAction(title: "确定", style: .theme, handler: { (action) in
+        alert.addAction(TSAlertAction(title: "确定".localized, style: .theme, handler: { (action) in
             let textField = alert.textFields?.first
             let topDay = Int(textField?.text ?? "")
             if let day = topDay, (day > 0 && day < 31) {

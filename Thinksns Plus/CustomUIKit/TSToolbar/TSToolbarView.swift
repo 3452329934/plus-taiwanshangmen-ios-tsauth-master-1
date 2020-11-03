@@ -81,9 +81,10 @@ class TSToolbarView: UIView, TSToolBarButtonItemDelegate {
             }
             var width: CGFloat = 0
             var x: CGFloat = 0
+            
             switch relativeType {
             case .left: // item 图片在左文字在右时
-                width = CGFloat(16.0 + 2.0 + 50.0) // 这里 width 的值是根据设计图配置的
+                width = CGFloat(50.0) // 这里 width 的值是根据设计图配置的
                 if model.index == 3 {
                     x = self.bounds.width - width
                 } else {

@@ -28,7 +28,7 @@ class TSPopMessageFriendList: TSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "选择好友"
+        title = "选择好友".localized
         let cancelButton = TSTextButton.initWith(putAreaType: .top)
         cancelButton.setTitle("选择_取消".localized, for: .normal)
         cancelButton.contentHorizontalAlignment = .left

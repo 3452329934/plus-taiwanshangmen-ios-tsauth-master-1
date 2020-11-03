@@ -127,7 +127,7 @@ class TSSuperLinkVC: UIViewController {
         sureButton.frame = CGRect(x: whiteWidth / 2.0, y: secondLine.bottom, width: whiteWidth / 2.0, height: whiteHeight - secondLine.bottom)
         sureButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         sureButton.setTitleColor(TSColor.main.theme, for: .normal)
-        sureButton.setTitle("确认", for: .normal)
+        sureButton.setTitle("确认".localized, for: .normal)
         sureButton.addTarget(self, action: #selector(sendBtnClick), for: UIControl.Event.touchUpInside)
         whiteView.addSubview(sureButton)
 

@@ -106,13 +106,13 @@ class FilterSectionView: UITableViewHeaderFooterView {
         if model.followStatus {
             topicFollowButton.setTitleColor(TSColor.main.theme, for: .normal)
             topicFollowButton.backgroundColor = UIColor.white
-            topicFollowButton.setTitle("已关注", for: .normal)
+            topicFollowButton.setTitle("已关注".localized, for: .normal)
             topicFollowButton.layer.borderColor = TSColor.main.theme.cgColor
             topicFollowButton.layer.borderWidth = 0.5
         } else {
             topicFollowButton.setTitleColor(UIColor.white, for: .normal)
             topicFollowButton.backgroundColor = TSColor.main.theme
-            topicFollowButton.setTitle("+ 关注", for: .normal)
+            topicFollowButton.setTitle("+ 关注".localized, for: .normal)
         }
         topicFollowButton.addTarget(self, action: #selector(topicFollowButtonClick(sender:)), for: .touchUpInside)
     }

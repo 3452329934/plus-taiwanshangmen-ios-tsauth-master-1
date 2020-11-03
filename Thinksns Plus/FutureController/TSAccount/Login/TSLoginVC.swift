@@ -25,7 +25,7 @@ class TSLoginVC: UIViewController, didSelectShowsSearchResultsCellDelegate {
     var isHiddenGuestLoginButton: Bool?
     var isHiddenDismissButton: Bool?
     var isPhoneRegister = false
-
+    // MARk: -登入
     /// 是否是短信快速登录, 默认不是
     private var isSMSLogin = false {
         didSet {
@@ -39,15 +39,15 @@ class TSLoginVC: UIViewController, didSelectShowsSearchResultsCellDelegate {
             self.showPrompt("")
 
             if isSMSLogin {
-                title = "一键登录"
+                title = "一键登录".localized
                 SMSLoginView.isHidden = false
                 namePhoneLoginView.isHidden = true
-                switchLoginTypeBtn.setTitle("使用账号密码登录", for: .normal)
+                switchLoginTypeBtn.setTitle("使用账号密码登录".localized, for: .normal)
             } else {
-                title = "登录"
+                title = "登录".localized
                 SMSLoginView.isHidden = true
                 namePhoneLoginView.isHidden = false
-                switchLoginTypeBtn.setTitle("使用手机号一键登录", for: .normal)
+                switchLoginTypeBtn.setTitle("使用手机号一键登录".localized, for: .normal)
 
             }
         }
@@ -126,13 +126,13 @@ class TSLoginVC: UIViewController, didSelectShowsSearchResultsCellDelegate {
     func setNavigationBar() {
         // debug模式下切换服务器
         #if DEBUG
-        let leftItem = UIBarButtonItem(title: "切换服务器", style: .done, target: self, action: #selector(pushServiceSwitchVC))
+        let leftItem = UIBarButtonItem(title: "切换服务器".localized, style: .done, target: self, action: #selector(pushServiceSwitchVC))
         self.navigationItem.leftBarButtonItem = leftItem
         #else
         // 不添加
         #endif
         let frameView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 44))
-        buttonForPushToRegisterVC.setTitle("注册", for: .normal)
+        buttonForPushToRegisterVC.setTitle("注册".localized, for: .normal)
         buttonForPushToRegisterVC.addTarget(self, action: #selector(pushToRegisterVCButtonTaped), for: .touchUpInside)
         frameView.addSubview(buttonForPushToRegisterVC)
         // 6pt 设计尺寸
@@ -157,7 +157,7 @@ class TSLoginVC: UIViewController, didSelectShowsSearchResultsCellDelegate {
     }
 
     func setupUI() {
-        title = "登录"
+        title = "登录".localized
         guestLoginButton.setTitle("显示_游客按钮".localized, for: .normal)
         guestLoginButton.isHidden = isHiddenGuestLoginButton!
         buttonForLogin.sizeType = .large

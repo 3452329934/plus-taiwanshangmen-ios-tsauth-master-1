@@ -62,10 +62,10 @@ class TSPopMessageVC: TSViewController, UISearchBarDelegate {
             return []
         } else {
             let unreadInfo = TSCurrentUserInfo.share.unreadCount
-            let systemModel = NoticeConversationCellModel(title: "系统消息", content: unreadInfo.commentsUsers ?? "暂无系统消息", badgeCount: unreadInfo.comments, date: unreadInfo.commentsUsersDate, image: "ico_message_systerm")
-            let commentModel = NoticeConversationCellModel(title: "收到的评论", content: unreadInfo.commentsUsers ?? "显示_收到的评论占位字".localized, badgeCount: unreadInfo.comments, date: unreadInfo.commentsUsersDate, image: "IMG_message_comment")
-            let likeModel = NoticeConversationCellModel(title: "收到的赞", content: unreadInfo.likedUsers ?? "显示_收到的赞占位字".localized, badgeCount: unreadInfo.like, date: unreadInfo.likeUsersDate, image: "IMG_message_good")
-            let pendModel = NoticeConversationCellModel(title: "审核通知", content: unreadInfo.pendingUsers ?? "显示_审核通知占位字".localized, badgeCount: unreadInfo.pending, date: unreadInfo.pendingUsersDate, image: "IMG_ico_message_check")
+            let systemModel = NoticeConversationCellModel(title: "系统消息".localized, content: unreadInfo.commentsUsers ?? "暂无系统消息".localized, badgeCount: unreadInfo.comments, date: unreadInfo.commentsUsersDate, image: "ico_message_systerm")
+            let commentModel = NoticeConversationCellModel(title: "收到的评论".localized, content: unreadInfo.commentsUsers ?? "显示_收到的评论占位字".localized, badgeCount: unreadInfo.comments, date: unreadInfo.commentsUsersDate, image: "IMG_message_comment")
+            let likeModel = NoticeConversationCellModel(title: "收到的赞".localized, content: unreadInfo.likedUsers ?? "显示_收到的赞占位字".localized, badgeCount: unreadInfo.like, date: unreadInfo.likeUsersDate, image: "IMG_message_good")
+            let pendModel = NoticeConversationCellModel(title: "审核通知".localized, content: unreadInfo.pendingUsers ?? "显示_审核通知占位字".localized, badgeCount: unreadInfo.pending, date: unreadInfo.pendingUsersDate, image: "IMG_ico_message_check")
 
             return [systemModel, commentModel, likeModel, pendModel]
         }

@@ -36,7 +36,7 @@ class TSFansAndFollowVC: TSLabelViewController, ChangeVCStateDelegate {
         fansVC = TSFollowFansListDetailVC(type: .fans, userId: userIdentity)
         followVC.removeNotic()
         fansVC.removeNotic()
-        super.init(labelTitleArray: ["粉丝", "关注"], scrollViewFrame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - TSNavigationBarHeight))
+        super.init(labelTitleArray: ["粉丝".localized, "关注".localized], scrollViewFrame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - TSNavigationBarHeight))
         self.userIdentity = userIdentity
     }
 

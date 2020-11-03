@@ -223,7 +223,7 @@ class TSSettimgPriceViewController: UIViewController, UITextFieldDelegate, UIGes
             make.right.equalToSuperview().offset(-10)
         }
         userPriceNumber = UITextField()
-        userPriceNumber.placeholder = "请输入金额"
+        userPriceNumber.placeholder = "请输入金额".localized
         userPriceNumber.keyboardType = .numberPad
         userPriceNumber.textAlignment = .right
         userPriceNumber.textColor = TSColor.normal.blackTitle
@@ -237,7 +237,7 @@ class TSSettimgPriceViewController: UIViewController, UITextFieldDelegate, UIGes
             make.left.equalTo(userPricelable.snp.right).offset(9)
         }
         submitButtion.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        submitButtion.setTitle("确定", for: .normal)
+        submitButtion.setTitle("确定".localized, for: .normal)
         submitButtion.setTitleColor(TSColor.main.white, for: .normal)
         submitButtion.titleLabel?.font = UIFont.systemFont(ofSize: TSFont.Button.navigation.rawValue)
         submitButtion.backgroundColor = TSColor.button.disabled

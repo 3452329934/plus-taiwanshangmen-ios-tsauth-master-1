@@ -97,11 +97,11 @@ class TSSetUserInfoVC: TSViewController, UITextViewDelegate, UITextFieldDelegate
     func setSexType(type: Int) -> String {
         switch type {
         case 1:
-            return "男"
+            return "夫妻"
         case 2:
-            return "女"
+            return "情侶"
         default:
-            return "保密"
+            return "單身"
         }
     }
 
@@ -400,7 +400,7 @@ class TSSetUserInfoVC: TSViewController, UITextViewDelegate, UITextFieldDelegate
     @IBAction func sexSelectorTap(_ sender: UITapGestureRecognizer) {
         nicknameTextField.resignFirstResponder()
         personalProfileTextView.resignFirstResponder()
-        let sexSelectorView = TSCustomActionsheetView(titles: ["选择_男".localized, "选择_女".localized, "选择_保密".localized])
+        let sexSelectorView = TSCustomActionsheetView(titles: ["夫妻","情侶","單身"])
         sexSelectorView.delegate = self
         sexSelectorView.show()
 
@@ -486,7 +486,7 @@ class TSSetUserInfoVC: TSViewController, UITextViewDelegate, UITextFieldDelegate
             return
         }
         if self.personalProfileTextView.text!.count.isEqualZero {
-            let topShow = TSIndicatorWindowTop(state: .faild, title: "请输入简介")
+            let topShow = TSIndicatorWindowTop(state: .faild, title: "请输入简介".localized)
             topShow.show()
             DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
                 DispatchQueue.main.async {
@@ -528,7 +528,7 @@ class TSSetUserInfoVC: TSViewController, UITextViewDelegate, UITextFieldDelegate
                 })
                 return
             } else {
-                let errorTitle = msg ?? "修改失败"
+                let errorTitle = msg ?? "修改失敗"
                 let topShow = TSIndicatorWindowTop(state: .faild, title: errorTitle)
                 topShow.show()
                 DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
@@ -619,7 +619,7 @@ class TSSetUserInfoVC: TSViewController, UITextViewDelegate, UITextFieldDelegate
     }
 
     private func openLibrary() {
-        guard let imagePickerVC = TZImagePickerController(maxImagesCountTSType: 1, columnNumber: 4, delegate: self, pushPhotoPickerVc: true, square: true, shouldPick: true, topTitle: "更换头像", mainColor: TSColor.main.theme)
+        guard let imagePickerVC = TZImagePickerController(maxImagesCountTSType: 1, columnNumber: 4, delegate: self, pushPhotoPickerVc: true, square: true, shouldPick: true, topTitle: "更换头像".localized, mainColor: TSColor.main.theme)
             else {
                 return
         }
@@ -653,7 +653,7 @@ class TSSetUserInfoVC: TSViewController, UITextViewDelegate, UITextFieldDelegate
             lzImage.cropSize = CGSize(width: UIScreen.main.bounds.width - 80, height: UIScreen.main.bounds.width - 80)
             lzImage.image = photoOrigin
             lzImage.isRound = false
-            lzImage.titleLabel.text = "更换头像"
+            lzImage.titleLabel.text = "更换头像".localized
             lzImage.didFinishPickingImage = {(image) -> Void in
                 guard let image = image else {
                     return
@@ -681,7 +681,7 @@ class TSSetUserInfoVC: TSViewController, UITextViewDelegate, UITextFieldDelegate
             self.changeImageRequest(image: self.templateImage!, imageName: imageName, size:  CGSize(width: (self.templateImage?.size.width)!, height: (self.templateImage?.size.height)!))
             self.buttonForAvatar.buttonForAvatar.setImage(self.templateImage!, for: .normal)
         } else {
-            let resultAlert = TSIndicatorWindowTop(state: .faild, title: "图片选择异常,请重试!")
+            let resultAlert = TSIndicatorWindowTop(state: .faild, title: "图片选择异常,请重试!".localized)
             resultAlert.show(timeInterval: TSIndicatorWindowTop.defaultShowTimeInterval)
         }
     }

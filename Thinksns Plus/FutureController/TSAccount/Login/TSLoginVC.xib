@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -37,7 +37,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="47" id="8hJ-FZ-RGj"/>
                     </constraints>
-                    <state key="normal" title="登录"/>
+                    <state key="normal" title="登入"/>
                     <connections>
                         <action selector="loginButtonTaped" destination="-1" eventType="touchUpInside" id="Ta0-zK-Ppw"/>
                     </connections>
@@ -63,14 +63,14 @@
                         <constraint firstAttribute="height" constant="35" id="ejM-B3-Dqh"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" title="忘记密码">
+                    <state key="normal" title="忘記密碼">
                         <color key="titleColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsa-uJ-LGU">
                     <rect key="frame" x="15" y="211" width="54" height="28"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" title="游客按钮">
+                    <state key="normal" title="訪客按鈕">
                         <color key="titleColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -84,7 +84,7 @@
                         <constraint firstAttribute="height" constant="27" id="Xay-Ut-Cga"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <state key="normal" title="使用手机号一键登录"/>
+                    <state key="normal" title="手機號碼一鍵登入"/>
                     <connections>
                         <action selector="switchLoginTypeBtnClick:" destination="-1" eventType="touchUpInside" id="2vF-YW-8q3"/>
                     </connections>
@@ -95,13 +95,13 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SjH-3j-gfH">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYx-Ab-O5a" customClass="TSAccountLabel" customModule="ThinkSNSPlus" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帳號" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYx-Ab-O5a" customClass="TSAccountLabel" customModule="ThinkSNSPlus" customModuleProvider="target">
                                     <rect key="frame" x="15" y="18" width="31" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名/手机号/邮箱" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GyL-DV-0Ue" customClass="TSAccountTextField" customModule="ThinkSNSPlus" customModuleProvider="target">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="名稱/手機/信箱" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GyL-DV-0Ue" customClass="TSAccountTextField" customModule="ThinkSNSPlus" customModuleProvider="target">
                                     <rect key="frame" x="76" y="7" width="284" height="40"/>
                                     <color key="tintColor" red="0.27450980392156865" green="0.65490196078431373" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -128,7 +128,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rwh-Gd-kCY">
                             <rect key="frame" x="0.0" y="54.5" width="375" height="54"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-2u-7eq" customClass="TSAccountLabel" customModule="ThinkSNSPlus" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-2u-7eq" customClass="TSAccountLabel" customModule="ThinkSNSPlus" customModuleProvider="target">
                                     <rect key="frame" x="15" y="18" width="31" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="Ia3-p0-bYR"/>
@@ -138,7 +138,7 @@
                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入6位以上登录密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UAL-xY-sjm" customClass="TSAccountTextField" customModule="ThinkSNSPlus" customModuleProvider="target">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="輸入6位數以上登入密碼" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UAL-xY-sjm" customClass="TSAccountTextField" customModule="ThinkSNSPlus" customModuleProvider="target">
                                     <rect key="frame" x="76" y="7" width="244" height="40"/>
                                     <color key="tintColor" red="0.27450980392156865" green="0.65490196078431373" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -192,7 +192,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1d-fJ-t1j">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0E-c4-cfq" customClass="TSAccountLabel" customModule="ThinkSNSPlus" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0E-c4-cfq" customClass="TSAccountLabel" customModule="ThinkSNSPlus" customModuleProvider="target">
                                     <rect key="frame" x="15" y="18" width="31" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="31" id="CfJ-0m-lja"/>
@@ -202,7 +202,7 @@
                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入11位手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TIs-Ap-cg9" customClass="TSAccountTextField" customModule="ThinkSNSPlus" customModuleProvider="target">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="輸入手機號碼" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TIs-Ap-cg9" customClass="TSAccountTextField" customModule="ThinkSNSPlus" customModuleProvider="target">
                                     <rect key="frame" x="76" y="7" width="284" height="40"/>
                                     <color key="tintColor" red="0.27450980390000002" green="0.65490196079999996" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -225,7 +225,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-gU-hOX">
                             <rect key="frame" x="0.0" y="54.5" width="375" height="54"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg0-Wm-ZqC" customClass="TSAccountLabel" customModule="ThinkSNSPlus" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="驗證碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg0-Wm-ZqC" customClass="TSAccountLabel" customModule="ThinkSNSPlus" customModuleProvider="target">
                                     <rect key="frame" x="15" y="18" width="46" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="46" id="zho-y2-zog"/>
@@ -235,7 +235,7 @@
                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XKi-HI-PTG" customClass="TSAccountTextField" customModule="ThinkSNSPlus" customModuleProvider="target">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="輸入驗證碼" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XKi-HI-PTG" customClass="TSAccountTextField" customModule="ThinkSNSPlus" customModuleProvider="target">
                                     <rect key="frame" x="76" y="7" width="192" height="40"/>
                                     <color key="tintColor" red="0.27450980390000002" green="0.65490196079999996" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -244,7 +244,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
-                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="59后重发" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbv-eq-tKf" customClass="TSCutDownLabel" customModule="ThinkSNSPlus" customModuleProvider="target">
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="59後重發" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbv-eq-tKf" customClass="TSCutDownLabel" customModule="ThinkSNSPlus" customModuleProvider="target">
                                     <rect key="frame" x="283" y="2" width="77" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.27450980390000002" green="0.65490196079999996" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -255,7 +255,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="h0e-eR-nh4"/>
                                     </constraints>
-                                    <state key="normal" title="获取验证码">
+                                    <state key="normal" title="獲取驗證碼">
                                         <color key="titleColor" red="0.27450980390000002" green="0.65490196079999996" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <state key="disabled">

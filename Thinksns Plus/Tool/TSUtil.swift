@@ -541,9 +541,10 @@ class TSUtil {
             case .denied, .restricted:
                 DispatchQueue.main.async {
                     let appName = TSAppConfig.share.localInfo.appDisplayName
-                    TSErrorTipActionsheetView().setWith(title: "相机权限设置", TitleContent: "请为 \(appName) 开放相机权限!\n点击\"相机\"右侧开关", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
-                        if let url = URL(string: UIApplication.openSettingsURLString) {
-                            UIApplication.shared.openURL(url)
+                    TSErrorTipActionsheetView().setWith(title: "相機權限設置", TitleContent: "請為\(appName)開放相機權限：手機設置-隱私-相機-\(appName)(打開)", doneButtonTitle: ["去設置" , "取消"], complete: { (_) in
+                        let url = URL(string: UIApplication.openSettingsURLString)
+                        if UIApplication.shared.canOpenURL(url!) {
+                            UIApplication.shared.openURL(url!)
                         }
                     })
                 }
@@ -575,7 +576,7 @@ class TSUtil {
             case .denied, .restricted:
                 DispatchQueue.main.async {
                     let appName = TSAppConfig.share.localInfo.appDisplayName
-                    TSErrorTipActionsheetView().setWith(title: "麦克风权限设置", TitleContent: "请为 \(appName) 开放麦克风权限!\n点击 \"麦克风\" 右侧开关", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
+                    TSErrorTipActionsheetView().setWith(title: "麥克風權限設置", TitleContent: "請為\(appName) 開放麥克風權限!\n點擊\"麥克風\" 右側開關", doneButtonTitle: ["去設置", "取消"], complete: { (_) in
                         if let url = URL(string: UIApplication.openSettingsURLString) {
                             UIApplication.shared.openURL(url)
                         }
@@ -638,7 +639,7 @@ class TSUtil {
             case .denied, .restricted:
                 DispatchQueue.main.async {
                     let appName = TSAppConfig.share.localInfo.appDisplayName
-                    TSErrorTipActionsheetView().setWith(title: "定位权限设置", TitleContent: "请为 \(appName) 开放定位权限!\n点击 \"位置\" 使用应用期间", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
+                    TSErrorTipActionsheetView().setWith(title: "定位權限設置", TitleContent: "請為\(appName) 開放定位權限!\n點擊\"位置\" 使用應用期間", doneButtonTitle: ["去設置", "取消"], complete: { (_) in
                         if let url = URL(string: UIApplication.openSettingsURLString) {
                             UIApplication.shared.openURL(url)
                         }

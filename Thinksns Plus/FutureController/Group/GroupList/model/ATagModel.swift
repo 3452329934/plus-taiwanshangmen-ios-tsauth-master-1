@@ -30,7 +30,7 @@ class ATagModel {
     class func recommend() -> ATagModel {
         let model = ATagModel()
         model.tagID = -9999
-        model.name = "推荐"
+        model.name = "推荐".localized
         model.index = 0
         return model
     }

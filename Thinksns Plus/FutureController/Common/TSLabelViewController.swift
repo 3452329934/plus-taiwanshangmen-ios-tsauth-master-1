@@ -40,7 +40,7 @@ class TSLabelViewController: TSViewController, UIScrollViewDelegate {
     /// 自定义初始化方法
     ///
     /// - Parameter labelTitleArray: 导航栏上标签的 title 的数组
-    init(labelTitleArray: [String], scrollViewFrame: CGRect?, isChat: Bool = false) {
+    init(labelTitleArray: [String], scrollViewFrame: CGRect?, isChat: Bool = false, fromMe: Bool = false) {
         super.init(nibName: nil, bundle: nil)
         if isChat {
             let frame = scrollViewFrame ?? CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - 64)

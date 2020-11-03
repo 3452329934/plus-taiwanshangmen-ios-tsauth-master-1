@@ -88,6 +88,7 @@ class IntegrationRechargeController: UIViewController {
             self?.tableController?.model = IntegrationRechargeModel(model: netModel)
         }
         */
+        TSAppConfig.share.localInfo.goldName = "積分"
         titleLabel.text = String(format: "显示_充值fomat".localized, TSAppConfig.share.localInfo.goldName)
     }
 
@@ -108,7 +109,7 @@ class IntegrationRechargeController: UIViewController {
     @IBAction func protocolButtonTaped(_ sender: UIButton) {
         let vc = RuleShowViewController()
         vc.ruleMarkdownStr = tableController?.model.rule ?? ""
-        vc.title = "用户充值协议"
+        vc.title = "用户充值協議"
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -232,7 +233,7 @@ class IntegrationRechargeTableController: UITableViewController {
         if TSAppConfig.share.localInfo.currencySetInfo != nil {
             let rechargeMax = TSAppConfig.share.localInfo.currencySetInfo!.rechargeMax
             if (fenNumber > rechargeMax) {
-                let alert = TSIndicatorWindowTop(state: .faild, title: "不能高于最高充值金额\(rechargeMax/100)元")
+                let alert = TSIndicatorWindowTop(state: .faild, title: "不能高於最高充值金额\(rechargeMax/100)元")
                 alert.show(timeInterval: TSIndicatorWindowTop.defaultShowTimeInterval)
                 return
             }
@@ -249,7 +250,7 @@ class IntegrationRechargeTableController: UITableViewController {
                 self.sureButton.isUserInteractionEnabled = true
                 var msg = message
                 if status {
-                    msg = String(format: "共消耗%.2f元，获得%d\(TSAppConfig.share.localInfo.goldName)！", rechargeNumber, self.model.ratio * Int(rechargeNumber) * 100)
+                    msg = String(format: "共消耗%.2f元，獲得%d\(TSAppConfig.share.localInfo.goldName)！", rechargeNumber, self.model.ratio * Int(rechargeNumber) * 100)
                 }
                 let alert = TSIndicatorWindowTop(state: status ? .success : .faild, title: msg)
                 alert.show(timeInterval: TSIndicatorWindowTop.defaultShowTimeInterval)
@@ -306,7 +307,7 @@ class IntegrationRechargeTableController: UITableViewController {
     /// 支付校验回调
     @objc func checkPayResultBack(noti: Notification) {
         guard let infoDic = noti.userInfo as? Dictionary<String, Any> else {
-            TSLogCenter.log.debug("\n\n checkPayResultBack 信息为空")
+            TSLogCenter.log.debug("\n\n checkPayResultBack 訊息為空")
             return
         }
         self.sureButton.isUserInteractionEnabled = true
@@ -399,10 +400,10 @@ class IntegrationRechargeTableController: UITableViewController {
                 case .applepay:
                     continue
                 case .wallet:
-                    title = "钱包余额充值"
+                    title = "錢包餘額充值"
                     alert.addAction(TSAlertAction(title: title, style: .default, handler: { [weak self] (_) in
                         self?.rechargeType = type
-                        self?.showChargeTypeLab.text = "钱包余额充值"
+                        self?.showChargeTypeLab.text = "钱包餘額充值"
                     }))
                 }
             }

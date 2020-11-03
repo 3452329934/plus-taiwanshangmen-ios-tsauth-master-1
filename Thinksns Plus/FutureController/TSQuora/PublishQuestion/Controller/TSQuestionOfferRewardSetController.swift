@@ -544,7 +544,7 @@ extension TSQuestionOfferRewardSetController {
                         if integrationSum < Int(amount) {
                             self?.doneBtn.isEnabled = true
                             // 余额不足，跳转进入钱包界面
-                            let alert = TSIndicatorWindowTop(state: .faild, title: "\(goldName)余额不足，请充值")
+                            let alert = TSIndicatorWindowTop(state: .faild, title: "\(goldName)餘額不足，请充值")
                             alert.show(timeInterval: TSIndicatorWindowTop.defaultShowTimeInterval, complete: {
                                 self?.navigationController?.pushViewController(IntegrationHomeController.vc(), animated: true)
                             })
@@ -659,7 +659,7 @@ extension TSQuestionOfferRewardSetController {
             if integrationSum < Int(payPrice) {
                 self?.doneBtn.isEnabled = true
                 // 余额不足，跳转进入钱包界面
-                let alert = TSIndicatorWindowTop(state: .faild, title: "\(goldName)余额不足，请充值")
+                let alert = TSIndicatorWindowTop(state: .faild, title: "\(goldName)餘額不足，请充值")
                 alert.show(timeInterval: TSIndicatorWindowTop.defaultShowTimeInterval, complete: {
                 self?.navigationController?.pushViewController(IntegrationHomeController.vc(), animated: true)
                 })

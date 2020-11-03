@@ -74,7 +74,7 @@ class TSPrivacyNoticeVC: UIViewController {
             contentLabel.attributedText = attrStr
 
             cancelBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-            cancelBtn.setTitle("不同意，退出应用", for: .normal)
+            cancelBtn.setTitle("不同意，退出APP", for: .normal)
 
             isSecondNotice = true
         } else {
@@ -98,10 +98,10 @@ extension TSPrivacyNoticeVC: TYAttributedLabelDelegate {
             TSUserNetworkingManager.getUserAgreement { (data, message, status) in
                if let data = data {
                    let markdownVC = TSMarkdownController(markdown: data)
-                   markdownVC.title = "用户协议"
+                   markdownVC.title = "用戶協議"
                    self.navigationController?.pushViewController(markdownVC, animated: true)
                } else {
-                   TSIndicatorWindowTop.showDefaultTime(state: .faild, title: "网络错误")
+                   TSIndicatorWindowTop.showDefaultTime(state: .faild, title: "網路錯誤")
                }
             }
         } else if textStorage.range == link1Range {
@@ -109,10 +109,10 @@ extension TSPrivacyNoticeVC: TYAttributedLabelDelegate {
             TSUserNetworkingManager.getPrivacyAgreement { (data, message, status) in
                if let data = data {
                    let markdownVC = TSMarkdownController(markdown: data)
-                   markdownVC.title = "隐私政策"
+                   markdownVC.title = "隱私權政策"
                    self.navigationController?.pushViewController(markdownVC, animated: true)
                } else {
-                   TSIndicatorWindowTop.showDefaultTime(state: .faild, title: "网络错误")
+                   TSIndicatorWindowTop.showDefaultTime(state: .faild, title: "網路錯誤")
                }
             }
         }

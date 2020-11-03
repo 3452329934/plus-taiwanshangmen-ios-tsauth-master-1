@@ -101,7 +101,7 @@ class TSChoosePriceVCViewController: TSViewController, btnTapDelegate, userInput
     // MARK: set ui
     func setUI() {
         self.view.backgroundColor = TSColor.inconspicuous.background
-        self.title = "打赏"
+        self.title = "打賞"
 
         if TSAppConfig.share.localInfo.rewardAmounts.isEmpty == false {
             inputPrices = TSAppConfig.share.localInfo.rewardAmounts
@@ -198,7 +198,7 @@ class TSChoosePriceVCViewController: TSViewController, btnTapDelegate, userInput
         guard let sourceId = sourceId, let realInputPrice = inputPrice else {
             return
         }
-        let loadingShow = TSIndicatorWindowTop(state: .loading, title: "正在打赏")
+        let loadingShow = TSIndicatorWindowTop(state: .loading, title: "正在打賞")
         loadingShow.show()
         self.view.isUserInteractionEnabled = false
 
@@ -255,7 +255,7 @@ class TSChoosePriceVCViewController: TSViewController, btnTapDelegate, userInput
                     }
                 }
                 if result == true {
-                    let topShow = TSIndicatorWindowTop(state: .success, title: "打赏成功")
+                    let topShow = TSIndicatorWindowTop(state: .success, title: "打賞成功")
                     topShow.show()
                     DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
                         DispatchQueue.main.async {
@@ -288,7 +288,7 @@ class TSChoosePriceVCViewController: TSViewController, btnTapDelegate, userInput
                     }
                 }
                 if result == true {
-                    let topShow = TSIndicatorWindowTop(state: .success, title: "打赏成功")
+                    let topShow = TSIndicatorWindowTop(state: .success, title: "打賞成功")
                     topShow.show()
                     DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
                         DispatchQueue.main.async {
@@ -316,7 +316,7 @@ class TSChoosePriceVCViewController: TSViewController, btnTapDelegate, userInput
                     }
                 }
                 if status {
-                    let topShow = TSIndicatorWindowTop(state: .success, title: "打赏成功")
+                    let topShow = TSIndicatorWindowTop(state: .success, title: "打賞成功")
                     topShow.show()
                     DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
                         DispatchQueue.main.async {
@@ -344,7 +344,7 @@ class TSChoosePriceVCViewController: TSViewController, btnTapDelegate, userInput
                     }
                 }
                 if status == true {
-                    let topShow = TSIndicatorWindowTop(state: .success, title: "打赏成功")
+                    let topShow = TSIndicatorWindowTop(state: .success, title: "打賞成功")
                     topShow.show()
                     DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
                         DispatchQueue.main.async {
@@ -373,7 +373,7 @@ class TSChoosePriceVCViewController: TSViewController, btnTapDelegate, userInput
                     }
                 }
                 if status == true {
-                    let topShow = TSIndicatorWindowTop(state: .success, title: "打赏成功")
+                    let topShow = TSIndicatorWindowTop(state: .success, title: "打賞成功")
                     topShow.show()
                     DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
                         DispatchQueue.main.async {

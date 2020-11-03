@@ -26,7 +26,7 @@ class TSOtherRegisteredVC: TSViewController, TSOtherRegisterdChooseViewDelegate 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "绑定账号"
+        self.title = "绑定账号".localized
         setUI()
     }
 
@@ -54,7 +54,7 @@ class TSOtherRegisteredVC: TSViewController, TSOtherRegisterdChooseViewDelegate 
         registerdChooseView.remove()
         let fillVC = ThreeUserFillInfoVC()
         fillVC.socialite = socialite
-        fillVC.title = "完善资料"
+        fillVC.title = "完善资料".localized
         let completeMaterialView = TSCompleteMaterialView(frame: CGRect.zero, superVC: fillVC)
         fillVC.view.addSubview(completeMaterialView)
         completeMaterialView.snp.makeConstraints { (make) in
@@ -67,7 +67,7 @@ class TSOtherRegisteredVC: TSViewController, TSOtherRegisterdChooseViewDelegate 
         registerdChooseView.remove()
         let fillVC = ThreeUserFillInfoVC()
         fillVC.socialite = socialite
-        fillVC.title = "已有账号"
+        fillVC.title = "已有账号".localized
         let hasAccountView = TSHasAccountView()
         fillVC.hasAccountView = hasAccountView
         hasAccountView.delegate = fillVC

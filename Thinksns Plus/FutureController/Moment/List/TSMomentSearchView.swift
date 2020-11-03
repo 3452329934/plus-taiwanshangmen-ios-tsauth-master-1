@@ -227,7 +227,7 @@ extension TSMomentSearchView: FeedListViewDelegate {
         if index == 1, model.sendStatus == .success {
             // 记录点击的位置信息
             newCommentInfo = (feedIndexPath, feedId, nil, nil)
-            setTSKeyboard(placeholderText: "随便说说~", feedCell: cell)
+            setTSKeyboard(placeholderText: "随便说说~".localized, feedCell: cell)
         }
         if index == 3 {
             if model.sendStatus == .success {

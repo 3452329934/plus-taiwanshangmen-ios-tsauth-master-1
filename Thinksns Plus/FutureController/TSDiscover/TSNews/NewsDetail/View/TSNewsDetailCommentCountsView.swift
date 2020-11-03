@@ -182,7 +182,7 @@ class TSNewsDetailCommentCountsView: UITableViewHeaderFooterView {
 
     // MARK: - public
     func uploadCount(CommentCount count: String) {
-        let countText = "\(count)条评论"
+        let countText = "\(count)條評論"
         let textWidth = countText.sizeOfString(usingFont: self.CountLabel.font).width
         var frameBlue = self.blueLine.frame
         frameBlue.size.width = textWidth + 10

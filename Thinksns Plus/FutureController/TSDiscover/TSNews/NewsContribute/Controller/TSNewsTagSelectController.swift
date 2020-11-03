@@ -195,7 +195,7 @@ class TSNewsTagSelectController: TSViewController {
 extension TSNewsTagSelectController {
     /// 显示温馨提示
     fileprivate func showPrompt() {
-        let alert = TSAlertController(title: "温馨提示", message: "标签为全局标签，选择合适的标签，系统可推荐你感兴趣的内容，方便找到相同身份或爱好的人，很重要哦！", style: .alert)
+        let alert = TSAlertController(title: "温馨提示", message: "標籤為全局標籤，選擇合適的標籤，系統可推薦你感興趣的內容，方便找到相同身份或愛好的人，很重要哦！", style: .alert)
         alert.addAction(TSAlertAction(title: "知道了", style: .default, handler: nil))
         present(alert, animated: false, completion: nil)
     }

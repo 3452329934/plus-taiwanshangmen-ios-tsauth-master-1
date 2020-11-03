@@ -130,23 +130,23 @@ extension ReceivePendingController {
         var childVC: UIViewController?
         switch showType {
         case .momentCommentTop:
-            title = "动态评论置顶"
+            title = "动态评论置顶".localized
             childVC = self.momentCommentTopVC
             (childVC as! ReceivePendingCommentTopController).initialDataSource()
         case .newsCommentTop:
-            title = "资讯评论置顶"
+            title = "资讯评论置顶".localized
             childVC = self.newsCommentTopVC
             (childVC as! ReceivePendingCommentTopController).initialDataSource()
         case .postCommentTop:
-            title = "帖子评论置顶"
+            title = "帖子评论置顶".localized
             childVC = self.postCommentTopVC
             (childVC as! ReceivePendingCommentTopController).initialDataSource()
         case .postTop:
-            title = "帖子置顶"
+            title = "帖子置顶".localized
             childVC = self.postTopVC
             (childVC as! ReceivePendingPostTopController).initialDataSource()
         case .groupAudit:
-            title = "圈子加入申请"
+            title = "圈子加入申请".localized
             childVC = self.groupAuditVC
             (childVC as! ReceivePendingGroupAuditController).initialDataSource()
         }

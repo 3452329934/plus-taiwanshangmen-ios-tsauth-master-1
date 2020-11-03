@@ -16,7 +16,7 @@ class TSQuoraSearchVC: UIViewController {
     /// 展示视图
     var displayView = TSLabelCollectionView()
     /// 标题数组
-    let titles = ["问答", "专题"]
+    let titles = ["问答".localized, "专题".localized]
 
     /// 问题搜索历史记录
     var questionsSearchHistoryList: QuoraSearchHistoryListView!

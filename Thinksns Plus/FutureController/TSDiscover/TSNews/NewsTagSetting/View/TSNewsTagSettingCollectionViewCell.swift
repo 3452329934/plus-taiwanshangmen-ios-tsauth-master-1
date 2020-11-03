@@ -60,6 +60,7 @@ class TSNewsTagSettingCollectionViewCell: UICollectionViewCell {
     }
 
     func updateData(title: String) {
+        print(title)
         self.titleLabel.text = title
     }
 

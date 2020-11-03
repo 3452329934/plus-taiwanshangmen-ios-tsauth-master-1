@@ -55,7 +55,7 @@ class TSChatSingleAddMemberVC: TSViewController, UITextFieldDelegate, UITableVie
     /// 是否是增删成员才进入这个页面的 "" 为正常创建聊天 add 为增加成员  delete 为删减成员
     var ischangeGroupMember: String? = ""
     /// 右上角按钮显示内容文字（增加页面 “添加“ 删减页面 “删除” 创建聊天页面 “聊天” 默认是 “聊天”）
-    var rightButtonTitle: String = "聊天"
+    var rightButtonTitle: String = "聊天".localized
     /// 如果是删除群成员的页面，这个群主 ID 必须传
     var ownerId: String = ""
     /// 当前正在聊天的对象的信息
@@ -65,11 +65,11 @@ class TSChatSingleAddMemberVC: TSViewController, UITextFieldDelegate, UITableVie
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         if self.image != nil {
-            rightButtonTitle = "发送"
+            rightButtonTitle = "发送".localized
         } else {
-            rightButtonTitle = "聊天"
+            rightButtonTitle = "聊天".localized
         }
-        title = "选择好友"
+        title = "选择好友".localized
         creatTopSubView()
         creatTableView()
     }
@@ -98,7 +98,7 @@ class TSChatSingleAddMemberVC: TSViewController, UITextFieldDelegate, UITableVie
         searchTextfield = UITextField(frame: CGRect(x: 15, y: (49 - 34) / 2.0, width: ScreenWidth - 15 * 2, height: 34))
         searchTextfield.font = UIFont.systemFont(ofSize: TSFont.SubInfo.footnote.rawValue)
         searchTextfield.textColor = TSColor.normal.minor
-        searchTextfield.placeholder = "搜索"
+        searchTextfield.placeholder = "搜索".localized
         searchTextfield.returnKeyType = .search
         searchTextfield.backgroundColor = TSColor.normal.placeholder
         searchTextfield.layer.cornerRadius = 5
@@ -357,7 +357,7 @@ class TSChatSingleAddMemberVC: TSViewController, UITextFieldDelegate, UITableVie
                 }
             }
 
-            let desc = "还没填写任何群简介"
+            let desc = "还没填写任何群简介".localized
             let ispublic = "0"
             let maxusers = "300"
             let menbers_only = "0"

@@ -44,12 +44,12 @@ class TSNewFriendsCell: UITableViewCell {
         if let praiseTitleS = model.relationshipTextWithCurrentUser()?.rawValue {
             praiseTitle = praiseTitleS
             self.buttonForFollow?.isHidden = false
-            if praiseTitleS == "已关注" || praiseTitleS == "互相关注" {
+            if praiseTitleS == "已关注".localized || praiseTitleS == "互相关注".localized {
                 self.buttonForFollow?.setTitleColor(TSColor.main.theme, for: .normal)
                 self.buttonForFollow?.backgroundColor = UIColor.white
                 self.buttonForFollow?.layer.borderColor = TSColor.main.theme.cgColor
                 self.buttonForFollow?.layer.borderWidth = 0.5
-            } else if praiseTitleS == "+ 关注" {
+            } else if praiseTitleS == "+ 关注".localized {
                 self.buttonForFollow?.setTitleColor(UIColor.white, for: .normal)
                 self.buttonForFollow?.backgroundColor = TSColor.main.theme
             } else {

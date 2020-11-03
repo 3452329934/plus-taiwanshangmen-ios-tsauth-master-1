@@ -46,7 +46,7 @@ class TSQuoraTopicsJoinTableCell: UITableViewCell {
         /// 设置标题
         labelForTitle.text = model.title
         /// 话题信息
-        let attributeString = QuoraStackBottomButtonsCell.getAttributeString(texts: ["\(model.followCount)", " 关注 · ", "\(model.questionCount)", " 问题"], colors: [TSColor.main.theme, TSColor.normal.content, TSColor.main.theme, TSColor.normal.content])
+        let attributeString = QuoraStackBottomButtonsCell.getAttributeString(texts: ["\(model.followCount)", " 關注 · ", "\(model.questionCount)", " 问题"], colors: [TSColor.main.theme, TSColor.normal.content, TSColor.main.theme, TSColor.normal.content])
         labelForDetail.attributedText = attributeString
         /// 关注按钮
         updateButton(isSelected: model.isFollowed)

@@ -402,7 +402,7 @@ extension TSAnswerCommentController: TSAnswerDetailToolBarProtocol {
         var answerShareUrl = ShareURL.answswer.rawValue
         answerShareUrl.replaceAll(matching: "replacequestion", with: "\(question.id)")
         answerShareUrl = answerShareUrl + "\(answerDetail.id)"
-        let shareTitle = question.title.count > 0 ? question.title : TSAppSettingInfoModel().appDisplayName + " " + "问答"
+        let shareTitle = question.title.count > 0 ? question.title : TSAppSettingInfoModel().appDisplayName + " " + "问答".localized
         var defaultContent = "默认分享内容".localized
         defaultContent.replaceAll(matching: "kAppName", with: TSAppSettingInfoModel().appDisplayName)
         let shareContent = answerDetail.body.ts_customMarkdownToNormal().count > 0 ? answerDetail.body.ts_customMarkdownToNormal() : defaultContent

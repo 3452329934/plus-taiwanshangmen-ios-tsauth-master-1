@@ -7,18 +7,18 @@
 		<key>develop</key>
 		<dict>
 			<key>address</key>
-			<string>https://tsplus.zhibocloud.cn/</string>
+			<string>https://marriage-party.fun/</string>
 			<key>imAppKey</key>
-			<string>1139171207178196#test-plus</string>
+			<string>1128181009228125#goingdown</string>
 			<key>imApnsName</key>
 			<string>TsIMHYTestDev</string>
 		</dict>
 		<key>production</key>
 		<dict>
 			<key>address</key>
-			<string>https://tsplus.zhibocloud.cn/</string>
+			<string>https://marriage-party.fun/</string>
 			<key>imAppKey</key>
-			<string>1139171207178196#thinksns-plus</string>
+			<string>1128181009228125#goingdown</string>
 			<key>imApnsName</key>
 			<string>TsIMHYTestDis</string>
 		</dict>
@@ -32,6 +32,6 @@
 	<key>isHiddenGuestLoginButtonInLaunch</key>
 	<false/>
 	<key>jPushKey</key>
-	<string>f0f9b22e116b6d60a278073f</string>
+	<string>1ec86bd453cd3bfe16ec995a</string>
 </dict>
 </plist>

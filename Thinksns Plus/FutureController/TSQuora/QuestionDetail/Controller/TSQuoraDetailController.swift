@@ -584,7 +584,7 @@ extension TSQuoraDetailController: TSQuoraDetailToolBarProtocol {
         let shareView = ShareListView(isMineSend: quoraDetail.userId == TSCurrentUserInfo.share.userInfo?.userIdentity, isCollection: false, shareType: ShareListType.questionDetail)
         shareView.delegate = self
         shareView.messageModel = messageModel
-        let shareTitle = quoraDetail.title.count > 0 ? quoraDetail.title : TSAppSettingInfoModel().appDisplayName + " " + "问答"
+        let shareTitle = quoraDetail.title.count > 0 ? quoraDetail.title : TSAppSettingInfoModel().appDisplayName + " " + "问答".localized
         var defaultContent = "默认分享内容".localized
         defaultContent.replaceAll(matching: "kAppName", with: TSAppSettingInfoModel().appDisplayName)
         let shareContent = quoraDetail.body.ts_customMarkdownToNormal().count > 0 ? quoraDetail.body.ts_customMarkdownToNormal() : defaultContent
@@ -721,8 +721,8 @@ extension TSQuoraDetailController {
 
     /// 删除问题弹窗
     fileprivate func showDeleteQuestionConfirmAlert() -> Void {
-        let alertVC = TSAlertController(title: nil, message: "删除问题后将无法复原，确认删除该问题?", style: .actionsheet)
-        alertVC.addAction(TSAlertAction(title: "删除问题", style: .destructive, handler: { (_) in
+        let alertVC = TSAlertController(title: nil, message: "删除问题后将无法复原，确认删除该问题?".localized, style: .actionsheet)
+        alertVC.addAction(TSAlertAction(title: "删除问题".localized, style: .destructive, handler: { (_) in
             self.deleteQuestion()
         }))
         self.present(alertVC, animated: false, completion: nil)
@@ -746,7 +746,7 @@ extension TSQuoraDetailController {
     /// 删除问题
     fileprivate func deleteQuestion() -> Void {
         // 问题删除的请求
-        let loadingShow = TSIndicatorWindowTop(state: .loading, title: "正在请求中...")
+        let loadingShow = TSIndicatorWindowTop(state: .loading, title: "正在請求中...")
         loadingShow.show()
         if bottomBar.type == .manager {
             TSQuoraNetworkManager.managerDeleteQuora(self.questionId, complete: { (msg, status) in

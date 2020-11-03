@@ -28,21 +28,19 @@ class TSRewardListCell: UITableViewCell {
         // 内容
         var contentString = NSMutableAttributedString()
         if model.user.name.isEmpty {
-            model.user.name = "该用户已被删除"
+            model.user.name = "該用戶已被刪除"
         }
         switch self.rewardType {
         case .moment:
-            contentString = NSMutableAttributedString(string: "\(model.user.name) 打赏了动态")
+            contentString = NSMutableAttributedString(string: "\(model.user.name) 打賞了動態")
         case .news:
-            contentString = NSMutableAttributedString(string: "\(model.user.name) 打赏了资讯")
+            contentString = NSMutableAttributedString(string: "\(model.user.name) 打賞了資訊")
         case .user:
-            contentString = NSMutableAttributedString(string: "\(model.user.name) 打赏了用户")
+            contentString = NSMutableAttributedString(string: "\(model.user.name) 打賞了用戶")
         case .answer:
-            contentString = NSMutableAttributedString(string: "\(model.user.name) 打赏了回答")
+            contentString = NSMutableAttributedString(string: "\(model.user.name) 打賞了回答")
         case .post:
-            contentString = NSMutableAttributedString(string: "\(model.user.name) 打赏了帖子")
-        default:
-            contentString = NSMutableAttributedString(string: "\(model.user.name) 打赏了动态")
+            contentString = NSMutableAttributedString(string: "\(model.user.name) 打賞了貼文")
         }
         labelForContent.attributedText = TSCommonTool.string(contentString, addpendAtrrs: [[NSAttributedString.Key.foregroundColor: TSColor.main.content]], strings: [model.user.name])
         // 时间 // TODO: 替换时间

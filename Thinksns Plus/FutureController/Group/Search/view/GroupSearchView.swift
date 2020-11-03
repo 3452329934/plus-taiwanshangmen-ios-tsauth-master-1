@@ -38,14 +38,14 @@ class GroupSearchView: GroupListActionView {
             // 跳转到创建圈子的页面
             // 判断配置是否需要认证才可创建圈子，如果需要，检查用户是否已经经过了身份验证
             if TSCurrentUserInfo.share.userInfo?.verified == nil && TSAppConfig.share.launchInfo?.groupBuildNeedVerified == true {
-                let alertVC = TSVerifyAlertController(title: "显示_提示".localized, message: "认证用户才能创建圈子，去认证？")
+                let alertVC = TSVerifyAlertController(title: "显示_提示".localized, message: "认证用户才能创建圈子，去认证？".localized)
                 TSRootViewController.share.currentShowViewcontroller?.present(alertVC, animated: false, completion: nil)
                 return
             }
             let buildGroupVC = CreateGroupController.vc()
             self?.parentViewController?.navigationController?.pushViewController(buildGroupVC, animated: true)
         })
-        placeholderView.set(buttonTitle: "创建圈子", labelText: "未找到相关圈子，创建属于自己的圈子吧")
+        placeholderView.set(buttonTitle: "创建圈子".localized, labelText: "未找到相关圈子，创建属于自己的圈子吧".localized)
         set(placeholderView: placeholderView, for: .empty)
     }
 

@@ -759,7 +759,7 @@ extension TSReleasePulseViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.title = "发布动态"
+        self.title = "发布动态".localized
         setReleaseButtonIsEnabled()
         if mainView.frame.size.height > mainScrollView.bounds.height {
         } else {
@@ -875,6 +875,7 @@ extension TSReleasePulseViewController {
 extension TSReleasePulseViewController {
     /// 布局话题板块儿
     func setTopicViewUI(showTopic: Bool, topicData: [TopicCommonModel]) {
+        
         topicView.removeAllSubViews()
         if showTopic {
             let topLine = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 0.5))
@@ -882,27 +883,27 @@ extension TSReleasePulseViewController {
             topicView.addSubview(topLine)
 
             if topicData.isEmpty {
-                let addTopicLabel = UILabel(frame: CGRect(x: 25, y: 0.5, width: 100, height: 49))
-                addTopicLabel.text = "添加话题"
-                addTopicLabel.textColor = UIColor(hex: 0x333333)
-                addTopicLabel.font = UIFont.systemFont(ofSize: 15)
-                topicView.addSubview(addTopicLabel)
-
-                let rightIcon = UIImageView(frame: CGRect(x: ScreenWidth - 15 - 10, y: 0, width: 10, height: 20))
-                rightIcon.clipsToBounds = true
-                rightIcon.contentMode = .scaleAspectFill
-                rightIcon.image = #imageLiteral(resourceName: "IMG_ic_arrow_smallgrey")
-                rightIcon.centerY = addTopicLabel.centerY
-                topicView.addSubview(rightIcon)
-
-                /// 外加一个点击事件button
-                let addButton = UIButton(type: .custom)
-                addButton.backgroundColor = UIColor.clear
-                addButton.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: 50)
-                addButton.addTarget(self, action: #selector(jumpToTopicSearchVC), for: UIControl.Event.touchUpInside)
-                topicView.addSubview(addButton)
-                topicViewHeight.constant = 50
-                topicView.updateConstraints()
+//                let addTopicLabel = UILabel(frame: CGRect(x: 25, y: 0.5, width: 100, height: 49))
+//                addTopicLabel.text = "添加话题"
+//                addTopicLabel.textColor = UIColor(hex: 0x333333)
+//                addTopicLabel.font = UIFont.systemFont(ofSize: 15)
+//                topicView.addSubview(addTopicLabel)
+//
+//                let rightIcon = UIImageView(frame: CGRect(x: ScreenWidth - 15 - 10, y: 0, width: 10, height: 20))
+//                rightIcon.clipsToBounds = true
+//                rightIcon.contentMode = .scaleAspectFill
+//                rightIcon.image = #imageLiteral(resourceName: "IMG_ic_arrow_smallgrey")
+//                rightIcon.centerY = addTopicLabel.centerY
+//                topicView.addSubview(rightIcon)
+//
+//                /// 外加一个点击事件button
+//                let addButton = UIButton(type: .custom)
+//                addButton.backgroundColor = UIColor.clear
+//                addButton.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: 50)
+//                addButton.addTarget(self, action: #selector(jumpToTopicSearchVC), for: UIControl.Event.touchUpInside)
+//                topicView.addSubview(addButton)
+//                topicViewHeight.constant = 50
+//                topicView.updateConstraints()
             } else {
                 var XX: CGFloat = 15
                 var YY: CGFloat = 14

@@ -185,7 +185,7 @@ class TSMeTableViewHeader: UIView {
         fanslabel.textColor = TSColor.main.content
         fanslabel.font = UIFont.boldSystemFont(ofSize: 20)
         let label = UILabel()
-        label.text = "粉丝"
+        label.text = "粉丝".localized
         label.font = UIFont.systemFont(ofSize: TSFont.SubInfo.mini.rawValue)
         label.textColor = TSColor.normal.minor
 
@@ -220,7 +220,7 @@ class TSMeTableViewHeader: UIView {
         followlabel.font = UIFont.boldSystemFont(ofSize: 20)
 
         let label = UILabel()
-        label.text = "关注"
+        label.text = "关注".localized
         label.font = UIFont.systemFont(ofSize: TSFont.SubInfo.mini.rawValue)
         label.textColor = TSColor.normal.minor
 

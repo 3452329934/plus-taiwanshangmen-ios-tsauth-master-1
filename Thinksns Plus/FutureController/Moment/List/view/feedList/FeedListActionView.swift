@@ -590,7 +590,7 @@ extension FeedListActionView {
 
     /// 显示删除动态的二次确认弹窗
     fileprivate func showFeedDeleteConfirmAlert(feedId: Int, feedIndexPath: IndexPath) -> Void {
-        let alertVC = TSAlertController.deleteConfirmAlert(deleteActionTitle: "删除动态") {
+        let alertVC = TSAlertController.deleteConfirmAlert(deleteActionTitle: "选择_删除动态".localized) {
             self.deleteFeed(feedId: feedId, feedIndexPath: feedIndexPath)
         }
         UIApplication.shared.keyWindow?.rootViewController?.present(alertVC, animated: false, completion: nil)
@@ -641,7 +641,7 @@ extension FeedListActionView {
 
     /// 重发评论 alert action
     func submitCommetAction(feedIndexPath: IndexPath, commentIndexPath: IndexPath) -> TSAlertAction {
-        let action = TSAlertAction(title: "重新发送", style: .default) { [weak self] (_) in
+        let action = TSAlertAction(title: "重新发送".localized, style: .default) { [weak self] (_) in
             self?.submitCommet(atFeedIndexPath: feedIndexPath, commentIndexPath: commentIndexPath)
         }
         return action
@@ -649,7 +649,7 @@ extension FeedListActionView {
 
     /// 置顶评论 alert action 
     func topCommentAction(commentId: Int, feedId: Int) -> TSAlertAction {
-        let action = TSAlertAction(title: "申请评论置顶", style: .default) { [weak self] (_) in
+        let action = TSAlertAction(title: "申请评论置顶".localized, style: .default) { [weak self] (_) in
             let topVC = TSTopAppilicationManager.commentTopVC(comment: commentId, feed: feedId)
             self?.parentViewController?.navigationController?.pushViewController(topVC, animated: true)
         }
@@ -658,7 +658,7 @@ extension FeedListActionView {
 
     /// 删除评论 alert action
     func deleteCommetAction(commentId: Int, feedId: Int, commentIndexPath: IndexPath, feedIndexPath: IndexPath) -> TSAlertAction {
-        let action = TSAlertAction(title: "删除评论", style: .default, handler: { [weak self] (_) in
+        let action = TSAlertAction(title: "删除评论".localized, style: .default, handler: { [weak self] (_) in
             self?.showCommentDeleteConfirmAlert(commentId: commentId, feedId: feedId, commentIndexPath: commentIndexPath, feedIndexPath: feedIndexPath)
         })
         return action
@@ -666,7 +666,7 @@ extension FeedListActionView {
 
     /// 显示删除评论的二次确认弹窗
     fileprivate func showCommentDeleteConfirmAlert(commentId: Int, feedId: Int, commentIndexPath: IndexPath, feedIndexPath: IndexPath) -> Void {
-        let alertVC = TSAlertController.deleteConfirmAlert(deleteActionTitle: "删除评论") {
+        let alertVC = TSAlertController.deleteConfirmAlert(deleteActionTitle: "删除评论".localized) {
             self.delteComment(commentId: commentId, feedId: feedId, commentIndexPath: commentIndexPath, feedIndexPath: feedIndexPath)
         }
         let tab = TSRootViewController.share.tabbarVC
@@ -744,7 +744,7 @@ extension FeedListActionView: ShareListViewDelegate {
         guard let feedId = model.id["feedId"] else {
             return
         }
-        let alertVC = TSAlertController.deleteConfirmAlert(deleteActionTitle: "删除动态") {
+        let alertVC = TSAlertController.deleteConfirmAlert(deleteActionTitle: "删除评论".localized) {
             self.deleteFeed(feedId: feedId, feedIndexPath: feedIndex)
         }
         UIApplication.shared.keyWindow?.rootViewController?.present(alertVC, animated: false, completion: nil)

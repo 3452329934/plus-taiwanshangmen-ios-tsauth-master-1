@@ -22,14 +22,20 @@ class MessageViewController: TSLabelViewController {
     fileprivate weak var chatButton: UIButton!
     /// 我的群聊
     fileprivate weak var groupButton: UIButton!
-
-    override init(labelTitleArray: [String], scrollViewFrame: CGRect?, isChat: Bool = false) {
+    var fromMe = false
+    override init(labelTitleArray: [String], scrollViewFrame: CGRect?, isChat: Bool = false, fromMe: Bool = false) {
+        self.fromMe = fromMe
         self.conversationVC = TSConversationTableViewController(style: .plain, model: MessageViewController.pasteNiticeModel())
         self.chatListNewVC = ChatListViewController()
         super.init(labelTitleArray: labelTitleArray, scrollViewFrame: scrollViewFrame, isChat: isChat)
         self.conversationVC.superViewController = self
         self.chatListNewVC.superViewController = self
-        self.add(childViewController: chatListNewVC, At: 1)
+        // 如果從 關於我 的頁面來 要另外處理
+        if fromMe == true {
+            self.add(childViewController: chatListNewVC, At: 0)
+        }else{
+            self.add(childViewController: chatListNewVC, At: 1)
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -96,7 +102,12 @@ class MessageViewController: TSLabelViewController {
             if imMessageCount < 0 {
                 imMessageCount = 0
             }
-            self.badges[1].isHidden = imMessageCount.isEqualZero
+            // 如果從 關於我 的頁面來 要另外處理
+            if self.fromMe == true{
+                self.badges[0].isHidden = imMessageCount.isEqualZero
+            }else{
+                self.badges[1].isHidden = imMessageCount.isEqualZero
+            }
             if unreadInfo.isHiddenNoticeBadge && unreadInfo.onlyNoticeUnreadCount().isEqualZero {
                 self.badges[0].isHidden = true
             } else {
@@ -116,21 +127,25 @@ class MessageViewController: TSLabelViewController {
             return []
         } else {
             let unreadInfo = TSCurrentUserInfo.share.unreadCount
-            let systemModel = NoticeConversationCellModel(title: "系统消息", content: unreadInfo.systemInfo ?? "暂无系统消息", badgeCount: unreadInfo.system, date: unreadInfo.systemTime, image: "ico_message_systerm")
-            let commentModel = NoticeConversationCellModel(title: "收到的评论", content: unreadInfo.commentsUsers ?? "显示_收到的评论占位字".localized, badgeCount: unreadInfo.comments, date: unreadInfo.commentsUsersDate, image: "IMG_message_comment")
-            let likeModel = NoticeConversationCellModel(title: "收到的赞", content: unreadInfo.likedUsers ?? "显示_收到的赞占位字".localized, badgeCount: unreadInfo.like, date: unreadInfo.likeUsersDate, image: "IMG_message_good")
-            let pendModel = NoticeConversationCellModel(title: "审核通知", content: unreadInfo.pendingUsers ?? "显示_审核通知占位字".localized, badgeCount: unreadInfo.pending, date: unreadInfo.pendingUsersDate, image: "IMG_ico_message_check")
+            let systemModel = NoticeConversationCellModel(title: "系统消息".localized, content: unreadInfo.systemInfo ?? "暂无系统消息".localized, badgeCount: unreadInfo.system, date: unreadInfo.systemTime, image: "ico_message_systerm")
+            let commentModel = NoticeConversationCellModel(title: "收到的评论".localized, content: unreadInfo.commentsUsers ?? "显示_收到的评论占位字".localized, badgeCount: unreadInfo.comments, date: unreadInfo.commentsUsersDate, image: "IMG_message_comment")
+            let likeModel = NoticeConversationCellModel(title: "收到的赞".localized, content: unreadInfo.likedUsers ?? "显示_收到的赞占位字".localized, badgeCount: unreadInfo.like, date: unreadInfo.likeUsersDate, image: "IMG_message_good")
+            let pendModel = NoticeConversationCellModel(title: "审核通知".localized, content: unreadInfo.pendingUsers ?? "显示_审核通知占位字".localized, badgeCount: unreadInfo.pending, date: unreadInfo.pendingUsersDate, image: "IMG_ico_message_check")
             var atStr = unreadInfo.atUsers ?? "显示_收到的at占位字".localized
             if atStr.isEmpty {
                 atStr = "显示_收到的at占位字".localized
             }
-            let atModel = NoticeConversationCellModel(title: "@我的", content: atStr, badgeCount: unreadInfo.at, date: unreadInfo.pendingUsersDate, image: "ico_@")
+            let atModel = NoticeConversationCellModel(title: "@我的".localized, content: atStr, badgeCount: unreadInfo.at, date: unreadInfo.pendingUsersDate, image: "ico_@")
 
             return [systemModel, atModel, commentModel, likeModel, pendModel]
         }
     }
 
     override func selectedPageChangedTo(index: Int) {
+        if self.fromMe == true {
+            return
+        }
+        
         if index == 0 { // 当视图切换到第一个时,刷新通知信息
             loadUnreadInfo()
             chatListNewVC.searchBar?.resignFirstResponder()

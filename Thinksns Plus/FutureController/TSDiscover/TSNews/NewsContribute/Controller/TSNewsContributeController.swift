@@ -438,7 +438,7 @@ extension TSNewsContributeController: TZImagePickerControllerDelegate, UIImagePi
                 }
                 self.insertImage(photos[0])
             } else {
-                let resultAlert = TSIndicatorWindowTop(state: .faild, title: "图片选择异常,请重试!")
+                let resultAlert = TSIndicatorWindowTop(state: .faild, title: "图片选择异常,请重试!".localized)
                 resultAlert.show(timeInterval: TSIndicatorWindowTop.defaultShowTimeInterval)
             }
         }

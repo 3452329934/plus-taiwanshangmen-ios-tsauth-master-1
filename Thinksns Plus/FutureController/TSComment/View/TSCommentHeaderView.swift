@@ -18,7 +18,7 @@ class TSCommentHeaderView: UITableViewHeaderFooterView {
     /// 评论数标题
     var commentCount: Int = 0 {
         didSet {
-            self.titleLabel.text = "\(commentCount)条评论"
+            self.titleLabel.text = "\(commentCount)條評論"
         }
     }
 

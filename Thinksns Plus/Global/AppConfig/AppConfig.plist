@@ -113,11 +113,11 @@
 	<key>site</key>
 	<dict>
 		<key>user_invite_template</key>
-		<string>邀请你的好友使用TS+吧！http://www.thinksns.com/</string>
+		<string>邀请你的好友使用TS+吧！</string>
 		<key>currency_name</key>
 		<dict>
 			<key>name</key>
-			<string>积分</string>
+			<string>積分</string>
 		</dict>
 		<key>reserved_nickname</key>
 		<string>root,admin</string>

@@ -87,27 +87,27 @@ class TSRegisterVC: UIViewController, UITextFieldDelegate {
         switch TSAppConfig.share.localInfo.registerMethod {
         // 全渠道，优先显示手机
         case .all:
-            title = "手机注册"
+            title = "手机注册".localized
             // 右侧按钮
             let rightBtn = UIButton(type: .custom)
             rightBtn.bounds = CGRect(x: 0, y: 0, width: 70, height: 44)
             rightBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
             rightBtn.contentHorizontalAlignment = .right
             rightBtn.setTitleColor(TSColor.main.theme, for: .normal)
-            rightBtn.setTitle("邮箱", for: .normal)
-            rightBtn.setTitle("手机", for: .selected)
+            rightBtn.setTitle("邮箱".localized, for: .normal)
+            rightBtn.setTitle("手机".localized, for: .selected)
             rightBtn.addTarget(self, action: #selector(channelBtnClick(_:)), for: .touchUpInside)
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
         // 仅仅邮箱注册
         case .mail:
-            title = "邮箱注册"
+            title = "邮箱注册".localized
             let btn = TSButton()
             btn.isSelected = false
             self.channelBtnClick(btn)
             self.navigationItem.rightBarButtonItem = nil
         // 仅仅手机号注册
         case .mobile:
-            title = "手机注册"
+            title = "手机注册".localized
             let btn = TSButton()
             btn.isSelected = true
             self.channelBtnClick(btn)
@@ -121,7 +121,7 @@ class TSRegisterVC: UIViewController, UITextFieldDelegate {
     @IBAction func showTermsBtnClick(_ sender: UIButton) {
         let content: String = TSAppConfig.share.localInfo.content
         let markdownVC = TSMarkdownController(markdown: content)
-        markdownVC.title = "注册协议"
+        markdownVC.title = "注册协议".localized
         self.navigationController?.pushViewController(markdownVC, animated: true)
     }
 
@@ -131,17 +131,17 @@ class TSRegisterVC: UIViewController, UITextFieldDelegate {
         button.isSelected = !button.isSelected
         if button.isSelected {
             // selected状态，邮箱找回
-            title = "邮箱注册"
-            labelForAccount.text = "邮箱"
+            title = "邮箱注册".localized
+            labelForAccount.text = "邮箱".localized
             textFieldForAccount.keyboardType = .emailAddress
-            textFieldForAccount.placeholder = "输入邮箱地址"
+            textFieldForAccount.placeholder = "输入邮箱地址".localized
             channel = .email
         } else {
             // normal状态，手机找回
-            title = "手机注册"
-            labelForAccount.text = "手机号"
+            title = "手机注册".localized
+            labelForAccount.text = "手机号".localized
             textFieldForAccount.keyboardType = .phonePad
-            textFieldForAccount.placeholder = "输入11位手机号"
+            textFieldForAccount.placeholder = "输入11位手机号".localized
             channel = .phone
         }
         // 清空输入框
@@ -346,7 +346,7 @@ class TSRegisterVC: UIViewController, UITextFieldDelegate {
         self.labelForCutDown.isHidden = false
         self.buttonForSendCAPTCHA.isHidden = true
         self.cutDownNumber += 1
-        self.labelForCutDown.text = "\(self.cutDownNumberMax - self.cutDownNumber)s后重发"
+        self.labelForCutDown.text = "\(self.cutDownNumberMax - self.cutDownNumber)s後重發"
         if self.cutDownNumber == self.cutDownNumberMax - 1 {
             stopTimer()
         }

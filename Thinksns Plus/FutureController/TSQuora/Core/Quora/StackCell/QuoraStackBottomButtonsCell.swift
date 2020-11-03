@@ -121,7 +121,7 @@ class QuoraStackBottomButtonsCell: UITableViewCell {
         let haveReward = model.rewardNumber > 0 // 是否有悬赏金额
         // 1.设置关注按钮
         // 1.1 更新关注显示内容
-        let followString = QuoraStackBottomButtonsCell.getAttributeString(texts: ["\(model.followCount)", " 关注  ·"], colors: [TSColor.main.theme, TSColor.normal.minor])
+        let followString = QuoraStackBottomButtonsCell.getAttributeString(texts: ["\(model.followCount)", " 關注  ·"], colors: [TSColor.main.theme, TSColor.normal.minor])
         buttonForFollow.setAttributedTitle(followString, for: .normal)
         // 1.2 更新关注显示设置
         buttonForFollow.titleLabel?.font = UIFont.systemFont(ofSize: 14)

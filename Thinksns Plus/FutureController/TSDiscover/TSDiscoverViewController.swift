@@ -19,16 +19,18 @@ class TSDiscoverViewController: TSViewController, UITableViewDelegate, UITableVi
 
     /// 列表
     let tableView = UITableView()
-
-    var cellTitleConfig = [TSAppConfig.share.localInfo.quoraSwitch ? ["资讯", "圈子", "问答"] : ["资讯", "圈子"], [ "排行榜", "话题"], ["音乐FM", "找人"]]
-    var cellImageConfig = [TSAppConfig.share.localInfo.quoraSwitch ? ["IMG_discover_ico_information", "IMG_discover_ico_channel", "IMG_discover_ico_queansw"] : ["IMG_discover_ico_information", "IMG_discover_ico_channel"], ["IMG_discover_ico_rankinglist", "discover_ico_topic", "IMG_discover_ico_buy", "discover_ico_topic"], ["IMG_discover_ico_music", "IMG_discover_ico_findpeople"]]
+    
+//    var cellTitleConfig = [TSAppConfig.share.localInfo.quoraSwitch ? ["资讯", "圈子", "问答"] : ["资讯", "圈子"], [ "排行榜", "话题"], ["音乐FM", "找人"]]
+//    var cellImageConfig = [TSAppConfig.share.localInfo.quoraSwitch ? ["IMG_discover_ico_information", "IMG_discover_ico_channel", "IMG_discover_ico_queansw"] : ["IMG_discover_ico_information", "IMG_discover_ico_channel"], ["IMG_discover_ico_rankinglist", "discover_ico_topic", "IMG_discover_ico_buy", "discover_ico_topic"], ["IMG_discover_ico_music", "IMG_discover_ico_findpeople"]]
+    var cellTitleConfig = [TSAppConfig.share.localInfo.quoraSwitch ? ["資訊", "圈子"] : ["資訊", "圈子"], ["排行榜"],["找人"]]
+    var cellImageConfig = [TSAppConfig.share.localInfo.quoraSwitch ? ["IMG_discover_ico_information", "IMG_discover_ico_channel"] : ["IMG_discover_ico_information", "IMG_discover_ico_channel"], ["IMG_discover_ico_rankinglist"],["IMG_discover_ico_findpeople"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = TSColor.inconspicuous.background
         
-         cellTitleConfig = [TSAppConfig.share.localInfo.quoraSwitch ? ["资讯", "圈子", "问答"] : ["资讯", "圈子"], [ "排行榜", "话题"], ["音乐FM", "找人"]]
-         cellImageConfig = [TSAppConfig.share.localInfo.quoraSwitch ? ["IMG_discover_ico_information", "IMG_discover_ico_channel", "IMG_discover_ico_queansw"] : ["IMG_discover_ico_information", "IMG_discover_ico_channel"], ["IMG_discover_ico_rankinglist", "discover_ico_topic", "IMG_discover_ico_buy", "discover_ico_topic"], ["IMG_discover_ico_music", "IMG_discover_ico_findpeople"]]
+         cellTitleConfig = [TSAppConfig.share.localInfo.quoraSwitch ? ["資訊", "圈子"] : ["資訊", "圈子"], ["排行榜"],["找人"]]
+         cellImageConfig = [TSAppConfig.share.localInfo.quoraSwitch ? ["IMG_discover_ico_information", "IMG_discover_ico_channel"] : ["IMG_discover_ico_information", "IMG_discover_ico_channel"], ["IMG_discover_ico_rankinglist"],["IMG_discover_ico_findpeople"]]
 
         self.makeTabelView()
     }
@@ -100,7 +102,7 @@ class TSDiscoverViewController: TSViewController, UITableViewDelegate, UITableVi
         let cellTitle = cellTitleConfig[indexPath.section][indexPath.row]
 //        let isLogin = TSCurrentUserInfo.share.isLogin
         switch cellTitle {
-        case "资讯":
+        case "資訊":
             let newsVC = TSNewsRootViewController()
             self.navigationController?.pushViewController(newsVC, animated: true)
         case "音乐FM":
@@ -127,7 +129,7 @@ class TSDiscoverViewController: TSViewController, UITableViewDelegate, UITableVi
 //            self.navigationController?.pushViewController(testVC, animated: true)
             break
         default:
-            assert(false, "发现页面配置错误")
+            assert(false, "發現頁面配置錯誤")
             break
         }
     }

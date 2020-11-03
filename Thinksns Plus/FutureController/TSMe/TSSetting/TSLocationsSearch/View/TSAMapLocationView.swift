@@ -59,10 +59,10 @@ class TSAMapLocationView: UIView, AMapLocationManagerDelegate {
     func setUI() {
         locationTitleLabel.font = UIFont.systemFont(ofSize: TSFont.SubInfo.footnote.rawValue)
         locationTitleLabel.textColor = TSColor.main.content
-        locationTitleLabel.text = "当前定位"
+        locationTitleLabel.text = "当前定位".localized
         locationLabel.font = UIFont.systemFont(ofSize: TSFont.SubInfo.footnote.rawValue)
         locationLabel.textColor = TSColor.normal.secondary
-        locationLabel.text = "未定位"
+        locationLabel.text = "未定位".localized
         locationImage.contentMode = .center
 
         self.addSubview(locationTitleLabel)
@@ -141,7 +141,7 @@ class TSAMapLocationView: UIView, AMapLocationManagerDelegate {
                 break
             }
         }
-        self.locationLabel.text = locationArray.last ?? "定位失败"
+        self.locationLabel.text = locationArray.last ?? "定位失败".localized
         self.finishBlock?(locationArray.last)
         self.locationLabel.textColor = TSColor.main.content
         self.showImageOrAnmie(show: .Iamge)
@@ -174,14 +174,14 @@ class TSAMapLocationView: UIView, AMapLocationManagerDelegate {
             self.getLocation()
         case .denied:
             let appName = TSAppConfig.share.localInfo.appDisplayName
-            TSErrorTipActionsheetView().setWith(title: "定位权限设置", TitleContent: "请为\(appName)开放定位权限：手机设置-隐私-定位-\(appName)(打开)", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
+            TSErrorTipActionsheetView().setWith(title: "定位權限設置", TitleContent: "請為\(appName)開放地位權限：手機設置-隱私-定位-\(appName)(打開)", doneButtonTitle: ["去設置", "取消"], complete: { (_) in
                 let url = URL(string: UIApplication.openSettingsURLString)
                 if UIApplication.shared.canOpenURL(url!) {
                     UIApplication.shared.openURL(url!)
                 }
             })
         default:
-            TSLogCenter.log.debug("定位准备中...")
+            TSLogCenter.log.debug("定位準備中...")
         }
 
     }
@@ -195,7 +195,7 @@ class TSAMapLocationView: UIView, AMapLocationManagerDelegate {
                 let error = error as NSError
                 if error.code == AMapLocationErrorCode.locateFailed.rawValue {
                     //定位错误：此时location和regeocode没有返回值，不进行annotation的添加
-                    self?.locationLabel.text = "三方定位错误"
+                    self?.locationLabel.text = "三方定位錯誤"
                     self?.finishBlock?(nil)
                     self?.showImageOrAnmie(show: .Iamge)
                     return
@@ -206,7 +206,7 @@ class TSAMapLocationView: UIView, AMapLocationManagerDelegate {
                     || error.code == AMapLocationErrorCode.notConnectedToInternet.rawValue
                     || error.code == AMapLocationErrorCode.cannotConnectToHost.rawValue {
                     //逆地理错误：在带逆地理的单次定位中，逆地理过程可能发生错误，此时location有返回值，regeocode无返回值，进行annotation的添加
-                    self?.locationLabel.text = "三方逆地理错误"
+                    self?.locationLabel.text = "三方逆地理錯誤"
                     self?.finishBlock?(nil)
                     self?.showImageOrAnmie(show: .Iamge)
                 }

@@ -521,7 +521,7 @@ class CreatTopicVC: TSViewController, TSCustomAcionSheetDelegate, UITextFieldDel
             hasChangeFaceImage = true
             showControl(show: true)
         } else {
-            let resultAlert = TSIndicatorWindowTop(state: .faild, title: "图片选择异常,请重试!")
+            let resultAlert = TSIndicatorWindowTop(state: .faild, title: "图片选择异常,请重试!".localized)
             resultAlert.show(timeInterval: TSIndicatorWindowTop.defaultShowTimeInterval)
         }
     }

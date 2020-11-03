@@ -15,7 +15,7 @@ class QuoraHomeListView: UIView {
     /// 标签滚动视图
     var labelCollectView = TSLabelCollectionView()
     /// 标题数组
-    let titles = ["热门", "精选", "悬赏", "最新", "全部"]
+    let titles = ["熱門", "精選", "懸賞", "最新", "全部"]
 
     /// 发布按钮
     var buttonForRelease = TSButton(type: .custom)

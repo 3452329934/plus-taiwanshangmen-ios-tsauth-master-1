@@ -416,7 +416,7 @@ extension GroupLocationController: AMapLocationManagerDelegate {
             return
         default:
             let appName = TSAppConfig.share.localInfo.appDisplayName
-            TSErrorTipActionsheetView().setWith(title: "定位权限设置", TitleContent: "请为\(appName)开放定位权限：手机设置-隐私-定位-\(appName)(打开)", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
+            TSErrorTipActionsheetView().setWith(title: "定位權限設置", TitleContent: "請為\(appName)開放定位權限：手機設置-隱私-定位-\(appName)(打開)", doneButtonTitle: ["去設置" , "取消"], complete: { (_) in
                 let url = URL(string: UIApplication.openSettingsURLString)
                 if UIApplication.shared.canOpenURL(url!) {
                     UIApplication.shared.openURL(url!)

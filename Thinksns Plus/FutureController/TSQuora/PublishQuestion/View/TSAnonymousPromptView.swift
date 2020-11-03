@@ -87,7 +87,7 @@ class TSAnonymousPromptView: UIView {
             make.height.equalTo(bottomH)
         }
         // 3.x separateLine + cancelBtn + confirmBtn
-        let titles = ["取消", "确定"]
+        let titles = ["取消".localized, "确定".localized]
         for (index, title) in titles.enumerated() {
             let button = UIButton(type: .custom)
             bottomView.addSubview(button)

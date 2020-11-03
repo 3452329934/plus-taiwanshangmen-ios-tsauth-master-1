@@ -77,6 +77,7 @@ class WalletHomeController: UIViewController {
     }
 
     func loadData() {
+        TSAppConfig.share.localInfo.goldName = "積分"
         if TSAppConfig.share.localInfo.walletSetInfo?.rule == "" {
             indicator.startAnimating()
             indicator.isHidden = false
@@ -107,7 +108,7 @@ class WalletHomeController: UIViewController {
             if isEntered == false {
                 UserDefaults.standard.set(true, forKey: alreadyEnteredIntoWalletHomeController)
                 DispatchQueue.main.async {
-                    let popView = TSAgreementPopView(title: "充值提现规则", content: (TSAppConfig.share.localInfo.walletSetInfo?.rule)!, doneTitle: "知道了")
+                    let popView = TSAgreementPopView(title: "充值提现规则".localized, content: (TSAppConfig.share.localInfo.walletSetInfo?.rule)!, doneTitle: "知道了")
                     popView.show()
                 }
             }
@@ -153,7 +154,7 @@ class WalletHomeController: UIViewController {
     @IBAction func ruleButtonTaped() {
         let vc = RuleShowViewController()
         vc.ruleMarkdownStr = TSAppConfig.share.localInfo.walletSetInfo?.rule == "" ? rule : TSAppConfig.share.localInfo.walletSetInfo?.rule
-        vc.title = "充值提现规则"
+        vc.title = "充值提现规则".localized
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -208,6 +209,7 @@ class WalletHomeTableController: UITableViewController {
             headerView.backgroundColor = TSColor.main.theme
             tableView.addSubview(headerView)
         }
+        integrationRechargeCell.isHidden = false
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -232,8 +234,11 @@ class WalletHomeTableController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         if cell == rechargeCell {
             // 1.点击了充值 cell
-            let rechargeVC = WalletRechargeController.vc()
-            navigationController?.pushViewController(rechargeVC, animated: true)
+            let vc = MessageViewController(labelTitleArray: ["聊天"], scrollViewFrame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 64), isChat: true, fromMe: true)
+            navigationController?.pushViewController(vc, animated: true)
+//            let rechargeVC = WalletRechargeController.vc()
+//            navigationController?.pushViewController(rechargeVC, animated: true)
+        
         } else if cell == cashCell {
             // 2.点击了提现 cell
             let cashVC = WalletCashController.vc()
@@ -247,6 +252,7 @@ class WalletHomeTableController: UITableViewController {
                 let rechargeVC = IntegrationRechargeController.vc()
                 navigationController?.pushViewController(rechargeVC, animated: true)
             }
+            
         }
     }
 }

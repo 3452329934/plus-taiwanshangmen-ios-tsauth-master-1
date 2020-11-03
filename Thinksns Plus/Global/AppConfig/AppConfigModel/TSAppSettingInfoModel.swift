@@ -163,7 +163,7 @@ class TSAppSettingInfoModel: Mappable {
     /// 悬赏规则 reward_rule
     var reward_rule: String = ""
     /// 积分名称
-    var goldName: String = "积分"
+    var goldName: String = "积分".localized
     /// 站点预留昵称
     var reservedNicknames: [String] = ["root", "admin"]
     /// 是否开放注册
@@ -199,7 +199,7 @@ class TSAppSettingInfoModel: Mappable {
     /// 动态文字数量
     var feedLimit: Int = 0
     /// 邀请信息
-    var inviteUserInfo: String = "未正确配置邀请信息"
+    var inviteUserInfo: String = "為正確配置邀請訊息"
     /// 关于我们
     var aboutUsUrl: String = ""
 
@@ -231,12 +231,11 @@ class TSAppSettingInfoModel: Mappable {
         let infoDic = Bundle.main.infoDictionary
         var appName = NSLocalizedString("CFBundleDisplayName", tableName: "InfoPlist", bundle: Bundle.main, value: "", comment: "") as String
         if appName == "CFBundleDisplayName" {
+//            appName = infoDic!["BundleName"] as! String
             // 没有配置或者错误配置InfoPlist.strings
             if (infoDic?.keys.contains("CFBundleDisplayName"))! {
                 // 配置了plist中的显示名称
                 appName = infoDic!["CFBundleDisplayName"] as! String
-            } else {
-                appName = infoDic!["BundleName"] as! String
             }
         }
         return appName

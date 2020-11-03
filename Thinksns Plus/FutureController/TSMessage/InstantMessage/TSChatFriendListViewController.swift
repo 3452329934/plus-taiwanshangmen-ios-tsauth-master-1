@@ -56,17 +56,17 @@ class TSChatFriendListViewController: TSViewController, UITextFieldDelegate, UIT
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         if ischangeGroupMember == "" {
-            rightButtonTitle = "聊天"
-            title = "选择好友"
+            rightButtonTitle = "聊天".localized
+            title = "选择好友".localized
         } else if ischangeGroupMember == "add" {
-            rightButtonTitle = "添加"
-            title = "添加成员"
+            rightButtonTitle = "添加".localized
+            title = "添加成员".localized
         } else if ischangeGroupMember == "map" {
-            rightButtonTitle = "发送"
-            title = "选择好友"
+            rightButtonTitle = "发送".localized
+            title = "选择好友".localized
         } else if ischangeGroupMember == "delete" {
-            rightButtonTitle = "删除"
-            title = "删除成员"
+            rightButtonTitle = "删除".localized
+            title = "删除成员".localized
             for (index, item) in originDataSource.enumerated().reversed() {
                 let userinfo: TSUserInfoModel = item as! TSUserInfoModel
                 if userinfo.userIdentity == Int(ownerId) {

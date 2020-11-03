@@ -133,7 +133,7 @@ class TSNewsRootViewController: TSViewController, UIScrollViewDelegate, TSNewTag
             let listVC = TSNewsListViewController(rootViewController: self)
             listVC.tagID = object.tagID
             self.addChild(listVC)
-            if object.name == "推荐" {
+            if object.name == "推荐".localized {
                 listVC.view.tag = -1 /// 添加标记 用于重新刷新界面的时候清空以前的视图
                 self.rootScrollView?.addSubview(listVC.view)
             }

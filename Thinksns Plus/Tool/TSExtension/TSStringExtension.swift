@@ -30,7 +30,7 @@ extension String {
 
 extension String {
     /// 将字符串转换为Date
-    @available(*, deprecated, message: "服务器提供的时间格式不允许再使用该方式转换,查看 TransformType")
+    @available(*, deprecated, message: "服務器提供的時間格式不允許再使用該方式轉換,查看 TransformType")
     func date(format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone? = TimeZone(identifier: "GMT")) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = timeZone
@@ -124,7 +124,7 @@ extension String {
 
     /// 将字符串数组转为 数组
     /// 例如 "1,2,3" -> [1, 2, 3]
-    @available(*, deprecated, message: "服务器提供的时间格式不允许再使用该方式转换,查看 TransformType")
+    @available(*, deprecated, message: "服務器提供的時間格式不允許再使用該方式轉換,查看 TransformType")
     func convertNumberArray() -> Array<Int>? {
         let stringArray = self.components(separatedBy: ",")
         var uids: Array<Int> = []

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -40,7 +38,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fS-kA-aQ2">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="689"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="664"/>
                             <subviews>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuQ-E3-2lT">
                                     <rect key="frame" x="323" y="175" width="42" height="21"/>
@@ -62,7 +60,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpa-ER-c62" customClass="TSSwitchPayInfoView" customModule="ThinkSNSPlus" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="445" width="375" height="244"/>
+                                    <rect key="frame" x="0.0" y="420" width="375" height="244"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="244" id="je6-qv-VUz"/>
@@ -86,14 +84,14 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6U-vu-U1v">
-                                    <rect key="frame" x="0.0" y="395" width="375" height="50"/>
+                                    <rect key="frame" x="0.0" y="370" width="375" height="50"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="L6o-j5-COe"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOO-ta-cQE" userLabel="AtView">
-                                    <rect key="frame" x="0.0" y="345" width="375" height="50"/>
+                                    <rect key="frame" x="0.0" y="370" width="375" height="50"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jcb-B6-FPT" userLabel="spView">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
@@ -140,7 +138,7 @@
                                 <constraint firstItem="N3w-uA-4bw" firstAttribute="leading" secondItem="4fS-kA-aQ2" secondAttribute="leading" constant="20" id="EYY-iQ-bg5"/>
                                 <constraint firstItem="MQs-Db-PrM" firstAttribute="leading" secondItem="4fS-kA-aQ2" secondAttribute="leading" constant="10" id="IL9-56-mUr"/>
                                 <constraint firstAttribute="trailing" secondItem="MQs-Db-PrM" secondAttribute="trailing" constant="10" id="J6L-3y-e9q"/>
-                                <constraint firstItem="E6U-vu-U1v" firstAttribute="top" secondItem="yOO-ta-cQE" secondAttribute="bottom" id="MGT-2c-36a"/>
+                                <constraint firstItem="E6U-vu-U1v" firstAttribute="top" secondItem="yOO-ta-cQE" secondAttribute="bottom" constant="-50" id="MGT-2c-36a"/>
                                 <constraint firstItem="yuQ-E3-2lT" firstAttribute="top" secondItem="MQs-Db-PrM" secondAttribute="bottom" constant="15" id="OGl-5G-Wa4"/>
                                 <constraint firstItem="rpa-ER-c62" firstAttribute="top" secondItem="E6U-vu-U1v" secondAttribute="bottom" id="ONM-4H-gtI"/>
                                 <constraint firstItem="rpa-ER-c62" firstAttribute="leading" secondItem="4fS-kA-aQ2" secondAttribute="leading" id="Pbj-Gw-FPy"/>

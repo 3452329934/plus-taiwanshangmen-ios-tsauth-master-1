@@ -78,7 +78,7 @@ class TSLikedUsersView: UIControl {
             avatarInfo.avatarURL = TSUtil.praseTSNetFileUrl(netFile:users[index].avatar)
             avatarButton.avatarInfo = avatarInfo
         }
-        usersCountLabel.text = String(format: "%d人点赞", data.likeCount)
+        usersCountLabel.text = String(format: "%d人點讚", data.likeCount)
         usersCountLabel.sizeToFit()
 
         usersCountLabel.snp.remakeConstraints { (mark) in

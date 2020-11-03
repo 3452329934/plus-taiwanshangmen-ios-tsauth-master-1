@@ -78,7 +78,7 @@ class TSRetrievePasswordVC: UIViewController {
 
     // MARK: - Custom user interface
     func setUI() {
-        self.title = "找回密码"
+        self.title = "找回密碼"
         self.buttonForSubmit.sizeType = .large
         // 右侧按钮
         let rightBtn = UIButton(type: .custom)
@@ -86,8 +86,8 @@ class TSRetrievePasswordVC: UIViewController {
         rightBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         rightBtn.contentHorizontalAlignment = .right
         rightBtn.setTitleColor(TSColor.main.theme, for: .normal)
-        rightBtn.setTitle("邮箱找回", for: .normal)
-        rightBtn.setTitle("手机找回", for: .selected)
+        rightBtn.setTitle("使用信箱", for: .normal)
+        rightBtn.setTitle("使用手機號碼", for: .selected)
         rightBtn.addTarget(self, action: #selector(channelBtnClick(_:)), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
     }
@@ -106,7 +106,7 @@ class TSRetrievePasswordVC: UIViewController {
                 self.showPrompt(msg)
                 return
             }
-            self.showPrompt("验证码发送成功")
+            self.showPrompt("驗證碼發送成功")
             // 开启倒计时
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.timerFired), object: nil)
             self.timer = Timer(timeInterval: 1.0, target: self, selector: #selector(self.timerFired), userInfo: nil, repeats: true)
@@ -159,7 +159,7 @@ class TSRetrievePasswordVC: UIViewController {
         TSAccountNetworkManager().retrievePassword(account: account, password: password, captcha: captcha, channel: self.channel, complete: { (msg, status) in
             self.enabled()
             if status {
-                self.showPrompt("修改密码成功")
+                self.showPrompt("修改密碼成功")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                     if let navigationController = self.navigationController {
                         navigationController.popViewController(animated: true)
@@ -202,15 +202,15 @@ class TSRetrievePasswordVC: UIViewController {
         button.isSelected = !button.isSelected
         if button.isSelected {
             // selected状态，邮箱找回
-            self.accountLabel.text = "邮箱"
+            self.accountLabel.text = "信箱"
             self.textFieldForAccount.keyboardType = .emailAddress
-            self.textFieldForAccount.placeholder = "输入邮箱地址"
+            self.textFieldForAccount.placeholder = "輸入信箱地址"
             self.channel = .email
         } else {
             // normal状态，手机找回
-            self.accountLabel.text = "手机号"
+            self.accountLabel.text = "手機號碼"
             self.textFieldForAccount.keyboardType = .phonePad
-            self.textFieldForAccount.placeholder = "请输入11位手机号"
+            self.textFieldForAccount.placeholder = "請輸入手機號碼"
             self.channel = .phone
         }
         // 清空输入框

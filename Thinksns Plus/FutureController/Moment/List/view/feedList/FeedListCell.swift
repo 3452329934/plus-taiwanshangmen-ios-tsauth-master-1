@@ -125,7 +125,13 @@ class FeedListCell: UITableViewCell {
     internal func setUI() {
         contentView.backgroundColor = UIColor.white
         let toolbarFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 58, height: 45)
-        toolbar.set(items: [TSToolbarItemModel(image: "", title: "", index: 0), TSToolbarItemModel(image: "IMG_home_ico_comment_normal", title: "", index: 1), TSToolbarItemModel(image: "IMG_home_ico_eye_normal", title: "", index: 2), TSToolbarItemModel(image: "IMG_home_ico_more", title: "", index: 3)], frame: toolbarFrame)
+        toolbar.set(items: [
+            TSToolbarItemModel(image: "", title: "", index: 0),
+            TSToolbarItemModel(image: "IMG_home_ico_comment_normal", title: "", index: 1),
+            TSToolbarItemModel(image: "IMG_home_ico_eye_normal", title: "", index: 2),
+            TSToolbarItemModel(image: "IMG_home_ico_more", title: "", index: 3),
+            
+        ], frame: toolbarFrame)
         toolbar.set(isUserInteractionEnabled: false, at: 2)
         playerContentView.tag = 10_086 ///< 短视频播放器需要使用这个tag,找到这个视图把播放器加载到视图上,该图层放在图片容器最上面，尺寸等于图片容器
         playerContentView.addTarget(self, action: #selector(videoDidClick(_:)), for: .touchUpInside)
@@ -137,8 +143,9 @@ class FeedListCell: UITableViewCell {
         repostView.cardShowType = .listView
         repostViewBgView.isHidden = true
         repostViewBgView.addSubview(repostView)
-
+        nameLabel.text = "ddddddd"
         contentView.addSubview(nameLabel)
+        
         contentView.addSubview(titleLabel)
         contentView.addSubview(contentLabel)
         contentView.addSubview(picturesView)
@@ -229,7 +236,7 @@ class FeedListCell: UITableViewCell {
         model.cellHeight = topRecord
     }
 
-    /// 加载姓名 label
+    // MARK: - 加载姓名 label
     func loadNameLabel(topRecord: inout CGFloat) {
         // 1.如果姓名为空，则不显示姓名 label
         nameLabel.isHidden = model.userName.isEmpty || model.isHiddenName
@@ -237,7 +244,7 @@ class FeedListCell: UITableViewCell {
             return
         }
         // 2.如果姓名不为空，更新姓名 label 显示设置
-        nameLabel.font = UIFont.systemFont(ofSize: 13)
+        nameLabel.font = UIFont.systemFont(ofSize: 18)
         nameLabel.textColor = UIColor(hex: 0x333333)
         nameLabel.text = model.userName
         nameLabel.sizeToFit()
@@ -534,6 +541,7 @@ class FeedListCell: UITableViewCell {
     /// 加载头像
     func loadAvatarView(topRecord: inout CGFloat) {
         // 1.如果头像信息不存在，就不显示头像
+        avatarView.frame.size = CGSize(width: 45, height: 45)
         avatarView.isHidden = model.avatarInfo == nil || model.isHiddenAvatar
         guard let avatarInfo = model.avatarInfo, model.isHiddenAvatar == false else {
             return
@@ -541,6 +549,7 @@ class FeedListCell: UITableViewCell {
         // 2.如果头像信息存在，更新头像显示设置
         avatarView.avatarPlaceholderType = AvatarView.PlaceholderType(sexNumber: model.sex)
         avatarView.avatarInfo = avatarInfo
+        
         // 3.更新 topRecord
         topRecord = max(avatarView.frame.maxY, topRecord)
     }

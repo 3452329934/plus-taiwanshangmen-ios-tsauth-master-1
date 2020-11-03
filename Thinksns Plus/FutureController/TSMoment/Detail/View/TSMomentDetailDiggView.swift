@@ -161,7 +161,7 @@ class TSMomentDetailDiggView: UIView {
 
     /// 更新点赞人数 label
     func updateDiggLabelFrame() {
-        labelForDigg.text = "\(object.digg)人点赞"
+        labelForDigg.text = "\(object.digg)人點讚"
         labelForDigg.sizeToFit()
         let lastAvatar = avatars.last
         if let lastAvatar = lastAvatar {

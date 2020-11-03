@@ -45,7 +45,7 @@ class TSDetailRewardListView: UIView, UICollectionViewDataSource, UICollectionVi
             } else {
                 amountStr = "0"
             }
-            let countString = "\(rewardModel.count)人打赏, 共" + amountStr + TSAppConfig.share.localInfo.goldName
+            let countString = "\(rewardModel.count)人打賞, 共" + amountStr + TSAppConfig.share.localInfo.goldName
             let attributeCountString = NSMutableAttributedString(string: countString)
             let nsString = countString as NSString
             let nsRange = nsString.range(of: "\(rewardModel.count)")

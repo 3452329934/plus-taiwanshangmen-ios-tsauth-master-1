@@ -387,9 +387,9 @@ class TSAnswerDetailView: UIView, TSDetailRewardListViewDelegate {
         if let date = model.createDate {
             let nsDate = NSDate(timeIntervalSince1970: date.timeIntervalSince1970)
             let strDate = TSDate().dateString(.normal, nsDate: nsDate)
-            self.publishTimeLabel.text = "发布于\(strDate)"
+            self.publishTimeLabel.text = "發布於\(strDate)"
         }
-        self.scanNumLabel.text = "\(TSAppConfig.share.pageViewsString(number: model.viewsCount))人浏览"
+        self.scanNumLabel.text = "\(TSAppConfig.share.pageViewsString(number: model.viewsCount))人瀏覽"
         // 3. rewardInfo
         self.setupRewardInfo(with: model)
         // 4. content

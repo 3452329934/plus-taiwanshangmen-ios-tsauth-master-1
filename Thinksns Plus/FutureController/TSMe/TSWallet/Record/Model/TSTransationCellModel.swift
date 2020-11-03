@@ -29,9 +29,9 @@ class TSTransationCellModel {
         dateString = TSDate().dateString(.walletList, nsDate: object.create)
         // 详情
         if object.type == "alipay" {
-            detailString = "支付宝 账户提现 "
+            detailString = "支付宝 帳戶提現 "
         } else if object.type == "wechat" {
-            detailString = "微信 账户提现 "
+            detailString = "微信 帳戶提現 "
         }
         detailString = detailString + object.account
         // 金额，提现为负
@@ -41,7 +41,7 @@ class TSTransationCellModel {
         case 0:
             stateString = "操作中"
         case 1:
-            stateString = "已审批"
+            stateString = "已审批".localized
             self.isShowMoney = true
         case 2:
             stateString = "操作失败"
@@ -61,9 +61,9 @@ class TSTransationCellModel {
         // 操作状态
         switch object.status {
         case 0:
-            stateString = "审核中"
+            stateString = "审核中".localized
         case 1:
-            stateString = "已审批"
+            stateString = "已审批".localized
             self.isShowMoney = true
         case 2:
             stateString = "操作失败"

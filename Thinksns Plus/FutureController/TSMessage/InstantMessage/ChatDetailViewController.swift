@@ -574,9 +574,9 @@ class ChatDetailViewController: EaseMessageViewController, EaseMessageViewContro
         alert.addTextField(configurationHandler: { (textField) in
             textField.placeholder = "编辑群名称，2-15个字符"
         })
-        alert.addAction(TSAlertAction(title: "取消", style: .theme, handler: { (action) in
+        alert.addAction(TSAlertAction(title: "取消".localized, style: .theme, handler: { (action) in
         }))
-        alert.addAction(TSAlertAction(title: "确定", style: .theme, handler: { (action) in
+        alert.addAction(TSAlertAction(title: "确定".localized, style: .theme, handler: { (action) in
             let textField = alert.textFields?.first
             var name = textField?.text
             name = name?.replacingOccurrences(of: " ", with: "")

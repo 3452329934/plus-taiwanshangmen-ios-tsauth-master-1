@@ -252,8 +252,8 @@ class TSHomepageVC: UIViewController, TZImagePickerControllerDelegate, ZFPlayerD
 
         // 3.加载 section view
         let sectionModel = FilterSectionViewModel()
-        sectionModel.countInfo = "\(model.userInfo.extra?.feedsCount ?? 0)条动态"
-        sectionModel.filterInfo = ["全部动态", "付费动态", "置顶动态"]
+        sectionModel.countInfo = "\(model.userInfo.extra?.feedsCount ?? 0)條動態"
+        sectionModel.filterInfo = ["全部動態", "付費動態", "置頂動態"]
         if userId == TSCurrentUserInfo.share.userInfo?.userIdentity {
             table.sectionViewType = .filter(sectionModel, self)
         } else {
@@ -316,11 +316,11 @@ class TSHomepageVC: UIViewController, TZImagePickerControllerDelegate, ZFPlayerD
             return
         }
         let image = currentPlayingCell?.picturesView.pictures.first ?? UIImage(named: "IMG_icon")
-        var defaultContent = "默认分享内容".localized
+        var defaultContent = "默認分享內容".localized
         defaultContent.replaceAll(matching: "kAppName", with: TSAppSettingInfoModel().appDisplayName)
         let description = currentPlayingCell?.model.content != "" ? currentPlayingCell?.model.content : defaultContent
         let shareView = ShareView()
-        shareView.show(URLString: ShareURL.feed.rawValue + "\(feedId)", image: image, description: description, title: TSAppSettingInfoModel().appDisplayName + " " + "动态")
+        shareView.show(URLString: ShareURL.feed.rawValue + "\(feedId)", image: image, description: description, title: TSAppSettingInfoModel().appDisplayName + " " + "動態")
     }
 
     func zf_playerDownload(_ url: String!) {
@@ -763,7 +763,7 @@ extension TSHomepageVC: UIImagePickerControllerDelegate, UINavigationControllerD
             }
             self.uploadBackImage(image: photos[0])
         } else {
-            let resultAlert = TSIndicatorWindowTop(state: .faild, title: "图片选择异常,请重试!")
+            let resultAlert = TSIndicatorWindowTop(state: .faild, title: "图片选择异常,请重试!".localized)
             resultAlert.show(timeInterval: TSIndicatorWindowTop.defaultShowTimeInterval)
         }
     }
@@ -800,7 +800,7 @@ extension TSHomepageVC: UIImagePickerControllerDelegate, UINavigationControllerD
         let authStatus: AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         if authStatus == AVAuthorizationStatus.denied || authStatus == AVAuthorizationStatus.restricted {
             let appName = TSAppConfig.share.localInfo.appDisplayName
-            TSErrorTipActionsheetView().setWith(title: "相机权限设置", TitleContent: "请为\(appName)开放相机权限：手机设置-隐私-相机-\(appName)(打开)", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
+            TSErrorTipActionsheetView().setWith(title: "相機權限設置", TitleContent: "請為\(appName)開放相機權限：手機設置-隱私-相機-\(appName)(打開)", doneButtonTitle: ["去設置" , "取消"], complete: { (_) in
                 let url = URL(string: UIApplication.openSettingsURLString)
                 if UIApplication.shared.canOpenURL(url!) {
                     UIApplication.shared.openURL(url!)
@@ -819,7 +819,7 @@ extension TSHomepageVC: UIImagePickerControllerDelegate, UINavigationControllerD
         let library: PHAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
         if library == PHAuthorizationStatus.denied || library == PHAuthorizationStatus.restricted {
             let appName = TSAppConfig.share.localInfo.appDisplayName
-            TSErrorTipActionsheetView().setWith(title: "相册权限设置", TitleContent: "请为\(appName)开放相册权限：手机设置-隐私-相册-\(appName)(打开)", doneButtonTitle: ["去设置", "取消"], complete: { (_) in
+            TSErrorTipActionsheetView().setWith(title: "相機權限設置", TitleContent: "請為\(appName)開放相機權限：手機設置-隱私-相機-\(appName)(打開)", doneButtonTitle: ["去設置" , "取消"], complete: { (_) in
                 let url = URL(string: UIApplication.openSettingsURLString)
                 if UIApplication.shared.canOpenURL(url!) {
                     UIApplication.shared.openURL(url!)

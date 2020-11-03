@@ -53,7 +53,7 @@ class FeedPagesController: TSLabelViewController, ZFPlayerDelegate {
     // MARK: - 生命周期
     init() {
         let height = UIScreen.main.bounds.height - (64 + 49)
-        super.init(labelTitleArray: ["最新", "热门", "关注"], scrollViewFrame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: height))
+        super.init(labelTitleArray: ["最新".localized, "热门".localized, "关注".localized], scrollViewFrame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: height))
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -170,8 +170,8 @@ class FeedPagesController: TSLabelViewController, ZFPlayerDelegate {
         if self.playerView != nil && TSCurrentUserInfo.share.isAgreeUserCelluarWatchShortVideo == false && TSAppConfig.share.reachabilityStatus == .Cellular {
             if playState == true {
                 self.perform(#selector(stopShortVideo), afterDelay: 0.000_01)
-                let alert = TSAlertController(title: "提示", message: "您当前正在使用移动网络，继续播放将消耗流量", style: .actionsheet, sheetCancelTitle: "放弃")
-                let action = TSAlertAction(title:"继续", style: .default, handler: { [weak self] (_) in
+                let alert = TSAlertController(title: "提示", message: "您當前正在使用行動網路，繼續播放將消耗流量", style: .actionsheet, sheetCancelTitle: "放棄")
+                let action = TSAlertAction(title:"繼續", style: .default, handler: { [weak self] (_) in
                     TSCurrentUserInfo.share.isAgreeUserCelluarWatchShortVideo = true
                     self?.playerView.play()
                 })
@@ -351,7 +351,7 @@ class FeedPagesController: TSLabelViewController, ZFPlayerDelegate {
             shareContent = defaultContent
         }
         let shareView = ShareView()
-        shareView.config(URLString: ShareURL.feed.rawValue + "\(feedId)", image: image, description: shareContent, title: TSAppSettingInfoModel().appDisplayName + " " + "动态")
+        shareView.config(URLString: ShareURL.feed.rawValue + "\(feedId)", image: image, description: shareContent, title: TSAppSettingInfoModel().appDisplayName + " " + "動態")
         return shareView
     }
 
@@ -369,7 +369,7 @@ class FeedPagesController: TSLabelViewController, ZFPlayerDelegate {
     func shareFeedAction(link: String, title: String, description: String, image: UIImage?) -> TSAlertAction {
         // 当分享内容为空时，显示默认内容
         let image = image ?? UIImage(named: "IMG_icon")
-        let title = title.isEmpty ? TSAppSettingInfoModel().appDisplayName + " " + "动态" : title
+        let title = title.isEmpty ? TSAppSettingInfoModel().appDisplayName + " " + "動態" : title
         var defaultContent = "默认分享内容".localized
         defaultContent.replaceAll(matching: "kAppName", with: TSAppSettingInfoModel().appDisplayName)
         let description = description.isEmpty ? defaultContent : description
@@ -654,8 +654,8 @@ extension FeedPagesController: FeedListActionViewDelegate {
                 return
             }
             // 弹窗 然后继续播放
-            let alert = TSAlertController(title: "提示", message: "您当前正在使用移动网络，继续播放将消耗流量", style: .actionsheet, sheetCancelTitle: "放弃")
-            let action = TSAlertAction(title:"继续", style: .default, handler: { [weak self] (_) in
+            let alert = TSAlertController(title: "提示", message: "您當前正在使用行動網路，繼續播放將消耗流量", style: .actionsheet, sheetCancelTitle: "放棄")
+            let action = TSAlertAction(title:"繼續", style: .default, handler: { [weak self] (_) in
                 self?.playVideoWith(feedListView, indexPath: cellIndexPath)
                 TSCurrentUserInfo.share.isAgreeUserCelluarWatchShortVideo = true
                 self?.currentWaitPlayView = nil
@@ -667,8 +667,8 @@ extension FeedPagesController: FeedListActionViewDelegate {
             currentWaitPlayCell = feedListView.cellForRow(at: cellIndexPath) as? FeedListCell
         } else if TSAppConfig.share.reachabilityStatus == .NotReachable {
             // 弹窗 然后继续播放
-            let alert = TSAlertController(title: "提示", message: "网络未连接，请检查网络", style: .actionsheet, sheetCancelTitle: "停止播放")
-            let action = TSAlertAction(title:"继续播放", style: .default, handler: { [weak self] (_) in
+            let alert = TSAlertController(title: "提示", message: "網路為連接，請檢查網路", style: .actionsheet, sheetCancelTitle: "停止播放")
+            let action = TSAlertAction(title:"繼續播放", style: .default, handler: { [weak self] (_) in
                 self?.playVideoWith(feedListView, indexPath: cellIndexPath)
                 self?.currentWaitPlayView = nil
                 self?.currentWaitPlayCell = nil

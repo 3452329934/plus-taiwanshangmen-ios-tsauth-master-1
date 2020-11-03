@@ -12,7 +12,7 @@ import UIKit
 class MyQuoraController: TSViewController {
 
     /// 分页控制器
-    let segmentControl = UISegmentedControl(items: ["提问", "回答", "关注"])
+    let segmentControl = UISegmentedControl(items: ["提问".localized, "回答".localized, "关注".localized])
     /// 提问列表
     var questionsListView: MyQuestionsListView!
     /// 回答列表

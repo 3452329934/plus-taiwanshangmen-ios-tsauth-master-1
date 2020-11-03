@@ -70,7 +70,7 @@ class TSNewFriendsVC: UIViewController {
     func setUI() {
         // 增大返回按钮的响应区域
         self.backBtn.setEnlargeResponseAreaEdge(size: 15)
-        let titleArray = ["热门", "最新", "推荐", "附近"]
+        let titleArray = ["热门".localized, "最新".localized, "推荐".localized, "附近".localized]
         let vcTypes: [TSNewFriendsVC.UserType] = [.hot, .new, .recommend, .nearby]
         // 1.滚动视图
         scrollview.contentSize = CGSize(width: CGFloat(titleArray.count) * UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - TSNavigationBarHeight - 45)
@@ -110,7 +110,7 @@ class TSNewFriendsVC: UIViewController {
             return
         }
         // 1.设置按钮显示地址
-        let addressInfo = address.components(separatedBy: " ").last ?? "选择城市"
+        let addressInfo = address.components(separatedBy: " ").last ?? "选择城市".localized
         buttonForCity.setTitle(addressInfo, for: .normal)
         // 2.获取经纬度等信息
         let requestAddress = address.replacingOccurrences(of: " ", with: "")

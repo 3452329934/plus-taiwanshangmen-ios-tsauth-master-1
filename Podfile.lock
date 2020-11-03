@@ -11,7 +11,7 @@ PODS:
   - Bugly (2.4.8)
   - CryptoSwift (0.15.0)
   - Hyphenate (3.5.3)
-  - IQKeyboardManagerSwift (6.2.0)
+  - IQKeyboardManagerSwift (6.5.5)
   - JCore (1.2.6)
   - JPush (3.1.2):
     - JCore (~> 1.2.6)
@@ -39,7 +39,7 @@ PODS:
   - SwiftyJSON (4.2.0)
   - TYAttributedLabel (2.6.6)
   - TZImagePickerController (3.2.1)
-  - WechatOpenSDK (1.8.2)
+  - WechatOpenSDK (1.8.7.1)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
   - XCGLogger/Core (4.0.0)
@@ -58,7 +58,7 @@ DEPENDENCIES:
   - Bugly (= 2.4.8)
   - CryptoSwift (= 0.15.0)
   - Hyphenate (= 3.5.3)
-  - IQKeyboardManagerSwift (= 6.2.0)
+  - IQKeyboardManagerSwift (= 6.5.5)
   - JPush (= 3.1.2)
   - Kingfisher (= 4.10.1)
   - KMPlaceholderTextView (= 1.4.0)
@@ -78,12 +78,15 @@ DEPENDENCIES:
   - SwiftyJSON (= 4.2.0)
   - TYAttributedLabel (from `https://github.com/customized-repos/TYAttributedLabel.git`)
   - TZImagePickerController (from `https://github.com/smelloftime/TZImagePickerController.git`)
-  - WechatOpenSDK (= 1.8.2)
+  - WechatOpenSDK (= 1.8.7.1)
   - XCGLogger (= 4.0.0)
   - YYKit (= 1.0.9)
   - ZFPlayer (from `https://github.com/caolin358688599/ZFPlayer.git`)
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - IQKeyboardManagerSwift
+    - WechatOpenSDK
   trunk:
     - Alamofire
     - AMap3DMap-NO-IDFA
@@ -93,7 +96,6 @@ SPEC REPOS:
     - Bugly
     - CryptoSwift
     - Hyphenate
-    - IQKeyboardManagerSwift
     - JCore
     - JPush
     - Kingfisher
@@ -112,7 +114,6 @@ SPEC REPOS:
     - SnapKit
     - SwiftDate
     - SwiftyJSON
-    - WechatOpenSDK
     - XCGLogger
     - YYKit
 
@@ -161,7 +162,7 @@ SPEC CHECKSUMS:
   Bugly: da3c02408c14838d498429320545a8e439392978
   CryptoSwift: 769f58a9e89f64e8796c2e59ce5f002dc81a2438
   Hyphenate: 445ea0670a89da602d91a30df34dbf2b9a3c7e51
-  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
   JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
@@ -184,11 +185,11 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TYAttributedLabel: cb8fc910d97eb5224936d4f692a78e042af691b2
   TZImagePickerController: fddbb359c360cc7e22bf349e806a83601e67859b
-  WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
+  WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFPlayer: 006aa31c550c2758ea54d34763a932aa3604e27a
 
-PODFILE CHECKSUM: a583c39070ea7ad59314c3ab49e396fecb077de7
+PODFILE CHECKSUM: 290ebef81afee6bb9344fdbc0291145b002a5b8c
 
 COCOAPODS: 1.9.1

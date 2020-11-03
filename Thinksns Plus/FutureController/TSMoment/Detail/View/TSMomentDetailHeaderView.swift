@@ -294,7 +294,7 @@ class TSMomentDetailHeaderView: UIView, TSMomentDetailDiggViewDelegate, TSDetail
         labelForSubInfo.font = UIFont.systemFont(ofSize: TSFont.SubInfo.mini.rawValue)
         labelForSubInfo.textColor = TSColor.normal.disabled
         let timeString = TSDate().dateString(.detail, nsDate: momentData.create)
-        labelForSubInfo.text = "发布于\(timeString)\n" + TSAppConfig.share.pageViewsString(number: momentData.view) + "显示_人浏览".localized
+        labelForSubInfo.text = "發布於\(timeString)\n" + TSAppConfig.share.pageViewsString(number: momentData.view) + "人瀏覽"
         labelForSubInfo.textAlignment = .right
         labelForSubInfo.numberOfLines = 2
         labelForSubInfo.sizeToFit()
@@ -460,7 +460,7 @@ class TSMomentDetailHeaderView: UIView, TSMomentDetailDiggViewDelegate, TSDetail
         }
         separateLineView?.isHidden = false
         if let number = number, number > 0 {
-            commentLabel.text = "\(number)条评论"
+            commentLabel.text = "\(number)條評論"
             commentLabel.sizeToFit()
             let commentSize = (commentLabel.text?.sizeOfString(usingFont: commentLabel.font))!
             let screenWidth = UIScreen.main.bounds.width

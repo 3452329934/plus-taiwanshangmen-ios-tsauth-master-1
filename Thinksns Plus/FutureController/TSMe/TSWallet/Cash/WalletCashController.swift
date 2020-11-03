@@ -200,13 +200,13 @@ class WalletCashController: UITableViewController {
                 var title = ""
                 switch type {
                 case .alipay:
-                    title = "支付宝提现"
+                    title = "支付寶提現"
                 case .wechat:
-                    title = "微信提现"
+                    title = "微信提現"
                 }
                 alert.addAction(TSAlertAction(title: title, style: .default, handler: { [weak self] (_) in
                     self?.cashType = type
-                    self?.rechargeTypeLabel.text = (self?.cashType == .wechat) ? "微信提现" : "支付宝提现"
+                    self?.rechargeTypeLabel.text = (self?.cashType == .wechat) ? "微信提現" : "支付寶提現"
                 }))
             }
             if !alert.actions.isEmpty {
@@ -214,7 +214,7 @@ class WalletCashController: UITableViewController {
                     self.present(alert, animated: false, completion: nil)
                 }
             } else {
-                alert.addAction(TSAlertAction(title: "当前未支持任何充值方式", style: .default, handler: nil))
+                alert.addAction(TSAlertAction(title: "當前為支持任何提現方式", style: .default, handler: nil))
                 DispatchQueue.main.async {
                     self.present(alert, animated: false, completion: nil)
                 }

@@ -112,7 +112,7 @@ class GroupHomeController: UIViewController {
                 // 创建圈子需要认证，且还没有认证
                 if groupBuildNeedVerified == true && nil == verified {
                     // 去认证
-                    let alertVC = TSVerifyAlertController(title: "显示_提示".localized, message: "认证用户才能创建圈子，去认证？")
+                    let alertVC = TSVerifyAlertController(title: "显示_提示".localized, message: "认证用户才能创建圈子，去认证？".localized)
                     TSRootViewController.share.currentShowViewcontroller?.present(alertVC, animated: false, completion: nil)
                 } else {
                     // 去创建圈子
@@ -212,7 +212,7 @@ class GroupHomeController: UIViewController {
                 let model = GroupListSectionViewModel()
                 model.maxCount = 5
                 model.rightType = .change
-                model.title = "热门推荐"
+                model.title = "热门推荐".localized
                 model.cellModels = recommendGroups
                 self?.datas.append(model)
             }
@@ -236,7 +236,7 @@ class GroupHomeController: UIViewController {
         // 2.处理 "我加入的" 列表
         if isJoin {
             // 2.1 如果是加入了某个圈子，将该圈子增加在到"我加入的圈子"
-            if let model = datas.first(where: { $0.title == "我加入的" }) {
+            if let model = datas.first(where: { $0.title == "我加入的".localized }) {
                 if let changeCellModel = model.cellModels.first(where: { $0.id == groupInfo.id }) {
                     changeCellModel.role = .member
                 } else {
@@ -246,7 +246,7 @@ class GroupHomeController: UIViewController {
                 let model = GroupListSectionViewModel()
                 model.maxCount = 5
                 model.rightType = .seeAll
-                model.title = "我加入的"
+                model.title = "我加入的".localized
                 model.cellModels = [groupInfo]
                 datas.insert(model, at: 0)
             }
@@ -263,7 +263,7 @@ class GroupHomeController: UIViewController {
         }
 
         // 3. 处理 "热门推荐" 列表
-        if let model = datas.first(where: { $0.title == "热门推荐" }), let changeCellModel = model.cellModels.first(where: { $0.id == groupInfo.id }) {
+        if let model = datas.first(where: { $0.title == "热门推荐".localized }), let changeCellModel = model.cellModels.first(where: { $0.id == groupInfo.id }) {
             changeCellModel.role = isJoin ? .member : .unjoined
         }
 
@@ -332,7 +332,7 @@ extension GroupHomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "GroupHomeCountCell", for: indexPath) as! GroupHomeCountCell
-            cell.titleLabel.attributedText = NSMutableAttributedString.attributeStringWith(strings: ["\(groupsCount)", "个兴趣小组，等待你的加入！"], colors: [UIColor(hex: 0xf4504d), UIColor(hex: 0x999999)], fonts: [20, 12])
+            cell.titleLabel.attributedText = NSMutableAttributedString.attributeStringWith(strings: ["\(groupsCount)", "个兴趣小组，等待你的加入！".localized], colors: [UIColor(hex: 0xf4504d), UIColor(hex: 0x999999)], fonts: [20, 12])
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: GroupListCell.identifier, for: indexPath) as! GroupListCell
@@ -389,7 +389,7 @@ extension GroupHomeController: GroupListSectionViewDelegate {
                 }
                 let cellModel = models.map { GroupListCellModel(model: $0) }
                 for data in weakself.datas {
-                    if data.title == "热门推荐" {
+                    if data.title == "热门推荐".localized {
                         data.cellModels = cellModel
                         weakself.table.reloadData()
                     }

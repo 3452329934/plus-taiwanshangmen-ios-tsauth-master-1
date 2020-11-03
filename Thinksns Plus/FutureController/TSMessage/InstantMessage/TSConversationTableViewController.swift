@@ -89,22 +89,23 @@ class TSConversationTableViewController: TSTableViewController, EMChatManagerDel
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             let didClickCellTitle = noticeCellModel[indexPath.row]
+            
             switch didClickCellTitle.title {
-            case "收到的评论":
+            case "收到的评论".localized:
                 let receiveCommentVC = ReceiveCommentTableVC()
                 navigationController?.pushViewController(receiveCommentVC, animated: true)
-            case "收到的赞":
+            case "收到的赞".localized:
                 let receiveLike = ReceiveLikeTableVC()
                 navigationController?.pushViewController(receiveLike, animated: true)
-            case "审核通知":
+            case "审核通知".localized:
                 // 需获取审核通知列表 展示哪种类型的审核通知，默认使用动态评论置顶
                 let showType: ReceivePendingController.ShowType = TSCurrentUserInfo.share.unreadCount.pendingType
                 let pendingVC = ReceivePendingController(showType: showType)
                 self.navigationController?.pushViewController(pendingVC, animated: true)
-            case "系统消息":
+            case "系统消息".localized:
                 let systemNoticeVC = NoticeTableViewController()
                 self.navigationController?.pushViewController(systemNoticeVC, animated: true)
-            case "@我的":
+            case "@我的".localized:
                 let atMeListVC = TSAtMeListVCViewController()
                 navigationController?.pushViewController(atMeListVC, animated: true)
             default:

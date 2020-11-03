@@ -153,7 +153,7 @@ class TSNewsDetailHeaderViewController: UIViewController, TSDetailRewardListView
         // 判断是否显示打赏
         if TSAppConfig.share.localInfo.isOpenReward == true {
             let rewardBtn = TSRewardButton(frame: CGRect.zero)
-            rewardBtn.setTitle("打赏", for: .normal)
+            rewardBtn.setTitle("打賞", for: .normal)
             rewardBtn.addTarget(self, action: #selector(reward), for: .touchUpInside)
             self.rewardBtn = rewardBtn
 

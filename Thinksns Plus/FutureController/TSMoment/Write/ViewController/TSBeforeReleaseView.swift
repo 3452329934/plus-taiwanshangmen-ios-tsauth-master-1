@@ -57,6 +57,7 @@ class TSBeforeReleaseView: UIView, UIGestureRecognizerDelegate {
     init(frame: CGRect, images: Array<UIImage>, titles: Array<String>) {
         super.init(frame: frame)
         super.backgroundColor = UIColor.clear
+        print(titles)
         if images.count <= 4 {
             proportionY = CGFloat((344.5 + btnWidth + viewHeight * CGFloat(25.0 / 667.0)) / 667.0)
         }

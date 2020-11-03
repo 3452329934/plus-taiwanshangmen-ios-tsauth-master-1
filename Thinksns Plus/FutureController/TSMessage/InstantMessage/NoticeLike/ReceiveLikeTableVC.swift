@@ -15,7 +15,7 @@ class ReceiveLikeTableVC: TSTableViewController, NoticePendingProtocol {
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "收到的赞"
+        self.title = "收到的赞".localized
         tableView.register(NoticeContentCell.self, forCellReuseIdentifier: "NoticePendingCell")
         tableView.mj_header.beginRefreshing()
         tableView.mj_footer.isHidden = true

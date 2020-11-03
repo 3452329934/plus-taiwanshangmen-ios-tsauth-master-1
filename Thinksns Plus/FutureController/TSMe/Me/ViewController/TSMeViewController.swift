@@ -23,7 +23,7 @@ class TSMeViewController: TSViewController, didMeSelectCellDelegate, SendSuccess
     var userCertificateToken: NotificationToken? = nil
     /// 页面展示标题数据
 
-    var tableViewTitleSource = [["个人主页", "用户认证", "我的\(TSAppConfig.share.localInfo.goldName)"], ["我的文章", "我的圈子", "我的收藏", "我的问答"], ["草稿箱", "设置"]]
+    var tableViewTitleSource = [["个人主页".localized, "用户认证".localized, "我的\(TSAppConfig.share.localInfo.goldName)"], ["我的文章".localized, "我的圈子".localized, "我的收藏".localized, "我的问答".localized], ["草稿箱".localized, "设置".localized]]
 
     /// 页面展示的图片数据
     var tableViewImgSource = [[#imageLiteral(resourceName: "IMG_ico_me_homepage"), #imageLiteral(resourceName: "IMG_ico_me_identification"), #imageLiteral(resourceName: "IMG_ico_me_integral.png")], [ #imageLiteral(resourceName: "IMG_ico_me_contribute"), #imageLiteral(resourceName: "IMG_ico_me_circle"), #imageLiteral(resourceName: "IMG_ico_me_collect"), #imageLiteral(resourceName: "IMG_ico_me_q&a")], [#imageLiteral(resourceName: "IMG_ico_me_draft"), #imageLiteral(resourceName: "IMG_ico_me_setting")]]
@@ -33,21 +33,24 @@ class TSMeViewController: TSViewController, didMeSelectCellDelegate, SendSuccess
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = TSColor.inconspicuous.background
+
+        TSAppConfig.share.localInfo.goldName = "积分".localized
         if TSAppConfig.share.localInfo.showOnlyIAP {
             if TSAppConfig.share.localInfo.quoraSwitch {
-                tableViewTitleSource = [["个人主页", "用户认证", "我的\(TSAppConfig.share.localInfo.goldName)"], ["我的文章", "我的圈子", "我的收藏", "我的问答"], ["草稿箱", "设置"]]
-                tableViewImgSource = [[#imageLiteral(resourceName: "IMG_ico_me_homepage"), #imageLiteral(resourceName: "IMG_ico_me_identification"), #imageLiteral(resourceName: "IMG_ico_me_integral.png")], [ #imageLiteral(resourceName: "IMG_ico_me_contribute"), #imageLiteral(resourceName: "IMG_ico_me_circle"), #imageLiteral(resourceName: "IMG_ico_me_collect"), #imageLiteral(resourceName: "IMG_ico_me_q&a")], [#imageLiteral(resourceName: "IMG_ico_me_draft"), #imageLiteral(resourceName: "IMG_ico_me_setting")]]
+                tableViewTitleSource = [["个人主页".localized, "我的钱包".localized, "我的\(TSAppConfig.share.localInfo.goldName)"], ["我的文章".localized, "我的圈子".localized, "我的收藏".localized], ["草稿箱".localized, "设置".localized]]
+                tableViewImgSource = [[#imageLiteral(resourceName: "IMG_ico_me_homepage"), #imageLiteral(resourceName: "IMG_ico_me_wallet"), #imageLiteral(resourceName: "IMG_ico_me_integral.png")], [ #imageLiteral(resourceName: "IMG_ico_me_contribute"), #imageLiteral(resourceName: "IMG_ico_me_circle"), #imageLiteral(resourceName: "IMG_ico_me_collect")], [#imageLiteral(resourceName: "IMG_ico_me_draft"), #imageLiteral(resourceName: "IMG_ico_me_setting")]]
             } else {
-                tableViewTitleSource = [["个人主页", "用户认证", "我的\(TSAppConfig.share.localInfo.goldName)"], ["我的文章", "我的圈子", "我的收藏"], ["草稿箱", "设置"]]
-                tableViewImgSource = [[#imageLiteral(resourceName: "IMG_ico_me_homepage"), #imageLiteral(resourceName: "IMG_ico_me_identification"), #imageLiteral(resourceName: "IMG_ico_me_integral.png")], [ #imageLiteral(resourceName: "IMG_ico_me_contribute"), #imageLiteral(resourceName: "IMG_ico_me_circle"), #imageLiteral(resourceName: "IMG_ico_me_collect")], [#imageLiteral(resourceName: "IMG_ico_me_draft"), #imageLiteral(resourceName: "IMG_ico_me_setting")]]
+                tableViewTitleSource = [["个人主页".localized, "用户认证".localized], ["我的文章".localized, "我的圈子".localized, "我的收藏".localized], ["草稿箱", "设置"]]
+                tableViewImgSource = [[#imageLiteral(resourceName: "IMG_ico_me_homepage"), #imageLiteral(resourceName: "IMG_ico_me_identification")], [ #imageLiteral(resourceName: "IMG_ico_me_contribute"), #imageLiteral(resourceName: "IMG_ico_me_circle"), #imageLiteral(resourceName: "IMG_ico_me_collect")], [#imageLiteral(resourceName: "IMG_ico_me_draft"), #imageLiteral(resourceName: "IMG_ico_me_setting")]]
             }
         } else {
+            
             if TSAppConfig.share.localInfo.quoraSwitch {
-                tableViewTitleSource = [["个人主页", "用户认证", "钱包", "我的\(TSAppConfig.share.localInfo.goldName)"], ["我的文章", "我的圈子", "我的收藏", "我的问答"], ["草稿箱", "设置"]]
+                tableViewTitleSource = [["个人主页".localized, "用户认证".localized, "我的钱包".localized, "我的\(TSAppConfig.share.localInfo.goldName)"], ["我的文章".localized, "我的圈子".localized, "我的收藏".localized, "我的问答".localized], ["草稿箱".localized, "设置".localized]]
                 tableViewImgSource = [[#imageLiteral(resourceName: "IMG_ico_me_homepage"), #imageLiteral(resourceName: "IMG_ico_me_identification"), #imageLiteral(resourceName: "IMG_ico_me_wallet"), #imageLiteral(resourceName: "IMG_ico_me_integral.png")], [ #imageLiteral(resourceName: "IMG_ico_me_contribute"), #imageLiteral(resourceName: "IMG_ico_me_circle"), #imageLiteral(resourceName: "IMG_ico_me_collect"), #imageLiteral(resourceName: "IMG_ico_me_q&a")], [#imageLiteral(resourceName: "IMG_ico_me_draft"), #imageLiteral(resourceName: "IMG_ico_me_setting")]]
             } else {
-                tableViewTitleSource = [["个人主页", "用户认证", "钱包", "我的\(TSAppConfig.share.localInfo.goldName)"], ["我的文章", "我的圈子", "我的收藏"], ["草稿箱", "设置"]]
-                tableViewImgSource = [[#imageLiteral(resourceName: "IMG_ico_me_homepage"), #imageLiteral(resourceName: "IMG_ico_me_identification"), #imageLiteral(resourceName: "IMG_ico_me_wallet"), #imageLiteral(resourceName: "IMG_ico_me_integral.png")], [ #imageLiteral(resourceName: "IMG_ico_me_contribute"), #imageLiteral(resourceName: "IMG_ico_me_circle"), #imageLiteral(resourceName: "IMG_ico_me_collect")], [#imageLiteral(resourceName: "IMG_ico_me_draft"), #imageLiteral(resourceName: "IMG_ico_me_setting")]]
+                tableViewTitleSource = [["个人主页".localized, "用户认证".localized, "钱包".localized], ["我的文章".localized, "我的圈子".localized, "我的收藏".localized], ["草稿箱".localized, "设置".localized]]
+                tableViewImgSource = [[#imageLiteral(resourceName: "IMG_ico_me_homepage"), #imageLiteral(resourceName: "IMG_ico_me_identification"), #imageLiteral(resourceName: "IMG_ico_me_wallet")], [ #imageLiteral(resourceName: "IMG_ico_me_contribute"), #imageLiteral(resourceName: "IMG_ico_me_circle"), #imageLiteral(resourceName: "IMG_ico_me_collect")], [#imageLiteral(resourceName: "IMG_ico_me_draft"), #imageLiteral(resourceName: "IMG_ico_me_setting")]]
             }
         }
         setQRCodeButton()
@@ -129,41 +132,41 @@ class TSMeViewController: TSViewController, didMeSelectCellDelegate, SendSuccess
     func didSelectCell(indexPath: IndexPath) {
         let cellTitel = tableViewTitleSource[indexPath.section][indexPath.row]
         switch cellTitel {
-        case "个人主页":
+        case "个人主页".localized:
             navigationController?.pushViewController(TSHomepageVC(TSCurrentUserInfo.share.userInfo!.userIdentity), animated: true)
-        case "我的收藏":
+        case "我的收藏".localized:
             let collectionVC = TSCollectionVC()
             navigationController?.pushViewController(collectionVC, animated: true)
-        case "意见反馈":
+        case "意见反馈".localized:
             let vc = TSFeedBackViewController()
             navigationController?.navigationItem.hidesBackButton = true
             navigationController?.pushViewController(vc, animated: true)
-        case "钱包":
+        case "我的钱包".localized:
             let wallet = WalletHomeController.vc()
             navigationController?.pushViewController(wallet, animated: true)
-        case "设置":
+        case "设置".localized:
             navigationController?.pushViewController(TSSettingVC(nibName: "TSSettingVC", bundle: nil), animated: true)
-        case "用户认证":
+        case "用户认证".localized:
             certificateTaped()
-        case "我的文章":
+        case "我的文章".localized:
             let vc = MyNewsController()
             navigationController?.pushViewController(vc, animated: true)
-        case "我的问答":
+        case "我的问答".localized:
             let vc = MyQuoraController()
             navigationController?.pushViewController(vc, animated: true)
-        case "我的圈子":
+        case "我的圈子".localized:
             let vc = MyGroupController()
             navigationController?.pushViewController(vc, animated: true)
-        case "我的好友":
+        case "我的好友".localized:
             let vc = TSFriendsListVC()
             navigationController?.pushViewController(vc, animated: true)
-        case "购买的音乐":
+        case "购买的音乐".localized:
             let vc = MyMusicController()
             navigationController?.pushViewController(vc, animated: true)
-        case "我的\(TSAppConfig.share.localInfo.goldName)":
+        case "我的\(TSAppConfig.share.localInfo.goldName)": //我的積分改跳轉到聊天
             let vc = IntegrationHomeController.vc()
             navigationController?.pushViewController(vc, animated: true)
-        case "草稿箱":
+        case "草稿箱".localized:
             let draftVC = TSDraftController()
             self.navigationController?.pushViewController(draftVC, animated: true)
         default:

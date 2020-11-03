@@ -97,9 +97,9 @@ extension TSWebEidtor {
         if var htmlString = String(data: htmlData, encoding: String.Encoding.utf8), let jsString = String(data: jsData, encoding: String.Encoding.utf8) {
             if let type = UserDefaults.standard.object(forKey: "webEditorType") as? String {
                 if (type == "question") {
-                    htmlString = htmlString.replacingOccurrences(of: "输入要说的话，图文结合更精彩哦", with: "详情描述你的问题，有助于受到准确的回答")
+                    htmlString = htmlString.replacingOccurrences(of: "输入要说的话，图文结合更精彩哦".localized, with: "详情描述你的问题，有助于受到准确的回答")
                 } else if (type == "reply") {
-                    htmlString = htmlString.replacingOccurrences(of: "输入要说的话，图文结合更精彩哦", with: "请输入你的回答")
+                    htmlString = htmlString.replacingOccurrences(of: "输入要说的话，图文结合更精彩哦".localized, with: "请输入你的回答")
                 }
                 UserDefaults.standard.removeObject(forKey: "webEditorType")
                 UserDefaults.standard.synchronize()
